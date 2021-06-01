@@ -184,3 +184,5 @@ public class EntitySpawner : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(left, top), new Vector3(left, bottom));
     }
 }
+
+public class Enemy : IComponentData { }
