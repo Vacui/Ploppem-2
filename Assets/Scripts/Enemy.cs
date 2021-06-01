@@ -64,16 +64,6 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 
         float deltaTime = Time.DeltaTime;
 
-        NativeArray<float3> moveDirectionsArray = new NativeArray<float3>(8, Allocator.TempJob);
-        moveDirectionsArray[0] = new float3(0, 1f, 0); // Up
-        moveDirectionsArray[1] = new float3(0.5f, 0.5f, 0); // Up-Right
-        moveDirectionsArray[2] = new float3(1f, 0, 0); // Right
-        moveDirectionsArray[3] = new float3(0.5f, -0.5f, 0); // Down-Right
-        moveDirectionsArray[4] = new float3(0, -1f, 0); // Down
-        moveDirectionsArray[5] = new float3(-0.5f, -0.5f, 0); // Down-Left
-        moveDirectionsArray[6] = new float3(-1f, 0, 0); // Left
-        moveDirectionsArray[7] = new float3(-0.5f, 0.5f, 0); // Up-Left
-
         NativeArray<Unity.Mathematics.Random> randomArray = World.GetExistingSystem<RandomSystem>().RandomArray;
 
         JobHandle jobHandle = Entities
@@ -96,11 +86,7 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
                 }
             }).Schedule(inputDeps);
 
-        jobHandle.Complete();
-
-        moveDirectionsArray.Dispose();
-
-        return inputDeps;
+        return jobHandle;
     }
 }
 

@@ -48,6 +48,21 @@ public class EntitySpawner : MonoBehaviour {
     }
 
     private void Update() {
+
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0)) {
+            SpawnEnemy(CodeMonkey.Utils.UtilsClass.GetMouseWorldPosition());
+        }
+#endif
+#if UNITY_ANDROID
+        if (Input.touchCount > 0) {
+            Vector3 touchWorldPosition = Utils.UtilsClass.GetTouchWorldPosition(out bool valid);
+            if (valid) {
+                SpawnEnemy(touchWorldPosition);
+            }
+        }
+#endif
+
         spawnTimer -= Time.deltaTime;
 
         if (spawnTimer > 0f) {
@@ -57,17 +72,19 @@ public class EntitySpawner : MonoBehaviour {
         if (currentEntities >= maxEntities) {
             return;
         }
-
-        spawnTimer = spawnTimerFrequency;
-
-        currentEntities++;
+        
 
         // Spawn
         SpawnEnemy();
     }
 
     private void SpawnEnemy() {
+        SpawnEnemy(new float3(UnityEngine.Random.Range(leftLimit, rightLimit), UnityEngine.Random.Range(bottomLimit, topLimit), 0));
+    }
 
+    private void SpawnEnemy(float3 worldPosition) {
+        currentEntities++;
+        spawnTimer = spawnTimerFrequency;
 
         EntityArchetype entityArchetype = entityManager.CreateArchetype(
                 typeof(RenderBounds),
@@ -90,8 +107,11 @@ public class EntitySpawner : MonoBehaviour {
             material = entityMaterial,
         });
 
+
+        worldPosition.x = Mathf.Clamp(worldPosition.x, leftLimit, rightLimit);
+        worldPosition.y = Mathf.Clamp(worldPosition.y, bottomLimit, topLimit);
         entityManager.SetComponentData(spawnedEntity, new Translation {
-            Value = new float3(UnityEngine.Random.Range(leftLimit, rightLimit), UnityEngine.Random.Range(bottomLimit, topLimit), 0)
+            Value = worldPosition
         });
 
         entityManager.SetComponentData(spawnedEntity, new DirectionChangeTimerComponent {
