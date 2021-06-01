@@ -1,5 +1,4 @@
-﻿using Unity.Collections;
-using Unity.Entities;
+﻿using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Rendering;
 using Unity.Transforms;
@@ -7,16 +6,23 @@ using UnityEngine;
 
 public class EntitySpawner : MonoBehaviour {
 
+    [Header("Stats")]
+    [SerializeField] private int maxEntities;
+    [SerializeField] private float spawnTimerFrequency = 0.1f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float directionChangeTime;
+    [SerializeField] private float deathTime;
+
+    [Header("Enemy visuals")]
     [SerializeField] private Mesh entityMesh;
     [SerializeField] private Material entityMaterial;
 
     private float spawnTimer;
-    private float spawnTimerFrequency = .1f;
     private int currentEntities;
-    private int maxEntities = 100;
 
     EntityManager entityManager;
 
+    [Header("Limits")]
     [SerializeField] private float borderTop;
     [SerializeField] private float borderRight;
     [SerializeField] private float borderBottom;
@@ -26,8 +32,6 @@ public class EntitySpawner : MonoBehaviour {
     private float rightLimit;
     private float bottomLimit;
     private float leftLimit;
-
-    private int3[] moveDirectionsArray;
 
     private void Awake() {
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -41,16 +45,6 @@ public class EntitySpawner : MonoBehaviour {
 
         rightLimit = spawnAreaTopRightCorner.x - Mathf.Abs(borderRight);
         topLimit = spawnAreaTopRightCorner.y - Mathf.Abs(borderTop);
-
-        moveDirectionsArray = new int3[8];
-        moveDirectionsArray[0] = new int3(0, +1, 0); // Up
-        moveDirectionsArray[1] = new int3(+1, +1, 0); // Up-Right
-        moveDirectionsArray[2] = new int3(+1, 0, 0); // Right
-        moveDirectionsArray[3] = new int3(+1, -1, 0); // Down-Right
-        moveDirectionsArray[4] = new int3(0, -1, 0); // Down
-        moveDirectionsArray[5] = new int3(-1, -1, 0); // Down-Left
-        moveDirectionsArray[6] = new int3(-1, 0, 0); // Left
-        moveDirectionsArray[7] = new int3(-1, +1, 0); // Up-Left
     }
 
     private void Update() {
@@ -84,6 +78,7 @@ public class EntitySpawner : MonoBehaviour {
                 typeof(ChunkWorldRenderBounds),
                 typeof(Enemy),
                 typeof(DirectionComponent),
+                typeof(DirectionChangeTimerComponent),
                 typeof(MoveSpeedComponent),
                 typeof(MoveLimitsComponent)
             );
@@ -99,12 +94,12 @@ public class EntitySpawner : MonoBehaviour {
             Value = new float3(UnityEngine.Random.Range(leftLimit, rightLimit), UnityEngine.Random.Range(bottomLimit, topLimit), 0)
         });
 
-        entityManager.SetComponentData(spawnedEntity, new DirectionComponent {
-            Value = moveDirectionsArray[UnityEngine.Random.Range(0, moveDirectionsArray.Length - 1)]
+        entityManager.SetComponentData(spawnedEntity, new DirectionChangeTimerComponent {
+            StartValue = directionChangeTime
         });
 
         entityManager.SetComponentData(spawnedEntity, new MoveSpeedComponent {
-            Value = 1f
+            Value = moveSpeed
         });
 
         entityManager.SetComponentData(spawnedEntity, new MoveLimitsComponent {

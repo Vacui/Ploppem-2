@@ -150,12 +150,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccab33e49ac92b4ca8c16a3280c9685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxEntities: 10
+  spawnTimerFrequency: 0.5
+  moveSpeed: 2.5
+  directionChangeTime: 2
+  deathTime: 10
   entityMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   entityMaterial: {fileID: 2100000, guid: 2c7108561d0ca0d488f93f07698cf601, type: 2}
-  borderTop: 1
-  borderRight: 1
-  borderBottom: 1
-  borderLeft: 1
+  borderTop: 0.5
+  borderRight: 0.5
+  borderBottom: 0.5
+  borderLeft: 0.5
 --- !u!4 &382740851
 Transform:
   m_ObjectHideFlags: 0
