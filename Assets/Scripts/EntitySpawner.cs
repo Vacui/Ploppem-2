@@ -11,7 +11,7 @@ public class EntitySpawner : MonoBehaviour {
     [SerializeField] private float spawnTimerFrequency = 0.1f;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float directionChangeTime;
-    [SerializeField] private float deathTime;
+    [SerializeField] private float lifetime;
 
     [Header("Enemy visuals")]
     [SerializeField] private Mesh entityMesh;
@@ -54,6 +54,7 @@ public class EntitySpawner : MonoBehaviour {
             SpawnEnemy(CodeMonkey.Utils.UtilsClass.GetMouseWorldPosition());
         }
 #endif
+
 #if UNITY_ANDROID
         if (Input.touchCount > 0) {
             Vector3 touchWorldPosition = Utils.UtilsClass.GetTouchWorldPosition(out bool valid);
@@ -72,7 +73,6 @@ public class EntitySpawner : MonoBehaviour {
         if (currentEntities >= maxEntities) {
             return;
         }
-        
 
         // Spawn
         SpawnEnemy();
@@ -97,7 +97,8 @@ public class EntitySpawner : MonoBehaviour {
                 typeof(DirectionComponent),
                 typeof(DirectionChangeTimerComponent),
                 typeof(MoveSpeedComponent),
-                typeof(MoveLimitsComponent)
+                typeof(MoveLimitsComponent),
+                typeof(LifetimeComponent)
             );
 
         Entity spawnedEntity = entityManager.CreateEntity(entityArchetype);
@@ -127,6 +128,10 @@ public class EntitySpawner : MonoBehaviour {
             Right = rightLimit,
             Bottom = bottomLimit,
             Left = leftLimit
+        });
+
+        entityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
+            Value = lifetime
         });
     }
 
