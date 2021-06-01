@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils;
 
 namespace UI {
     [RequireComponent(typeof(RectTransform)), DisallowMultipleComponent]
@@ -23,15 +24,15 @@ namespace UI {
         protected override void OnActive() {
             base.OnActive();
             UpdateChildrens();
-            MyUtils.SetObjectsActive(objToShowOnActive, IsActive);
-            MyUtils.SetObjectsActive(objToHideOnActive, !IsActive);
+            UtilsClass.SetObjectsActive(objToShowOnActive, IsActive);
+            UtilsClass.SetObjectsActive(objToHideOnActive, !IsActive);
         }
 
         protected override void OnInactive() {
             base.OnInactive();
             UpdateChildrens();
-            MyUtils.SetObjectsActive(objToShowOnActive, IsActive);
-            MyUtils.SetObjectsActive(objToHideOnActive, !IsActive);
+            UtilsClass.SetObjectsActive(objToShowOnActive, IsActive);
+            UtilsClass.SetObjectsActive(objToHideOnActive, !IsActive);
         }
 
         private void UpdateChildrens() {

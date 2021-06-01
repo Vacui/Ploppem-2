@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using Utils;
 
 namespace UI {
     [RequireComponent(typeof(RectTransform)), ExecuteInEditMode, DisallowMultipleComponent]
