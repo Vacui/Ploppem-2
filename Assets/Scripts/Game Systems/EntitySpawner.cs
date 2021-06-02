@@ -1,4 +1,5 @@
-﻿using Unity.Entities;
+﻿using System;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Rendering;
 using Unity.Transforms;
@@ -7,11 +8,10 @@ using UnityEngine;
 public class EntitySpawner : MonoBehaviour {
 
     [Header("Stats")]
-    [SerializeField] private int maxEntities;
-    [SerializeField] private float spawnTimerFrequency = 0.1f;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float directionChangeTime;
-    [SerializeField] private float lifetime;
+    [SerializeField] private float spawnTimerFrequency;
+    [SerializeField] private AnimationCurve moveSpeedCurve;
+    [SerializeField] private AnimationCurve directionChangeTimeCurve;
+    [SerializeField] private AnimationCurve lifetimeCurve;
 
     [Header("Enemy visuals")]
     [SerializeField] private Mesh entityMesh;
@@ -33,6 +33,9 @@ public class EntitySpawner : MonoBehaviour {
     private float bottomLimit;
     private float leftLimit;
 
+    private bool spawnIsEnabled = false;
+    private float gameTime = 0f;
+
     private void Awake() {
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 
@@ -47,11 +50,40 @@ public class EntitySpawner : MonoBehaviour {
         topLimit = spawnAreaTopRightCorner.y - Mathf.Abs(borderTop);
     }
 
+    private void Start() {
+        DOTS_GameHandler.Instance.OnGameStarted += GameStarted;
+        DOTS_GameHandler.Instance.OnGamePaused += DisableSpawn;
+        DOTS_GameHandler.Instance.OnGameResumed += EnableSpawn;
+        DOTS_GameHandler.Instance.OnGameOver += DisableSpawn;
+    }
+
+    private void OnDestroy() {
+        DOTS_GameHandler.Instance.OnGameStarted -= GameStarted;
+        DOTS_GameHandler.Instance.OnGamePaused -= DisableSpawn;
+        DOTS_GameHandler.Instance.OnGameResumed -= EnableSpawn;
+        DOTS_GameHandler.Instance.OnGameOver -= DisableSpawn;
+    }
+
+    private void GameStarted(object sender, EventArgs args){
+        gameTime = 0f;
+        EnableSpawn(sender, args);
+    }
+
+    private void EnableSpawn(object sender, EventArgs args) {
+        Debug.Log("Enabling spawn");
+        spawnIsEnabled = true;
+    }
+
+    private void DisableSpawn(object sender, EventArgs args) {
+        Debug.Log("Disabling spawn");
+        spawnIsEnabled = false;
+    }
+
     private void Update() {
 
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0)) {
-            SpawnEnemy(CodeMonkey.Utils.UtilsClass.GetMouseWorldPosition());
+            SpawnEntity(CodeMonkey.Utils.UtilsClass.GetMouseWorldPosition());
         }
 #endif
 
@@ -59,30 +91,31 @@ public class EntitySpawner : MonoBehaviour {
         if (Input.touchCount > 0) {
             Vector3 touchWorldPosition = Utils.UtilsClass.GetTouchWorldPosition(out bool valid);
             if (valid) {
-                SpawnEnemy(touchWorldPosition);
+                SpawnEntity(touchWorldPosition);
             }
         }
 #endif
 
+        if (!spawnIsEnabled) {
+            return;
+        }
+
         spawnTimer -= Time.deltaTime;
+        gameTime += Time.deltaTime;
 
         if (spawnTimer > 0f) {
             return;
         }
 
-        if (currentEntities >= maxEntities) {
-            return;
-        }
-
-        // Spawn
-        SpawnEnemy();
+        // Spawn entity
+        SpawnEntity();
     }
 
-    private void SpawnEnemy() {
-        SpawnEnemy(new float3(UnityEngine.Random.Range(leftLimit, rightLimit), UnityEngine.Random.Range(bottomLimit, topLimit), 0));
+    private void SpawnEntity() {
+        SpawnEntity(new float3(UnityEngine.Random.Range(leftLimit, rightLimit), UnityEngine.Random.Range(bottomLimit, topLimit), 0));
     }
 
-    private void SpawnEnemy(float3 worldPosition) {
+    private void SpawnEntity(float3 worldPosition) {
         currentEntities++;
         spawnTimer = spawnTimerFrequency;
 
@@ -116,11 +149,11 @@ public class EntitySpawner : MonoBehaviour {
         });
 
         entityManager.SetComponentData(spawnedEntity, new DirectionChangeTimerComponent {
-            StartValue = directionChangeTime
+            StartValue = directionChangeTimeCurve.Evaluate(gameTime)
         });
 
         entityManager.SetComponentData(spawnedEntity, new MoveSpeedComponent {
-            Value = moveSpeed
+            Value = moveSpeedCurve.Evaluate(gameTime)
         });
 
         entityManager.SetComponentData(spawnedEntity, new MoveLimitsComponent {
@@ -131,7 +164,7 @@ public class EntitySpawner : MonoBehaviour {
         });
 
         entityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
-            Value = lifetime
+            Value = lifetimeCurve.Evaluate(gameTime)
         });
     }
 
