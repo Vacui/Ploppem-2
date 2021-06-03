@@ -28,6 +28,9 @@ public struct MoveLimitsComponent : IComponentData {
     public float Left;
 }
 
+public class MovementSystemGroup : ComponentSystemGroup { }
+
+[UpdateInGroup(typeof(MovementSystemGroup))]
 public class MoveJobSystem : JobComponentSystem {
 
     [BurstCompile]
@@ -35,27 +38,27 @@ public class MoveJobSystem : JobComponentSystem {
 
         float deltaTime = Time.DeltaTime;
 
-        JobHandle jobHandle = Entities.ForEach((ref Translation translation, ref DirectionComponent direction, ref DirectionChangeTimerComponent changeDirectionTimer, in MoveSpeedComponent moveSpeed, in MoveLimitsComponent moveLimits) => {
-            translation.Value += direction.Value * deltaTime * moveSpeed.Value;
+        return Entities
+            .WithAll<Enemy>()
+            .ForEach((ref Translation translation, ref DirectionComponent direction, ref DirectionChangeTimerComponent changeDirectionTimer, in MoveSpeedComponent moveSpeed, in MoveLimitsComponent moveLimits) => {
+                translation.Value += direction.Value * deltaTime * moveSpeed.Value;
 
-            if (translation.Value.x < moveLimits.Left || translation.Value.x > moveLimits.Right) {
-                translation.Value.x = Mathf.Clamp(translation.Value.x, moveLimits.Left, moveLimits.Right);
-                direction.Value.x *= -1;
-                changeDirectionTimer.Value = changeDirectionTimer.StartValue;
-            }
+                if (translation.Value.x < moveLimits.Left || translation.Value.x > moveLimits.Right) {
+                    translation.Value.x = Mathf.Clamp(translation.Value.x, moveLimits.Left, moveLimits.Right);
+                    direction.Value.x *= -1;
+                    changeDirectionTimer.Value = changeDirectionTimer.StartValue;
+                }
 
-            if (translation.Value.y < moveLimits.Bottom || translation.Value.y > moveLimits.Top) {
-                translation.Value.y = Mathf.Clamp(translation.Value.y, moveLimits.Bottom, moveLimits.Top);
-                direction.Value.y *= -1;
-                changeDirectionTimer.Value = changeDirectionTimer.StartValue;
-            }
-        }).Schedule(inputDeps);
-
-        return jobHandle;
+                if (translation.Value.y < moveLimits.Bottom || translation.Value.y > moveLimits.Top) {
+                    translation.Value.y = Mathf.Clamp(translation.Value.y, moveLimits.Bottom, moveLimits.Top);
+                    direction.Value.y *= -1;
+                    changeDirectionTimer.Value = changeDirectionTimer.StartValue;
+                }
+            }).Schedule(inputDeps);
     }
 }
 
-[UpdateAfter(typeof(MoveJobSystem))]
+[UpdateInGroup(typeof(MovementSystemGroup))] [UpdateAfter(typeof(MoveJobSystem))]
 public class ChangeDirectionJobSystem : JobComponentSystem {
 
     [BurstCompile]
@@ -65,8 +68,9 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 
         NativeArray<Unity.Mathematics.Random> randomArray = World.GetExistingSystem<RandomSystem>().RandomArray;
 
-        JobHandle jobHandle = Entities
+        return Entities
             .WithNativeDisableParallelForRestriction(randomArray)
+            .WithAll<Enemy>()
             .ForEach((int nativeThreadIndex, ref DirectionComponent direction, ref DirectionChangeTimerComponent directionChangeTimer, in Translation translation) => {
                 directionChangeTimer.Value -= deltaTime;
 
@@ -84,17 +88,18 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
                     directionChangeTimer.Value = directionChangeTimer.StartValue;
                 }
             }).Schedule(inputDeps);
-
-        return jobHandle;
     }
 }
 
+[UpdateInGroup(typeof(MovementSystemGroup))]
 public class ShowDirectionDebugJobSystem : ComponentSystem {
 
     protected override void OnUpdate() {
-        Entities.ForEach((ref Translation translation, ref DirectionComponent direction) => {
-            float drawDistance = 2f;
-            Debug.DrawLine(translation.Value, translation.Value + (direction.Value * drawDistance));
-        });
+        Entities
+            .WithAll<Enemy>()
+            .ForEach((ref Translation translation, ref DirectionComponent direction) => {
+                float drawDistance = 2f;
+                Debug.DrawLine(translation.Value, translation.Value + (direction.Value * drawDistance));
+            });
     }
 }

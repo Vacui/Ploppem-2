@@ -7,14 +7,13 @@ public struct LifetimeComponent : IComponentData {
     public float Value;
 }
 
-[UpdateAfter(typeof(ChangeDirectionJobSystem))]
+[UpdateAfter(typeof(MovementSystemGroup))]
 public class LifetimeJobSystem : JobComponentSystem {
 
     private EndSimulationEntityCommandBufferSystem endSimulationEntityCommandBuffer;
 
     protected override void OnCreate() {
         endSimulationEntityCommandBuffer = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-        base.OnCreate();
     }
 
     [BurstCompile]
@@ -25,6 +24,7 @@ public class LifetimeJobSystem : JobComponentSystem {
         EntityCommandBuffer.Concurrent entityCommandBuffer = endSimulationEntityCommandBuffer.CreateCommandBuffer().ToConcurrent();
 
         JobHandle jobHandle = Entities
+            .WithAll<Enemy>()
             .ForEach((Entity entity, int entityInQueryIndex, ref LifetimeComponent lifetime) => {
                 lifetime.Value -= deltaTime;
 

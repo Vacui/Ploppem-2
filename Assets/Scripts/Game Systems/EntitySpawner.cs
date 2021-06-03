@@ -50,14 +50,14 @@ public class EntitySpawner : MonoBehaviour {
         topLimit = spawnAreaTopRightCorner.y - Mathf.Abs(borderTop);
     }
 
-    private void Start() {
+    private void OnEnable() {
         DOTS_GameHandler.Instance.OnGameStarted += GameStarted;
         DOTS_GameHandler.Instance.OnGamePaused += DisableSpawn;
         DOTS_GameHandler.Instance.OnGameResumed += EnableSpawn;
         DOTS_GameHandler.Instance.OnGameOver += DisableSpawn;
     }
 
-    private void OnDestroy() {
+    private void OnDisable() {
         DOTS_GameHandler.Instance.OnGameStarted -= GameStarted;
         DOTS_GameHandler.Instance.OnGamePaused -= DisableSpawn;
         DOTS_GameHandler.Instance.OnGameResumed -= EnableSpawn;
@@ -217,5 +217,3 @@ public class EntitySpawner : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(left, top), new Vector3(left, bottom));
     }
 }
-
-public class Enemy : IComponentData { }

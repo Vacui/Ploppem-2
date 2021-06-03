@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour {
 
-    [BeginHorizontal]
-    [EditorButton(nameof(StartGame), "Play", ButtonActivityType.OnPlayMode)]
-    [EditorButton(nameof(StopGame), "Stop", ButtonActivityType.OnPlayMode)]
     [EditorButton(nameof(ResumeGame), "Resume", ButtonActivityType.OnPlayMode)]
     [EditorButton(nameof(PauseGame), "Pause", ButtonActivityType.OnPlayMode)]
-    [EndHorizontal]
+    [EditorButton(nameof(StartGame), "Play", ButtonActivityType.OnPlayMode)]
+    [EditorButton(nameof(StopGame), "Stop", ButtonActivityType.OnPlayMode)]
     public bool temp;
 
     public static event EventHandler OnGameStarted;
