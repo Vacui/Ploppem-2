@@ -13,6 +13,11 @@ public class EnemySpawnerJobSystem : JobComponentSystem {
 
     protected override JobHandle OnUpdate(JobHandle inputDeps) {
 
+        if (!HasSingleton<GameState>() ||
+            GetSingleton<GameState>().Value != GameState.State.Playing) {
+            return default;
+        }
+
         spawnTime -= Time.DeltaTime;
 
         if (spawnTime > 0f) {
@@ -90,3 +95,27 @@ public class EnemySpawnerJobSystem : JobComponentSystem {
 }
 
 public struct Enemy : IComponentData { }
+
+public struct DirectionComponent : IComponentData {
+    public float3 Value;
+}
+
+public struct DirectionChangeTimerComponent : IComponentData {
+    public float StartValue;
+    public float Value;
+}
+
+public struct MoveSpeedComponent : IComponentData {
+    public float Value;
+}
+
+public struct MoveLimitsComponent : IComponentData {
+    public float Top;
+    public float Right;
+    public float Bottom;
+    public float Left;
+}
+
+public struct LifetimeComponent : IComponentData {
+    public float Value;
+}

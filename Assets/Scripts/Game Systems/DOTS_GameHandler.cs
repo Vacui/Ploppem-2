@@ -2,9 +2,6 @@
 using Unity.Jobs;
 using Unity.Entities;
 
-[UpdateBefore(typeof(MovementSystemGroup))]
-[UpdateBefore(typeof(EnemySpawnerJobSystem))]
-[UpdateBefore(typeof(LifetimeJobSystem))]
 public class DOTS_GameHandler : JobComponentSystem {
 
     public static DOTS_GameHandler Instance { get; private set; }

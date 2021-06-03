@@ -3,11 +3,6 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 
-public struct LifetimeComponent : IComponentData {
-    public float Value;
-}
-
-[UpdateAfter(typeof(MovementSystemGroup))]
 public class LifetimeJobSystem : JobComponentSystem {
 
     private EndSimulationEntityCommandBufferSystem endSimulationEntityCommandBuffer;
@@ -39,5 +34,3 @@ public class LifetimeJobSystem : JobComponentSystem {
         return jobHandle;
     }
 }
-
-public struct DeathMark : IComponentData { }
