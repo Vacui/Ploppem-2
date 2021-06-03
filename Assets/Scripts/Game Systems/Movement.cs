@@ -94,6 +94,10 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 [UpdateInGroup(typeof(MovementSystemGroup))]
 public class ShowDirectionDebugJobSystem : ComponentSystem {
 
+    protected override void OnCreate() {
+        Enabled = false;
+    }
+
     protected override void OnUpdate() {
         Entities
             .WithAll<Enemy>()
