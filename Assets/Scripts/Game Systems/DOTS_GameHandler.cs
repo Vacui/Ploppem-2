@@ -28,7 +28,9 @@ public class DOTS_GameHandler : JobComponentSystem {
     }
 
     protected override void OnStartRunning() {
+
         SetSystemsEnabled(false);
+
     }
 
     private void StartGame(object sender, EventArgs args) {
@@ -81,7 +83,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         
     }
 
-    private bool SetSingletonValue(GameState.State value, GameState.State filter, bool isFilter = true) {
+    private bool SetSingletonValue(GameState.State value, GameState.State filter, bool filterEqual = true) {
 
         if (!HasSingleton<GameState>()) {
             return false;
@@ -89,8 +91,8 @@ public class DOTS_GameHandler : JobComponentSystem {
 
         GameState gameState = GetSingleton<GameState>();
 
-        if ((isFilter && gameState.Value != filter) ||
-            (!isFilter && gameState.Value == filter)) {
+        if ((filterEqual && gameState.Value != filter) ||
+            (!filterEqual && gameState.Value == filter)) {
             return false;
         }
 
