@@ -15,7 +15,7 @@ public class LifetimeRenderingJobSystem : JobComponentSystem {
             .WithAll<Enemy>()
             .ForEach((ref Translation translation, ref LifetimeRenderingData lifetimeRenderingData, in LifetimeComponent lifetime) => {
 
-                lifetimeRenderingData.CurrentColor = math.lerp(lifetimeRenderingData.StartColor, lifetimeRenderingData.EndColor, lifetime.Value / lifetime.Start);
+                lifetimeRenderingData.CurrentColor = math.lerp(lifetimeRenderingData.StartColor, lifetimeRenderingData.EndColor, 1f - lifetime.Value / lifetime.Start);
                 lifetimeRenderingData.Matrix = Matrix4x4.TRS(translation.Value, Quaternion.identity, Vector3.one);
 
             }).Schedule(inputDeps);
