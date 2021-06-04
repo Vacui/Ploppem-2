@@ -71,7 +71,7 @@ public class DOTS_GameHandler : JobComponentSystem {
             return;
         }
 
-        World.GetOrCreateSystem<EnemySpawnerJobSystem>().Reset();
+        World.GetOrCreateSystem<EnemySpawnerSystem>().Reset();
 
         SetSystemsEnabled(false);
 
@@ -104,7 +104,7 @@ public class DOTS_GameHandler : JobComponentSystem {
     }
 
     private void SetSystemsEnabled(bool enabled) {
-        World.GetOrCreateSystem<EnemySpawnerJobSystem>().Enabled = enabled;
+        World.GetOrCreateSystem<EnemySpawnerSystem>().Enabled = enabled;
         World.GetOrCreateSystem<MoveJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<ChangeDirectionJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<ShowDirectionDebugJobSystem>().Enabled = enabled;

@@ -5,14 +5,23 @@ using UnityEngine;
 
 public class EnemySpawnData : MonoBehaviour {
 
+    public static EnemySpawnData Instance { get; private set; }
+
     private EntityManager entityManger;
 
+    [Header("Rendering")]
+    [SerializeField] private Mesh mesh;
+    public Mesh Mesh => mesh;
+    [SerializeField] private Material material;
+    public Material Material => material;
+
+    [Header("Stats")]
     [SerializeField] private float spawnFrequency;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float directionChangeFrequency;
     [SerializeField] private float lifeTime;
 
-    [Header("Spawn Limits")]
+    [Header("Limits")]
     [SerializeField] private float borderTop;
     [SerializeField] private float borderRight;
     [SerializeField] private float borderBottom;
@@ -26,6 +35,8 @@ public class EnemySpawnData : MonoBehaviour {
     private Entity referenceHolderEntity;
 
     private void Awake() {
+
+        Instance = this;
 
         entityManger = World.DefaultGameObjectInjectionWorld.EntityManager;
 

@@ -1,22 +1,15 @@
-﻿using Unity.Burst;
-using Unity.Entities;
+﻿using Unity.Entities;
 using UnityEngine;
-using Unity.Rendering;
 using Unity.Transforms;
 using Utils;
 
 [UpdateAfter(typeof(LifetimeRenderingJobSystem))]
 public class LifetimeRenderingSystem : ComponentSystem {
 
-    [BurstCompile]
     protected override void OnUpdate() {
 
-        if (!HasSingleton<PrefabEntityComponent>()) {
-            return;
-        }
-
-        Entity prefabEntity = GetSingleton<PrefabEntityComponent>().Prefab;
-        RenderMesh renderMesh = EntityManager.GetSharedComponentData<RenderMesh>(prefabEntity);
+        Material material = EnemySpawnData.Instance.Material;
+        Mesh mesh = EnemySpawnData.Instance.Mesh;
 
         Entities
             .WithAll<Enemy>()
@@ -27,9 +20,9 @@ public class LifetimeRenderingSystem : ComponentSystem {
                 materialPropertyBlock.SetColor("_Color", lifetimeRenderingData.CurrentColor.ToColor());
 
                 Graphics.DrawMesh(
-                    renderMesh.mesh,
+                    mesh,
                     lifetimeRenderingData.Matrix,
-                    renderMesh.material,
+                    material,
                     0, // Layer
                     Camera.main,
                     0, // Submesh index
