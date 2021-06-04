@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShowDirectionDebugJobSystem : ComponentSystem {
 
-    protected override void OnCreate() {
+    protected override void OnStartRunning() {
         Enabled = false;
     }
 

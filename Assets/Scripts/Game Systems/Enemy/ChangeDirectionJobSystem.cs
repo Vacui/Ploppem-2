@@ -5,7 +5,6 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 [UpdateAfter(typeof(MoveJobSystem))]
 public class ChangeDirectionJobSystem : JobComponentSystem {
@@ -15,7 +14,7 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 
         float deltaTime = Time.DeltaTime;
 
-        NativeArray<Unity.Mathematics.Random> randomArray = World.GetExistingSystem<RandomSystem>().RandomArray;
+        NativeArray<Random> randomArray = World.GetExistingSystem<RandomSystem>().RandomArray;
 
         return Entities
             .WithNativeDisableParallelForRestriction(randomArray)
@@ -25,11 +24,11 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 
                 if (directionChangeTimer.Value <= 0f) {
                     // Change direction
-                    Unity.Mathematics.Random random = randomArray[nativeThreadIndex];
+                    Random random = randomArray[nativeThreadIndex];
 
-                    float angle = random.NextFloat(-180f, 180f) * Mathf.PI * 2f;
-                    float x = Mathf.Cos(angle);
-                    float y = Mathf.Sin(angle);
+                    float angle = random.NextFloat(-180f, 180f) * math.PI * 2f;
+                    float x = math.cos(angle);
+                    float y = math.sin(angle);
                     direction.Value = new float3(x, y, 0);
 
                     randomArray[nativeThreadIndex] = random;
