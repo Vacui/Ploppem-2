@@ -1,5 +1,4 @@
 ﻿using System;
-using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 
@@ -14,12 +13,20 @@ public class EnemySpawnData : MonoBehaviour {
     public Mesh Mesh => mesh;
     [SerializeField] private Material material;
     public Material Material => material;
+    [SerializeField] private Color startColor;
+    public Color StartColor => startColor;
+    [SerializeField] private Color endColor;
+    public Color EndColor => endColor;
 
     [Header("Stats")]
     [SerializeField] private float spawnFrequency;
+    public float SpawnFrequency => spawnFrequency;
     [SerializeField] private float moveSpeed;
+    public float MoveSpeed => moveSpeed;
     [SerializeField] private float directionChangeFrequency;
-    [SerializeField] private float lifeTime;
+    public float DirectionChangeFrequency => directionChangeFrequency;
+    [SerializeField] private float lifetime;
+    public float Lifetime => lifetime;
 
     [Header("Limits")]
     [SerializeField] private float borderTop;
@@ -28,11 +35,13 @@ public class EnemySpawnData : MonoBehaviour {
     [SerializeField] private float borderLeft;
 
     private float spawnLimitTop;
+    public float SpawnLimitTop => spawnLimitTop;
     private float spawnLimitRight;
+    public float SpawnLimitRight => spawnLimitRight;
     private float spawnLimitBottom;
+    public float SpawnLimitBottom => spawnLimitBottom;
     private float spawnLimitLeft;
-
-    private Entity referenceHolderEntity;
+    public float SpawnLimitLeft => spawnLimitLeft;
 
     private void Awake() {
 
@@ -58,45 +67,17 @@ public class EnemySpawnData : MonoBehaviour {
     }
 
     private void Start() {
-        DOTS_GameHandler.Instance.OnGameStarted += CreateEntitySpawnBlobAsset;
-        DOTS_GameHandler.Instance.OnGameOver += DestroyBlobAssetReference;
+        DOTS_GameHandler.Instance.OnGameStarted += OnGameStarted;
     }
 
     private void OnDestroy() {
-        DOTS_GameHandler.Instance.OnGameStarted -= CreateEntitySpawnBlobAsset;
-        DOTS_GameHandler.Instance.OnGameOver -= DestroyBlobAssetReference;
+        DOTS_GameHandler.Instance.OnGameStarted -= OnGameStarted;
     }
 
-    private void CreateEntitySpawnBlobAsset(object sender, EventArgs args) {
+    private void OnGameStarted(object sender, EventArgs args) {
 
-        BlobAssetReference<EnemySpawnDataBlobAsset> entitySpawnDataBlobAssetReference;
+        CalculateSpawnLimits();
 
-        using (BlobBuilder blobBuilder = new BlobBuilder(Allocator.Temp)) {
-            ref EnemySpawnDataBlobAsset entitySpawnDataBlobAsset = ref blobBuilder.ConstructRoot<EnemySpawnDataBlobAsset>();
-
-            entitySpawnDataBlobAsset.SpawnFrequency = spawnFrequency;
-            entitySpawnDataBlobAsset.MoveSpeed = moveSpeed;
-            entitySpawnDataBlobAsset.DirectionChangeFrequency = directionChangeFrequency;
-            entitySpawnDataBlobAsset.Lifetime = lifeTime;
-
-            entitySpawnDataBlobAsset.SpawnLimitTop = spawnLimitTop;
-            entitySpawnDataBlobAsset.SpawnLimitRight = spawnLimitRight;
-            entitySpawnDataBlobAsset.SpawnLimitBottom = spawnLimitBottom;
-            entitySpawnDataBlobAsset.SpawnLimitLeft = spawnLimitLeft;
-
-            entitySpawnDataBlobAssetReference = blobBuilder.CreateBlobAssetReference<EnemySpawnDataBlobAsset>(Allocator.Persistent);
-        }
-
-        referenceHolderEntity = entityManger.CreateEntity();
-
-        entityManger.AddComponentData(referenceHolderEntity, new EnemySpawnDataBlobAssetReference {
-            Reference = entitySpawnDataBlobAssetReference
-        });
-
-    }
-
-    private void DestroyBlobAssetReference(object sender, EventArgs args) {
-        entityManger.DestroyEntity(referenceHolderEntity);
     }
 
     private void OnDrawGizmosSelected() {
@@ -109,25 +90,5 @@ public class EnemySpawnData : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(spawnLimitLeft, spawnLimitTop), new Vector3(spawnLimitLeft, spawnLimitBottom));
 
     }
-
-}
-
-public struct EnemySpawnDataBlobAsset { 
-
-    public float SpawnFrequency;
-    public float MoveSpeed;
-    public float DirectionChangeFrequency;
-    public float Lifetime;
-
-    public float SpawnLimitTop;
-    public float SpawnLimitRight;
-    public float SpawnLimitBottom;
-    public float SpawnLimitLeft;
-
-}
-
-public struct EnemySpawnDataBlobAssetReference : IComponentData {
-
-    public BlobAssetReference<EnemySpawnDataBlobAsset> Reference;
 
 }

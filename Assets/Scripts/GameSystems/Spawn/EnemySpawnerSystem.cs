@@ -1,6 +1,7 @@
 ﻿using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using Utils;
 
 public class EnemySpawnerSystem : ComponentSystem {
 
@@ -15,7 +16,7 @@ public class EnemySpawnerSystem : ComponentSystem {
     protected override void OnUpdate() {
 
         if (!HasSingleton<GameState>() ||
-            !(GetSingleton<GameState>().Value == GameState.State.Playing)) {
+            GetSingleton<GameState>().Value != GameState.State.Playing) {
             return;
         }
 
@@ -25,12 +26,11 @@ public class EnemySpawnerSystem : ComponentSystem {
             return;
         }
 
-        if (!HasSingleton<EnemySpawnDataBlobAssetReference>() ||
-            !GetSingleton<EnemySpawnDataBlobAssetReference>().Reference.IsCreated) {
+        if (EnemySpawnData.Instance == null) {
             return;
         }
 
-        EnemySpawnDataBlobAsset spawnData = GetSingleton<EnemySpawnDataBlobAssetReference>().Reference.Value;
+        EnemySpawnData spawnData = EnemySpawnData.Instance;
 
         /*UnityEngine.Debug.Log($"" +
             $"{spawnData.SpawnFrequency}, " +
@@ -48,7 +48,7 @@ public class EnemySpawnerSystem : ComponentSystem {
 
     }
 
-    private void SpawnEnemy(EnemySpawnDataBlobAsset spawnData) {
+    private void SpawnEnemy(EnemySpawnData spawnData) {
 
         EntityArchetype enemyEntityArchetype = EntityManager.CreateArchetype(
                    typeof(Enemy),
@@ -93,8 +93,8 @@ public class EnemySpawnerSystem : ComponentSystem {
         });
 
         EntityManager.SetComponentData(spawnedEntity, new LifetimeRenderingData {
-            StartColor = new float4(1, 1, 1, 1),
-            EndColor = new float4(0, 0, 0, 1)
+            StartColor = spawnData.StartColor.ToFloat4(),
+            EndColor = spawnData.EndColor.ToFloat4()
         });
 
     }
