@@ -109,6 +109,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         World.GetOrCreateSystem<ChangeDirectionJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<ShowDirectionDebugJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<LifetimeJobSystem>().Enabled = enabled;
+        World.GetOrCreateSystem<LifetimeRenderingSystem>().Enabled = enabled;
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps) {

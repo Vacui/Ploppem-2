@@ -2,6 +2,8 @@
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
+using Unity.Rendering;
+using UnityEngine;
 
 public class EnemySpawnerJobSystem : JobComponentSystem {
 
@@ -62,6 +64,9 @@ public class EnemySpawnerJobSystem : JobComponentSystem {
         });
         */
 
+        EntityManager.RemoveComponent(spawnedEntity, typeof(RenderMesh));
+        EntityManager.RemoveComponent(spawnedEntity, typeof(RenderBounds));
+
         EntityManager.SetComponentData(spawnedEntity, new Translation {
             Value = new float3(
                 UnityEngine.Random.Range(spawnData.SpawnLimitLeft, spawnData.SpawnLimitRight),
@@ -87,7 +92,13 @@ public class EnemySpawnerJobSystem : JobComponentSystem {
         });
 
         EntityManager.AddComponentData(spawnedEntity, new LifetimeComponent {
+            Start = spawnData.Lifetime,
             Value = spawnData.Lifetime
+        });
+
+        EntityManager.AddComponentData(spawnedEntity, new LifetimeRenderingData {
+            StartColor = new float4(1, 1, 1, 1),
+            EndColor = new float4(0, 0, 0, 1)
         });
 
     }
@@ -117,5 +128,13 @@ public struct MoveLimitsComponent : IComponentData {
 }
 
 public struct LifetimeComponent : IComponentData {
+    public float Start;
     public float Value;
+}
+
+public struct LifetimeRenderingData : IComponentData {
+    public float4 StartColor;
+    public float4 EndColor;
+    public float4 CurrentColor;
+    public Matrix4x4 Matrix;
 }

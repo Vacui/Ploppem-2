@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Utils {
@@ -63,13 +64,13 @@ namespace Utils {
                 int tests = 0;
                 bool tryAgain = true;
                 while (tests < limit && tryAgain) {
-                    result = Random.Range(start, end);
+                    result = UnityEngine.Random.Range(start, end);
                     if (!exceptions.Contains(result)) return result;
                     tests++;
                 }
                 throw new KeyNotFoundException();
             } else {
-                return Random.Range(start, end);
+                return UnityEngine.Random.Range(start, end);
             }
         }
 
@@ -137,6 +138,10 @@ namespace Utils {
         public static Color SetColorAlpha(Color color, float alpha) {
             color.a = alpha;
             return color;
+        }
+
+        public static Color ToColor(this float4 color) {
+            return new Color(color.x, color.y, color.z, color.w);
         }
     }
 }

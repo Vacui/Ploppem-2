@@ -4,6 +4,7 @@
     "com.unity.cinemachine": "2.6.5",
     "com.unity.editorcoroutines": "1.0.0",
     "com.unity.entities": "0.11.2-preview.1",
+    "com.unity.platforms.android": "0.4.0-preview.5",
     "com.unity.rendering.hybrid": "0.5.2-preview.4",
     "com.unity.test-framework": "1.1.22",
     "com.unity.textmeshpro": "2.1.1",
