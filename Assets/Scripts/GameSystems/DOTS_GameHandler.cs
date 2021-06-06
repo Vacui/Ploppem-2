@@ -71,12 +71,10 @@ public class DOTS_GameHandler : JobComponentSystem {
             return;
         }
 
-        World.GetOrCreateSystem<EnemySpawnerSystem>().Reset();
-
         SetSystemsEnabled(false);
 
-        // Destroy all Enemy entities
-        EntityQuery entityQuery = GetEntityQuery(typeof(Enemy));
+        // Destroy all GameSession entities
+        EntityQuery entityQuery = GetEntityQuery(typeof(GameSession));
         EntityManager.DestroyEntity(entityQuery);
 
         OnGameOver?.Invoke(this, EventArgs.Empty);

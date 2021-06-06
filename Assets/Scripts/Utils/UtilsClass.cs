@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -146,6 +147,25 @@ namespace Utils {
 
         public static float4 ToFloat4(this Color color) {
             return new float4(color.r, color.g, color.b, color.a);
+        }
+
+        /// <param name="samples">Must be 2 or higher</param>
+        public static NativeArray<float4> SampleGradient(Gradient gradient, int samples, Allocator allocator){
+
+            if(samples < 2) {
+                throw new System.IndexOutOfRangeException();
+            }
+
+            float timeStep = 1f / samples;
+
+            NativeArray<float4> result = new NativeArray<float4>(samples, allocator);
+
+            for(int i = 0; i < samples; i++) {
+                result[i] = gradient.Evaluate(i * timeStep).ToFloat4();
+            }
+
+            return result;
+
         }
     }
 }
