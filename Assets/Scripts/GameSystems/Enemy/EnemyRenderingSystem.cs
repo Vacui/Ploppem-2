@@ -1,15 +1,15 @@
 ﻿using Unity.Entities;
-using UnityEngine;
 using Unity.Transforms;
-using Utils;
+using UnityEngine;
 
 [UpdateAfter(typeof(EnemyRenderingJobSystem))]
 public class EnemyRenderingSystem : ComponentSystem {
 
     protected override void OnUpdate() {
 
-        Material material = EnemySpawnData.Instance.Material;
-        Mesh mesh = EnemySpawnData.Instance.Mesh;
+        Material material = EnemySpawnerData.Instance.Material;
+        Mesh mesh = EnemySpawnerData.Instance.Mesh;
+        Gradient colorGradient = EnemySpawnerData.Instance.ColorGradient;
 
         Entities
             .WithAll<Enemy>()
@@ -17,7 +17,7 @@ public class EnemyRenderingSystem : ComponentSystem {
 
                 MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
 
-                materialPropertyBlock.SetColor("_Color", lifetimeRenderingData.CurrentColor.ToColor());
+                materialPropertyBlock.SetColor("_Color", colorGradient.Evaluate(1f - lifetime.Value / lifetime.Start));
 
                 Graphics.DrawMesh(
                     mesh,

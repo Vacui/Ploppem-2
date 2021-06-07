@@ -167,5 +167,24 @@ namespace Utils {
             return result;
 
         }
+
+        /// <param name="samples">Must be 2 or higher</param>
+        public static NativeArray<float> SampleAnimationCurve(AnimationCurve animationCurve, int samples, Allocator allocator) {
+
+            if (samples < 2) {
+                throw new System.IndexOutOfRangeException();
+            }
+
+            float timeStep = 1f / samples;
+
+            NativeArray<float> result = new NativeArray<float>(samples, allocator);
+
+            for (int i = 0; i < samples; i++) {
+                result[i] = animationCurve.Evaluate(i * timeStep);
+            }
+
+            return result;
+
+        }
     }
 }

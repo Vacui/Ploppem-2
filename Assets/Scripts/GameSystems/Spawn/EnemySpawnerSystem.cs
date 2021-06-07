@@ -4,6 +4,14 @@ using Unity.Transforms;
 
 public class EnemySpawnerSystem : ComponentSystem {
 
+    private float spawnTime;
+    private float gameSessionTime;
+
+    public void Reset() {
+        spawnTime = 0f;
+        gameSessionTime = 0f;
+    }
+
     protected override void OnUpdate() {
 
         if (!HasSingleton<GameState>() ||
@@ -11,35 +19,37 @@ public class EnemySpawnerSystem : ComponentSystem {
             return;
         }
 
-        Entities
-            .ForEach((ref EnemySpawnerComponent enemySpawner) => {
+        gameSessionTime += Time.DeltaTime;
+        spawnTime -= Time.DeltaTime;
 
-                enemySpawner.SpawnTime -= Time.DeltaTime;
+        if (spawnTime > 0f) {
+            return;
+        }
 
-                if (enemySpawner.SpawnTime > 0f) {
-                    return;
-                }
+        EnemySpawnerData spawnData = EnemySpawnerData.Instance;
 
-                if (!enemySpawner.Reference.IsCreated) {
-                    return;
-                }
+        if(spawnData == null) {
+            return;
+        }
 
-                ref EnemySpawnDataBlobAsset spawnData = ref enemySpawner.Reference.Value;
+        spawnTime = spawnData.SpawnFrequency;
 
-                enemySpawner.SpawnTime = spawnData.SpawnFrequency;
-
-                SpawnEnemy(new float3(
-                        UnityEngine.Random.Range(spawnData.SpawnLimitLeft, spawnData.SpawnLimitRight),
-                        UnityEngine.Random.Range(spawnData.SpawnLimitBottom, spawnData.SpawnLimitTop),
-                        0),
-                        ref spawnData);
-                
-            });
+        SpawnEnemy(new float3(
+                UnityEngine.Random.Range(spawnData.SpawnLimitLeft, spawnData.SpawnLimitRight),
+                UnityEngine.Random.Range(spawnData.SpawnLimitBottom, spawnData.SpawnLimitTop),
+                0),
+                spawnData.DirectionChangeFrequency,
+                spawnData.MoveSpeedCurve.Evaluate(gameSessionTime),
+                spawnData.SpawnLimitTop,
+                spawnData.SpawnLimitRight,
+                spawnData.SpawnLimitBottom,
+                spawnData.SpawnLimitLeft,
+                spawnData.Lifetime);
 
         return;
     }
 
-    private void SpawnEnemy(float3 worldPosition, ref EnemySpawnDataBlobAsset spawnData) {
+    private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime) {
 
         EntityArchetype enemyEntityArchetype = EntityManager.CreateArchetype(
             typeof(GameSession),
@@ -60,27 +70,23 @@ public class EnemySpawnerSystem : ComponentSystem {
         });
 
         EntityManager.SetComponentData(spawnedEntity, new DirectionChangeTimerComponent {
-            StartValue = spawnData.DirectionChangeFrequency
+            StartValue = directionChangeFrequency
         });
 
         EntityManager.SetComponentData(spawnedEntity, new MoveSpeedComponent {
-            Value = spawnData.MoveSpeed
+            Value = moveSpeed
         });
 
         EntityManager.SetComponentData(spawnedEntity, new MoveLimitsComponent {
-            Top = spawnData.SpawnLimitTop,
-            Right = spawnData.SpawnLimitRight,
-            Bottom = spawnData.SpawnLimitBottom,
-            Left = spawnData.SpawnLimitLeft
+            Top = moveLimitTop,
+            Right = moveLimitRight,
+            Bottom = moveLimitBottom,
+            Left = moveLimitLeft
         });
 
         EntityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
-            Start = spawnData.Lifetime,
-            Value = spawnData.Lifetime
-        });
-
-        EntityManager.SetComponentData(spawnedEntity, new LifetimeRenderingData {
-            SampledGradientReference = spawnData.SampledGradientReference
+            Start = lifetime,
+            Value = lifetime
         });
 
     }
@@ -117,7 +123,6 @@ public struct LifetimeComponent : IComponentData {
 }
 
 public struct LifetimeRenderingData : IComponentData {
-    public float4 CurrentColor;
     public int Layer;
     public UnityEngine.Matrix4x4 Matrix;
     public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
