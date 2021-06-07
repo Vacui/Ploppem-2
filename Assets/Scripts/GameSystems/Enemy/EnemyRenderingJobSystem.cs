@@ -5,7 +5,7 @@ using Unity.Transforms;
 using UnityEngine;
 
 [UpdateAfter(typeof(LifetimeJobSystem))]
-public class LifetimeRenderingJobSystem : JobComponentSystem {
+public class EnemyRenderingJobSystem : JobComponentSystem {
 
     [BurstCompile]
     protected override JobHandle OnUpdate(JobHandle inputDeps) {

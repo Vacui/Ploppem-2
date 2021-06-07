@@ -3,8 +3,8 @@ using UnityEngine;
 using Unity.Transforms;
 using Utils;
 
-[UpdateAfter(typeof(LifetimeRenderingJobSystem))]
-public class LifetimeRenderingSystem : ComponentSystem {
+[UpdateAfter(typeof(EnemyRenderingJobSystem))]
+public class EnemyRenderingSystem : ComponentSystem {
 
     protected override void OnUpdate() {
 
