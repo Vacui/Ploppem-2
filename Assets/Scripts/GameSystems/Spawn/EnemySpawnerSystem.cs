@@ -118,6 +118,7 @@ public struct LifetimeComponent : IComponentData {
 
 public struct LifetimeRenderingData : IComponentData {
     public float4 CurrentColor;
+    public int Layer;
     public UnityEngine.Matrix4x4 Matrix;
     public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
 }

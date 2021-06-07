@@ -23,7 +23,7 @@ public class EnemyRenderingSystem : ComponentSystem {
                     mesh,
                     lifetimeRenderingData.Matrix,
                     material,
-                    0, // Layer
+                    lifetimeRenderingData.Layer, // Layer
                     Camera.main,
                     0, // Submesh index
                     materialPropertyBlock
