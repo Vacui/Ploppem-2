@@ -1,7 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-public class Testing : MonoBehaviour {
+public class GameHandler : MonoBehaviour {
+
+    public static GameHandler Instance { get; private set; }
 
     [EditorButton(nameof(ResumeGame), "Resume", ButtonActivityType.OnPlayMode)]
     [EditorButton(nameof(PauseGame), "Pause", ButtonActivityType.OnPlayMode)]
@@ -13,6 +15,16 @@ public class Testing : MonoBehaviour {
     public static event EventHandler OnGamePaused;
     public static event EventHandler OnGameResumed;
     public static event EventHandler OnGameOver;
+
+    private void Awake() {
+        
+        if(Instance != null && Instance != this) {
+            Destroy(gameObject);
+        }
+
+        Instance = this;
+
+    }
 
     public void StartGame() {
         OnGameStarted?.Invoke(this, EventArgs.Empty);

@@ -14,17 +14,17 @@ public class DOTS_GameHandler : JobComponentSystem {
     protected override void OnCreate() {
         Instance = this;
 
-        Testing.OnGameStarted += StartGame;
-        Testing.OnGamePaused += PauseGame;
-        Testing.OnGameResumed += ResumeGame;
-        Testing.OnGameOver += GameOver;
+        GameHandler.OnGameStarted += StartGame;
+        GameHandler.OnGamePaused += PauseGame;
+        GameHandler.OnGameResumed += ResumeGame;
+        GameHandler.OnGameOver += GameOver;
     }
 
     protected override void OnDestroy() {
-        Testing.OnGameStarted -= StartGame;
-        Testing.OnGamePaused -= PauseGame;
-        Testing.OnGameResumed -= ResumeGame;
-        Testing.OnGameOver -= GameOver;
+        GameHandler.OnGameStarted -= StartGame;
+        GameHandler.OnGamePaused -= PauseGame;
+        GameHandler.OnGameResumed -= ResumeGame;
+        GameHandler.OnGameOver -= GameOver;
     }
 
     protected override void OnStartRunning() {
