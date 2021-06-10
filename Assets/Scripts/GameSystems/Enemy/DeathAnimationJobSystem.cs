@@ -1,30 +1,38 @@
-﻿using Unity.Entities;
+﻿using Unity.Burst;
+using Unity.Collections;
+using Unity.Entities;
 using Unity.Jobs;
 
-public class KillerJobSystem : JobComponentSystem {
+public class DeathAnimationJobSystem : JobComponentSystem {
 
     private EndSimulationEntityCommandBufferSystem entityCommandBufferSystem;
 
     protected override void OnCreate() {
         entityCommandBufferSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-        base.OnCreate();
     }
 
+    [BurstCompile]
     protected override JobHandle OnUpdate(JobHandle inputDeps) {
+
+        float deltaTime = Time.DeltaTime;
 
         EntityCommandBuffer.Concurrent entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer().ToConcurrent();
 
         JobHandle jobHandle = Entities
-            .WithAll<DeathMark>()
-            .ForEach((int nativeThreadIndex, Entity entity) => {
+            .WithAll<Enemy, DeathMark>()
+            .ForEach((Entity entity, int entityInQueryIndex, ref DeathAnimationData deathAnimData) => {
 
-                entityCommandBuffer.DestroyEntity(nativeThreadIndex, entity);
+                deathAnimData.Value += deltaTime;
+
+                if (deathAnimData.Value > deathAnimData.Duration) {
+                    // Destroy Entity
+                    entityCommandBuffer.DestroyEntity(entityInQueryIndex, entity);
+                }
 
             }).Schedule(inputDeps);
 
         entityCommandBufferSystem.AddJobHandleForProducer(jobHandle);
 
         return jobHandle;
-
     }
 }

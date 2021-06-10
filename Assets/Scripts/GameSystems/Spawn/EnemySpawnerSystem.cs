@@ -44,12 +44,14 @@ public class EnemySpawnerSystem : ComponentSystem {
                 spawnData.SpawnLimitRight,
                 spawnData.SpawnLimitBottom,
                 spawnData.SpawnLimitLeft,
-                spawnData.Lifetime);
+                spawnData.Lifetime,
+                spawnData.DeathDuration
+                );
 
         return;
     }
 
-    private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime) {
+    private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime, float deathDuration) {
 
         EntityArchetype enemyEntityArchetype = EntityManager.CreateArchetype(
             typeof(GameSession),
@@ -60,7 +62,8 @@ public class EnemySpawnerSystem : ComponentSystem {
             typeof(MoveSpeedComponent),
             typeof(MoveLimitsComponent),
             typeof(LifetimeComponent),
-            typeof(LifetimeRenderingData)
+            typeof(DeathAnimationData),
+            typeof(EnemyRenderingData)
             );
 
         Entity spawnedEntity = EntityManager.CreateEntity(enemyEntityArchetype);
@@ -87,6 +90,10 @@ public class EnemySpawnerSystem : ComponentSystem {
         EntityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
             Start = lifetime,
             Value = lifetime
+        });
+
+        EntityManager.SetComponentData(spawnedEntity, new DeathAnimationData {
+            Duration = deathDuration
         });
 
     }
@@ -122,8 +129,14 @@ public struct LifetimeComponent : IComponentData {
     public float Value;
 }
 
-public struct LifetimeRenderingData : IComponentData {
+public struct DeathAnimationData : IComponentData {
+    public float Duration;
+    public float Value;
+}
+
+public struct EnemyRenderingData : IComponentData {
     public int Layer;
+    public float Scale;
     public UnityEngine.Matrix4x4 Matrix;
     public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
 }

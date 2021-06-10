@@ -109,10 +109,9 @@ public class DOTS_GameHandler : JobComponentSystem {
         World.GetOrCreateSystem<ChangeDirectionJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<ShowDirectionDebugJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<LifetimeJobSystem>().Enabled = enabled;
-        World.GetOrCreateSystem<EnemyRenderingJobSystem>().Enabled = enabled;
+        World.GetOrCreateSystem<EnemyPreRenderingJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<EnemyRenderingSystem>().Enabled = enabled;
-        World.GetOrCreateSystem<SelectEntitySystem>().Enabled = enabled;
-        World.GetOrCreateSystem<KillerJobSystem>().Enabled = enabled;
+        World.GetOrCreateSystem<KillerEnemySystem>().Enabled = enabled;
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps) {

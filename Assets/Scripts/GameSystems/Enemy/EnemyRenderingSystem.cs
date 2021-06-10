@@ -2,7 +2,7 @@
 using Unity.Transforms;
 using UnityEngine;
 
-[UpdateAfter(typeof(EnemyRenderingJobSystem))]
+[UpdateAfter(typeof(EnemyPreRenderingJobSystem))]
 public class EnemyRenderingSystem : ComponentSystem {
 
     protected override void OnUpdate() {
@@ -13,7 +13,7 @@ public class EnemyRenderingSystem : ComponentSystem {
 
         Entities
             .WithAll<Enemy>()
-            .ForEach((ref Translation translation, ref LifetimeComponent lifetime, ref LifetimeRenderingData lifetimeRenderingData) => {
+            .ForEach((ref Translation translation, ref LifetimeComponent lifetime, ref EnemyRenderingData lifetimeRenderingData) => {
 
                 MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
 

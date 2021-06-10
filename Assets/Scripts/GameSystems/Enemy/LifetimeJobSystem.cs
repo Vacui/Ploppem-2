@@ -20,12 +20,13 @@ public class LifetimeJobSystem : JobComponentSystem {
 
         JobHandle jobHandle = Entities
             .WithAll<Enemy>()
+            .WithNone<DeathMark>()
             .ForEach((Entity entity, int entityInQueryIndex, ref LifetimeComponent lifetime) => {
                 lifetime.Value -= deltaTime;
 
                 if (lifetime.Value <= 0f) {
-                    // Destroy Entity
-                    entityCommandBuffer.DestroyEntity(entityInQueryIndex, entity);
+                    // Mark the Entity as Dead
+                    entityCommandBuffer.AddComponent(entityInQueryIndex, entity, typeof(DeathMark));
                 }
             }).Schedule(inputDeps);
 

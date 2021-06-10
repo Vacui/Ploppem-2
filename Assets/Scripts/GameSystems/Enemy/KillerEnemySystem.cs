@@ -4,9 +4,10 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using Utils;
 
-public class SelectEntitySystem : ComponentSystem {
+[UpdateBefore(typeof(MoveJobSystem))]
+public class KillerEnemySystem : ComponentSystem {
 
-    private const float SELECT_SIZE_RADIUS = .25f;
+    private const float SELECT_SIZE_RADIUS = .5f;
 
     protected override void OnUpdate() {
 
@@ -20,14 +21,13 @@ public class SelectEntitySystem : ComponentSystem {
 #endif
 
 #if UNITY_ANDROID
-        if (Input.touchCount <= 0) {
-            return;
-        }
 
         float3 touchPosition = UtilsClass.GetTouchWorldPosition(out bool valid);
         if (!valid) {
             return;
         }
+
+        Debug.Log("Touch!");
 
         SelectEntitiesOn(touchPosition);
 #endif
@@ -38,9 +38,11 @@ public class SelectEntitySystem : ComponentSystem {
         float3 lowerLeftClickPosition = new float3(position.x - SELECT_SIZE_RADIUS, position.y - SELECT_SIZE_RADIUS, 0);
         float3 upperRightClickPosition = new float3(position.x + SELECT_SIZE_RADIUS, position.y + SELECT_SIZE_RADIUS, 0);
 
+        int killedEnemies = 0;
+
         Entities
-            .WithNone<DeathMark>()
             .WithAll<Enemy>()
+            .WithNone<DeathMark>()
             .ForEach((Entity entity, ref Translation translation) => {
 
                 float3 entityPosition = translation.Value;
@@ -52,8 +54,17 @@ public class SelectEntitySystem : ComponentSystem {
                     return;
                 }
 
-                PostUpdateCommands.AddComponent(entity, new DeathMark());
+                killedEnemies++;
+
+                // Mark the Entity as dead
+                PostUpdateCommands.AddComponent(entity, typeof(DeathMark));
             });
+
+        if(killedEnemies <= 0) {
+            return;
+        }
+
+        Debug.Log($"Killed {killedEnemies} enemies");
 
     }
 

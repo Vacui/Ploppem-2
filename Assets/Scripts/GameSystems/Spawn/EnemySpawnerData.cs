@@ -1,9 +1,6 @@
 ﻿using System;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
 using UnityEngine;
-using Utils;
 
 public class EnemySpawnerData : MonoBehaviour {
 
@@ -11,15 +8,13 @@ public class EnemySpawnerData : MonoBehaviour {
 
     private EntityManager entityManger;
 
-    [Header("Rendering")]
-    [SerializeField] private Mesh mesh;
-    public Mesh Mesh => mesh;
-    [SerializeField] private Material material;
-    public Material Material => material;
-    [SerializeField] private Gradient colorGradient;
-    public Gradient ColorGradient => colorGradient;
+    [Header("Limits")]
+    [SerializeField] private float borderTop;
+    [SerializeField] private float borderRight;
+    [SerializeField] private float borderBottom;
+    [SerializeField] private float borderLeft;
 
-    [Header("Stats")]
+    [Header("Movement")]
     [SerializeField] private float spawnFrequency;
     public float SpawnFrequency => spawnFrequency;
     [SerializeField] private float moveSpeed;
@@ -28,14 +23,20 @@ public class EnemySpawnerData : MonoBehaviour {
     public AnimationCurve MoveSpeedCurve => moveSpeedCurve;
     [SerializeField] private float directionChangeFrequency;
     public float DirectionChangeFrequency => directionChangeFrequency;
+
+    [Header("Death")]
     [SerializeField] private float lifetime;
     public float Lifetime => lifetime;
+    [SerializeField] private float deathDuration;
+    public float DeathDuration => deathDuration;
 
-    [Header("Limits")]
-    [SerializeField] private float borderTop;
-    [SerializeField] private float borderRight;
-    [SerializeField] private float borderBottom;
-    [SerializeField] private float borderLeft;
+    [Header("Rendering")]
+    [SerializeField] private Mesh mesh;
+    public Mesh Mesh => mesh;
+    [SerializeField] private Material material;
+    public Material Material => material;
+    [SerializeField] private Gradient colorGradient;
+    public Gradient ColorGradient => colorGradient;
 
     private float spawnLimitTop;
     public float SpawnLimitTop => spawnLimitTop;

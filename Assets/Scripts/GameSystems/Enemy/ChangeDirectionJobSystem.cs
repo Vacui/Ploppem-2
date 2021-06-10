@@ -6,7 +6,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-[UpdateAfter(typeof(MoveJobSystem))]
+[UpdateBefore(typeof(MoveJobSystem))]
 public class ChangeDirectionJobSystem : JobComponentSystem {
 
     [BurstCompile]
@@ -19,6 +19,7 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
         return Entities
             .WithNativeDisableParallelForRestriction(randomArray)
             .WithAll<Enemy>()
+            .WithNone<DeathMark>()
             .ForEach((int nativeThreadIndex, ref DirectionComponent direction, ref DirectionChangeTimerComponent directionChangeTimer, in Translation translation) => {
                 directionChangeTimer.Value -= deltaTime;
 

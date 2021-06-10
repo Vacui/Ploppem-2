@@ -13,6 +13,7 @@ public class MoveJobSystem : JobComponentSystem {
 
         return Entities
             .WithAll<Enemy>()
+            .WithNone<DeathMark>()
             .ForEach((ref Translation translation, ref DirectionComponent direction, ref DirectionChangeTimerComponent changeDirectionTimer, in MoveSpeedComponent moveSpeed, in MoveLimitsComponent moveLimits) => {
                 translation.Value += direction.Value * deltaTime * moveSpeed.Value;
 
