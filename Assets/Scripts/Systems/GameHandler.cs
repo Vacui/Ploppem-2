@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Unity.Entities;
 
 public class GameHandler : MonoBehaviour {
 
@@ -24,6 +25,10 @@ public class GameHandler : MonoBehaviour {
 
         Instance = this;
 
+    }
+
+    private void Start() {
+        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<LifetimeJobSystem>().OnEnemyDead += (sender, args) => { Debug.Log("An Enemy is dead."); };
     }
 
     public void StartGame() {
