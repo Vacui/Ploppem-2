@@ -43,7 +43,7 @@ public class KillerEnemySystem : ComponentSystem {
         Entities
             .WithAll<Enemy>()
             .WithNone<DeathMark>()
-            .ForEach((Entity entity, ref Translation translation) => {
+            .ForEach((Entity entity, ref Translation translation, ref DeathAnimationData deathAnimData) => {
 
                 float3 entityPosition = translation.Value;
 
@@ -58,6 +58,7 @@ public class KillerEnemySystem : ComponentSystem {
 
                 // Mark the Entity as dead
                 PostUpdateCommands.AddComponent(entity, typeof(DeathMark));
+                deathAnimData.Killed = true;
             });
 
         if(killedEnemies <= 0) {

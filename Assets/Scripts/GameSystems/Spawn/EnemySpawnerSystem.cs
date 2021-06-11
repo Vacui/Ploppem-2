@@ -167,6 +167,7 @@ public struct LifetimeComponent : IComponentData {
 public struct DeathAnimationData : IComponentData {
     public float Duration;
     public float Value;
+    public bool Killed;
 }
 
 public struct EnemyRenderingData : IComponentData {

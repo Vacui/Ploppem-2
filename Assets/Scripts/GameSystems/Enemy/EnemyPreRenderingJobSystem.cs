@@ -19,12 +19,18 @@ public class EnemyPreRenderingJobSystem : JobComponentSystem {
                 float deathAnimPercentage = deathAnimData.Value / deathAnimData.Duration;
 
                 float scaleFactor = 1f;
+                float4 color = renderingData.SampledGradientReference.Value.Evaluate(lifetimePercentage);
                 if (deathAnimPercentage > 0f) {
-                    scaleFactor = math.clamp(1f - deathAnimPercentage, 0f, 1f);
+                    if (deathAnimData.Killed) {
+                        scaleFactor = math.clamp(deathAnimPercentage + 1f, 1f, 2f);
+                        color.w = math.clamp(1f - deathAnimPercentage, 0f, 1f);
+                    } else {
+                        scaleFactor = math.clamp(1f - deathAnimPercentage, 0f, 1f);
+                    }
                 }
                 renderingData.Matrix = Matrix4x4.TRS(translation.Value, Quaternion.identity, Vector3.one * scaleFactor);
 
-                renderingData.Color = renderingData.SampledGradientReference.Value.Evaluate(lifetimePercentage);
+                renderingData.Color = color;
 
                 // calculate layer, using just layers section 10 - 20
                 renderingData.Layer = (int)math.floor((1f - lifetimePercentage) * (20 - 10)) + 10;
