@@ -1,15 +1,25 @@
-﻿using Unity.Entities;
+﻿using System;
+using Unity.Collections;
+using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
+using Utils;
 
 public class EnemySpawnerSystem : ComponentSystem {
 
     private float spawnTime;
     private float gameSessionTime;
 
+    private BlobAssetReference<SampledGradientBlobAsset> sampledColorGradientReference;
+
     public void Reset() {
         spawnTime = 0f;
         gameSessionTime = 0f;
+
+        if (sampledColorGradientReference.IsCreated) {
+            sampledColorGradientReference.Dispose();
+        }
     }
 
     protected override void OnUpdate() {
@@ -32,6 +42,10 @@ public class EnemySpawnerSystem : ComponentSystem {
             return;
         }
 
+        if (!sampledColorGradientReference.IsCreated) {
+            SampleColorGradient(spawnData.ColorGradient);
+        }
+
         spawnTime = spawnData.SpawnFrequency;
 
         SpawnEnemy(new float3(
@@ -49,6 +63,24 @@ public class EnemySpawnerSystem : ComponentSystem {
                 );
 
         return;
+    }
+
+    private void SampleColorGradient(Gradient colorGradient) {
+
+        NativeArray<float4> sampledGradient = UtilsClass.SampleGradient(colorGradient, 1000, Allocator.Temp);
+        sampledColorGradientReference = BlobAssetUtils.BuildBlobAsset(sampledGradient, delegate (ref SampledGradientBlobAsset blobAsset, NativeArray<float4> data) {
+
+            BlobBuilder blobBuilder = BlobAssetUtils.BlobBuilder;
+
+            BlobBuilderArray<float4> sampledGradientArrayBuilder = blobBuilder.Allocate(ref blobAsset.SampledGradient, data.Length);
+
+            for (int i = 0; i < data.Length; i++) {
+                sampledGradientArrayBuilder[i] = data[i];
+            }
+
+        });
+        sampledGradient.Dispose();
+
     }
 
     private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime, float deathDuration) {
@@ -88,12 +120,15 @@ public class EnemySpawnerSystem : ComponentSystem {
         });
 
         EntityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
-            Start = lifetime,
-            Value = lifetime
+            Duration = lifetime
         });
 
         EntityManager.SetComponentData(spawnedEntity, new DeathAnimationData {
             Duration = deathDuration
+        });
+
+        EntityManager.SetComponentData(spawnedEntity, new EnemyRenderingData {
+            SampledGradientReference = sampledColorGradientReference
         });
 
     }
@@ -125,7 +160,7 @@ public struct MoveLimitsComponent : IComponentData {
 }
 
 public struct LifetimeComponent : IComponentData {
-    public float Start;
+    public float Duration;
     public float Value;
 }
 
@@ -135,8 +170,8 @@ public struct DeathAnimationData : IComponentData {
 }
 
 public struct EnemyRenderingData : IComponentData {
+    public float4 Color;
     public int Layer;
-    public float Scale;
     public UnityEngine.Matrix4x4 Matrix;
     public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
 }

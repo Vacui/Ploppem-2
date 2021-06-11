@@ -13,20 +13,22 @@ public class EnemyPreRenderingJobSystem : JobComponentSystem {
 
         return Entities
             .WithAll<Enemy>()
-            .ForEach((ref EnemyRenderingData lifetimeRenderingData, in Translation translation, in LifetimeComponent lifetime, in DeathAnimationData deathAnimData) => {
+            .ForEach((ref EnemyRenderingData renderingData, in Translation translation, in LifetimeComponent lifetime, in DeathAnimationData deathAnimData) => {
 
-                float remainingLifetimePercentage = lifetime.Value / lifetime.Start;
-
-                // calculate layer, using just layers section 10 - 20
-                lifetimeRenderingData.Layer = (int)math.floor(remainingLifetimePercentage * (20 - 10)) + 10;
+                float lifetimePercentage = lifetime.Value / lifetime.Duration;
+                float deathAnimPercentage = deathAnimData.Value / deathAnimData.Duration;
 
                 float scaleFactor = 1f;
-                float deathAnimPercentage = deathAnimData.Value / deathAnimData.Duration;
                 if (deathAnimPercentage > 0f) {
                     scaleFactor = math.clamp(1f - deathAnimPercentage, 0f, 1f);
                 }
+                renderingData.Matrix = Matrix4x4.TRS(translation.Value, Quaternion.identity, Vector3.one * scaleFactor);
 
-                lifetimeRenderingData.Matrix = Matrix4x4.TRS(translation.Value, Quaternion.identity, Vector3.one * scaleFactor);
+                renderingData.Color = renderingData.SampledGradientReference.Value.Evaluate(lifetimePercentage);
+
+                // calculate layer, using just layers section 10 - 20
+                renderingData.Layer = (int)math.floor((1f - lifetimePercentage) * (20 - 10)) + 10;
+
 
             }).Schedule(inputDeps);
     }

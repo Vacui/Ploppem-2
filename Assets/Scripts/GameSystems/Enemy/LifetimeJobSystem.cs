@@ -22,9 +22,9 @@ public class LifetimeJobSystem : JobComponentSystem {
             .WithAll<Enemy>()
             .WithNone<DeathMark>()
             .ForEach((Entity entity, int entityInQueryIndex, ref LifetimeComponent lifetime) => {
-                lifetime.Value -= deltaTime;
+                lifetime.Value += deltaTime;
 
-                if (lifetime.Value <= 0f) {
+                if (lifetime.Value > lifetime.Duration) {
                     // Mark the Entity as Dead
                     entityCommandBuffer.AddComponent(entityInQueryIndex, entity, typeof(DeathMark));
                 }
