@@ -26,6 +26,7 @@ public class EnemyPreRenderingJobSystem : JobComponentSystem {
                         color.w = math.clamp(1f - deathAnimPercentage, 0f, 1f);
                     } else {
                         scaleFactor = math.clamp(1f - deathAnimPercentage, 0f, 1f);
+                        color = renderingData.DeathColor;
                     }
                 }
                 renderingData.Matrix = Matrix4x4.TRS(translation.Value, Quaternion.identity, Vector3.one * scaleFactor);

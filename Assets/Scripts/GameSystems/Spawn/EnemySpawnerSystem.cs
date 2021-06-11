@@ -59,7 +59,8 @@ public class EnemySpawnerSystem : ComponentSystem {
                 spawnData.SpawnLimitBottom,
                 spawnData.SpawnLimitLeft,
                 spawnData.Lifetime,
-                spawnData.DeathDuration
+                spawnData.DeathDuration,
+                spawnData.DeathColor.ToFloat4()
                 );
 
         return;
@@ -83,7 +84,7 @@ public class EnemySpawnerSystem : ComponentSystem {
 
     }
 
-    private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime, float deathDuration) {
+    private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime, float deathDuration, float4 deathColor) {
 
         EntityArchetype enemyEntityArchetype = EntityManager.CreateArchetype(
             typeof(GameSession),
@@ -128,7 +129,8 @@ public class EnemySpawnerSystem : ComponentSystem {
         });
 
         EntityManager.SetComponentData(spawnedEntity, new EnemyRenderingData {
-            SampledGradientReference = sampledColorGradientReference
+            SampledGradientReference = sampledColorGradientReference,
+            DeathColor = deathColor
         });
 
     }
@@ -175,4 +177,5 @@ public struct EnemyRenderingData : IComponentData {
     public int Layer;
     public UnityEngine.Matrix4x4 Matrix;
     public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
+    public float4 DeathColor;
 }

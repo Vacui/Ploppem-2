@@ -37,6 +37,8 @@ public class EnemySpawnerData : MonoBehaviour {
     public Material Material => material;
     [SerializeField] private Gradient colorGradient;
     public Gradient ColorGradient => colorGradient;
+    [SerializeField] private Color deathColor;
+    public Color DeathColor => deathColor;
 
     private float spawnLimitTop;
     public float SpawnLimitTop => spawnLimitTop;

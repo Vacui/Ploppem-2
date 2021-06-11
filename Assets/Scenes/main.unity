@@ -733,14 +733,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   directionChangeFrequency: 2
-  lifetime: 6
-  deathDuration: 1
+  lifetime: 3
+  deathDuration: 0.5
   mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: 301cb7cc601632341991e3f8fa75f262, type: 2}
   colorGradient:
     serializedVersion: 2
     key0: {r: 0.18039216, g: 0.8, b: 0.44313726, a: 1}
-    key1: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
+    key1: {r: 0.9529412, g: 0.6117647, b: 0.07058824, a: 1}
     key2: {r: 0.90588236, g: 0.29803923, b: 0.23529412, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -749,7 +749,7 @@ MonoBehaviour:
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
     ctime1: 32768
-    ctime2: 58982
+    ctime2: 62258
     ctime3: 0
     ctime4: 0
     ctime5: 0
@@ -766,6 +766,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  deathColor: {r: 0.20392157, g: 0.28627452, b: 0.36862746, a: 1}
 --- !u!4 &390318941
 Transform:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.7411765, g: 0.7647059, b: 0.78039217, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
