@@ -12,8 +12,8 @@ public class EnemyPreRenderingJobSystem : JobComponentSystem {
     protected override JobHandle OnUpdate(JobHandle inputDeps) {
 
         return Entities
-            .WithAll<Enemy>()
-            .ForEach((ref EnemyRenderingData renderingData, in Translation translation, in LifetimeComponent lifetime, in DeathAnimationData deathAnimData) => {
+            .WithAll<Tag_Enemy>()
+            .ForEach((ref RenderingData renderingData, in Translation translation, in Lifetime lifetime, in DeathAnimationData deathAnimData) => {
 
                 float lifetimePercentage = lifetime.Value / lifetime.Duration;
                 float deathAnimPercentage = deathAnimData.Value / deathAnimData.Duration;

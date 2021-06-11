@@ -12,9 +12,9 @@ public class MoveJobSystem : JobComponentSystem {
         float deltaTime = Time.DeltaTime;
 
         return Entities
-            .WithAll<Enemy>()
-            .WithNone<DeathMark>()
-            .ForEach((ref Translation translation, ref DirectionComponent direction, ref DirectionChangeTimerComponent changeDirectionTimer, in MoveSpeedComponent moveSpeed, in MoveLimitsComponent moveLimits) => {
+            .WithAll<Tag_Enemy>()
+            .WithNone<Tag_DeathMark>()
+            .ForEach((ref Translation translation, ref MoveDirection direction, ref MoveDirectionChangeTimer changeDirectionTimer, in MoveSpeed moveSpeed, in MoveLimits moveLimits) => {
                 translation.Value += direction.Value * deltaTime * moveSpeed.Value;
 
                 if (translation.Value.x < moveLimits.Left || translation.Value.x > moveLimits.Right) {

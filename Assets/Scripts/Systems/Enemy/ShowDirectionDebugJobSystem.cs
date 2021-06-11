@@ -10,9 +10,9 @@ public class ShowDirectionDebugJobSystem : ComponentSystem {
 
     protected override void OnUpdate() {
         Entities
-            .WithAll<Enemy>()
-            .WithNone<DeathMark>()
-            .ForEach((ref Translation translation, ref DirectionComponent direction) => {
+            .WithAll<Tag_Enemy>()
+            .WithNone<Tag_DeathMark>()
+            .ForEach((ref Translation translation, ref MoveDirection direction) => {
                 float drawDistance = 2f;
                 Debug.DrawLine(translation.Value, translation.Value + (direction.Value * drawDistance));
             });

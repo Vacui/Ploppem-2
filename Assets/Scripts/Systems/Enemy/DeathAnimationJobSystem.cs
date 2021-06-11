@@ -19,7 +19,7 @@ public class DeathAnimationJobSystem : JobComponentSystem {
         EntityCommandBuffer.Concurrent entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer().ToConcurrent();
 
         JobHandle jobHandle = Entities
-            .WithAll<Enemy, DeathMark>()
+            .WithAll<Tag_Enemy, Tag_DeathMark>()
             .ForEach((Entity entity, int entityInQueryIndex, ref DeathAnimationData deathAnimData) => {
 
                 deathAnimData.Value += deltaTime;

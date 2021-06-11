@@ -13,8 +13,8 @@ public class EnemyRenderingSystem : ComponentSystem {
         Gradient colorGradient = EnemySpawnerData.Instance.ColorGradient;
 
         Entities
-            .WithAll<Enemy>()
-            .ForEach((ref Translation translation, ref LifetimeComponent lifetime, ref EnemyRenderingData renderingData) => {
+            .WithAll<Tag_Enemy>()
+            .ForEach((ref Translation translation, ref Lifetime lifetime, ref RenderingData renderingData) => {
 
                 MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
 

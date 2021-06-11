@@ -76,7 +76,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         World.GetOrCreateSystem<EnemySpawnerSystem>().Reset();
 
         // Destroy all GameSession entities
-        EntityQuery entityQuery = GetEntityQuery(typeof(GameSession));
+        EntityQuery entityQuery = GetEntityQuery(typeof(Tag_GameSession));
         EntityManager.DestroyEntity(entityQuery);
 
         OnGameOver?.Invoke(this, EventArgs.Empty);

@@ -1,5 +1,4 @@
-﻿using System;
-using Unity.Collections;
+﻿using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -87,16 +86,16 @@ public class EnemySpawnerSystem : ComponentSystem {
     private void SpawnEnemy(float3 worldPosition, float directionChangeFrequency, float moveSpeed, float moveLimitTop, float moveLimitRight, float moveLimitBottom, float moveLimitLeft, float lifetime, float deathDuration, float4 deathColor) {
 
         EntityArchetype enemyEntityArchetype = EntityManager.CreateArchetype(
-            typeof(GameSession),
-            typeof(Enemy),
+            typeof(Tag_GameSession),
+            typeof(Tag_Enemy),
             typeof(Translation),
-            typeof(DirectionComponent),
-            typeof(DirectionChangeTimerComponent),
-            typeof(MoveSpeedComponent),
-            typeof(MoveLimitsComponent),
-            typeof(LifetimeComponent),
+            typeof(MoveDirection),
+            typeof(MoveDirectionChangeTimer),
+            typeof(MoveSpeed),
+            typeof(MoveLimits),
+            typeof(Lifetime),
             typeof(DeathAnimationData),
-            typeof(EnemyRenderingData)
+            typeof(RenderingData)
             );
 
         Entity spawnedEntity = EntityManager.CreateEntity(enemyEntityArchetype);
@@ -105,22 +104,22 @@ public class EnemySpawnerSystem : ComponentSystem {
             Value = worldPosition
         });
 
-        EntityManager.SetComponentData(spawnedEntity, new DirectionChangeTimerComponent {
+        EntityManager.SetComponentData(spawnedEntity, new MoveDirectionChangeTimer {
             StartValue = directionChangeFrequency
         });
 
-        EntityManager.SetComponentData(spawnedEntity, new MoveSpeedComponent {
+        EntityManager.SetComponentData(spawnedEntity, new MoveSpeed {
             Value = moveSpeed
         });
 
-        EntityManager.SetComponentData(spawnedEntity, new MoveLimitsComponent {
+        EntityManager.SetComponentData(spawnedEntity, new MoveLimits {
             Top = moveLimitTop,
             Right = moveLimitRight,
             Bottom = moveLimitBottom,
             Left = moveLimitLeft
         });
 
-        EntityManager.SetComponentData(spawnedEntity, new LifetimeComponent {
+        EntityManager.SetComponentData(spawnedEntity, new Lifetime {
             Duration = lifetime
         });
 
@@ -128,54 +127,11 @@ public class EnemySpawnerSystem : ComponentSystem {
             Duration = deathDuration
         });
 
-        EntityManager.SetComponentData(spawnedEntity, new EnemyRenderingData {
+        EntityManager.SetComponentData(spawnedEntity, new RenderingData {
             SampledGradientReference = sampledColorGradientReference,
             DeathColor = deathColor
         });
 
     }
 
-}
-
-public struct GameSession : IComponentData { }
-
-public struct Enemy : IComponentData { }
-
-public struct DirectionComponent : IComponentData {
-    public float3 Value;
-}
-
-public struct DirectionChangeTimerComponent : IComponentData {
-    public float StartValue;
-    public float Value;
-}
-
-public struct MoveSpeedComponent : IComponentData {
-    public float Value;
-}
-
-public struct MoveLimitsComponent : IComponentData {
-    public float Top;
-    public float Right;
-    public float Bottom;
-    public float Left;
-}
-
-public struct LifetimeComponent : IComponentData {
-    public float Duration;
-    public float Value;
-}
-
-public struct DeathAnimationData : IComponentData {
-    public float Duration;
-    public float Value;
-    public bool Killed;
-}
-
-public struct EnemyRenderingData : IComponentData {
-    public float4 Color;
-    public int Layer;
-    public UnityEngine.Matrix4x4 Matrix;
-    public BlobAssetReference<SampledGradientBlobAsset> SampledGradientReference;
-    public float4 DeathColor;
 }

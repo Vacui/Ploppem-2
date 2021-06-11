@@ -18,9 +18,9 @@ public class ChangeDirectionJobSystem : JobComponentSystem {
 
         return Entities
             .WithNativeDisableParallelForRestriction(randomArray)
-            .WithAll<Enemy>()
-            .WithNone<DeathMark>()
-            .ForEach((int nativeThreadIndex, ref DirectionComponent direction, ref DirectionChangeTimerComponent directionChangeTimer, in Translation translation) => {
+            .WithAll<Tag_Enemy>()
+            .WithNone<Tag_DeathMark>()
+            .ForEach((int nativeThreadIndex, ref MoveDirection direction, ref MoveDirectionChangeTimer directionChangeTimer, in Translation translation) => {
                 directionChangeTimer.Value -= deltaTime;
 
                 if (directionChangeTimer.Value <= 0f) {

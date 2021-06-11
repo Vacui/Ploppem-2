@@ -19,14 +19,14 @@ public class LifetimeJobSystem : JobComponentSystem {
         EntityCommandBuffer.Concurrent entityCommandBuffer = entityCommandBufferSystem.CreateCommandBuffer().ToConcurrent();
 
         JobHandle jobHandle = Entities
-            .WithAll<Enemy>()
-            .WithNone<DeathMark>()
-            .ForEach((Entity entity, int entityInQueryIndex, ref LifetimeComponent lifetime) => {
+            .WithAll<Tag_Enemy>()
+            .WithNone<Tag_DeathMark>()
+            .ForEach((Entity entity, int entityInQueryIndex, ref Lifetime lifetime) => {
                 lifetime.Value += deltaTime;
 
                 if (lifetime.Value > lifetime.Duration) {
                     // Mark the Entity as Dead
-                    entityCommandBuffer.AddComponent(entityInQueryIndex, entity, typeof(DeathMark));
+                    entityCommandBuffer.AddComponent(entityInQueryIndex, entity, typeof(Tag_DeathMark));
                 }
             }).Schedule(inputDeps);
 
