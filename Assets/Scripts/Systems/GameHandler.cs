@@ -6,17 +6,15 @@ public class GameHandler : MonoBehaviour {
 
     public static GameHandler Instance { get; private set; }
 
-    [EditorButton(nameof(ResumeGame), "Resume", ButtonActivityType.OnPlayMode)]
-    [EditorButton(nameof(PauseGame), "Pause", ButtonActivityType.OnPlayMode)]
-    [EditorButton(nameof(StopGame), "Stop", ButtonActivityType.OnPlayMode)]
-    [EditorButton(nameof(StartGame), "Play", ButtonActivityType.OnPlayMode)]
-    public bool temp;
-
     public static event EventHandler OnGameStarted;
     public static event EventHandler OnGamePaused;
     public static event EventHandler OnGameResumed;
     public static event EventHandler OnGameOver;
 
+    [EditorButton(nameof(ResumeGame), "Resume", ButtonActivityType.OnPlayMode)]
+    [EditorButton(nameof(PauseGame), "Pause", ButtonActivityType.OnPlayMode)]
+    [EditorButton(nameof(StartGame), "Play", ButtonActivityType.OnPlayMode)]
+    [EditorButton(nameof(StopGame), "Stop", ButtonActivityType.OnPlayMode)]
     [SerializeField] private int lifes;
     public int Lifes => lifes;
 
