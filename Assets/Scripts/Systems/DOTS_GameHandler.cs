@@ -18,13 +18,8 @@ public class DOTS_GameHandler : JobComponentSystem {
         GameHandler.OnGamePaused += PauseGame;
         GameHandler.OnGameResumed += ResumeGame;
         GameHandler.OnGameOver += GameOver;
-    }
 
-    protected override void OnDestroy() {
-        GameHandler.OnGameStarted -= StartGame;
-        GameHandler.OnGamePaused -= PauseGame;
-        GameHandler.OnGameResumed -= ResumeGame;
-        GameHandler.OnGameOver -= GameOver;
+        World.GetOrCreateSystem<GameOverSystem>().OnGameOver += GameOver;
     }
 
     protected override void OnStartRunning() {
@@ -67,7 +62,7 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void GameOver(object sender, EventArgs args) {
 
-        if(!SetSingletonValue(GameState.State.Dead, GameState.State.Playing)) {
+        if (!SetSingletonValue(GameState.State.Dead, GameState.State.Playing)) {
             return;
         }
 
@@ -80,7 +75,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         EntityManager.DestroyEntity(entityQuery);
 
         OnGameOver?.Invoke(this, EventArgs.Empty);
-        
+
     }
 
     private bool SetSingletonValue(GameState.State value, GameState.State filter, bool filterEqual = true) {
@@ -112,6 +107,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         World.GetOrCreateSystem<EnemyPreRenderingJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<EnemyRenderingSystem>().Enabled = enabled;
         World.GetOrCreateSystem<KillerEnemySystem>().Enabled = enabled;
+        World.GetOrCreateSystem<GameOverSystem>().Enabled = enabled;
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps) {

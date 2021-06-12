@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   temp: 0
+  lifes: 1
 --- !u!4 &19644984
 Transform:
   m_ObjectHideFlags: 0
@@ -485,6 +486,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7b338163adcbf324db4a5777694c9f7e,
         type: 3}
+    - target: {fileID: 224000010937413736, guid: 0abab5bb77339e4428787a870eb31bd3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 134.01025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
 --- !u!1 &247718717
@@ -658,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18039216, g: 0.15686275, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -739,9 +745,9 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 301cb7cc601632341991e3f8fa75f262, type: 2}
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.18039216, g: 0.8, b: 0.44313726, a: 1}
-    key1: {r: 0.9529412, g: 0.6117647, b: 0.07058824, a: 1}
-    key2: {r: 0.90588236, g: 0.29803923, b: 0.23529412, a: 0}
+    key0: {r: 0.42352942, g: 0.7921569, b: 0.44313726, a: 1}
+    key1: {r: 0.9529412, g: 0.62352943, b: 0.23137255, a: 1}
+    key2: {r: 0.98039216, g: 0.40392157, b: 0.3529412, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -808,7 +814,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7411765, g: 0.7647059, b: 0.78039217, a: 1}
+  m_BackGroundColor: {r: 0.9490196, g: 0.9411765, b: 0.94509804, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -960,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18039216, g: 0.15686275, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

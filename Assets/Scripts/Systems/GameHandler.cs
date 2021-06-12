@@ -17,6 +17,9 @@ public class GameHandler : MonoBehaviour {
     public static event EventHandler OnGameResumed;
     public static event EventHandler OnGameOver;
 
+    [SerializeField] private int lifes;
+    public int Lifes => lifes;
+
     private void Awake() {
         
         if(Instance != null && Instance != this) {
@@ -25,10 +28,6 @@ public class GameHandler : MonoBehaviour {
 
         Instance = this;
 
-    }
-
-    private void Start() {
-        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<LifetimeJobSystem>().OnEnemyDead += (sender, args) => { Debug.Log("An Enemy is dead."); };
     }
 
     public void StartGame() {
