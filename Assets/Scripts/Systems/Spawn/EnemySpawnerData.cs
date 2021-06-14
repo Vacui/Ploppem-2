@@ -15,18 +15,16 @@ public class EnemySpawnerData : MonoBehaviour {
     [SerializeField] private float borderLeft;
 
     [Header("Movement")]
-    [SerializeField] private float spawnFrequency;
-    public float SpawnFrequency => spawnFrequency;
-    [SerializeField] private float moveSpeed;
-    public float MoveSpeed => moveSpeed;
+    [SerializeField] private AnimationCurve spawnFrequencyCurve;
+    public AnimationCurve SpawnFrequencyCurve => spawnFrequencyCurve;
     [SerializeField] private AnimationCurve moveSpeedCurve;
     public AnimationCurve MoveSpeedCurve => moveSpeedCurve;
-    [SerializeField] private float directionChangeFrequency;
-    public float DirectionChangeFrequency => directionChangeFrequency;
+    [SerializeField] private AnimationCurve directionChangeFrequencyCurve;
+    public AnimationCurve DirectionChangeFrequencyCurve => directionChangeFrequencyCurve;
 
     [Header("Death")]
-    [SerializeField] private float lifetime;
-    public float Lifetime => lifetime;
+    [SerializeField] private AnimationCurve lifetimeCurve;
+    public AnimationCurve LifetimeCurve => lifetimeCurve;
     [SerializeField] private float deathDuration;
     public float DeathDuration => deathDuration;
 

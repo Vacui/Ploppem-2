@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using Unity.Entities;
 
 public class GameHandler : MonoBehaviour {
 
