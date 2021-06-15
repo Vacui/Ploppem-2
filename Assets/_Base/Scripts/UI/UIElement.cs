@@ -5,20 +5,6 @@ using UnityEngine.EventSystems;
 namespace UI {
     [RequireComponent(typeof(RectTransform)), DisallowMultipleComponent]
     public abstract class UIElement : MonoBehaviour {
-        [SerializeField, Disable, EditorButton("ToggleActive", "Toggle Active", activityType: ButtonActivityType.Everything)] private bool isActive = false;
-        public bool IsActive {
-            get { return isActive; }
-            private set {
-                isActive = IsLocked ? false : value;
-                if (isActive) {
-                    OnActive();
-                    OnActiveEvent?.Invoke();
-                } else {
-                    OnInactive();
-                    OnInactiveEvent?.Invoke();
-                }
-            }
-        }
 
         private bool isLocked = false;
         public bool IsLocked {
@@ -32,6 +18,25 @@ namespace UI {
                 } else {
                     OnUnlock();
                     OnUnlockEvent?.Invoke();
+                }
+            }
+        }
+
+        [Disable]
+        [EditorButton(nameof(Active), "Active", activityType: ButtonActivityType.Everything)]
+        [EditorButton(nameof(Inactive), "Inactive", activityType: ButtonActivityType.Everything)]
+        [SerializeField]
+        private bool isActive = false;
+        public bool IsActive {
+            get { return isActive; }
+            private set {
+                isActive = IsLocked ? false : value;
+                if (isActive) {
+                    OnActive();
+                    OnActiveEvent?.Invoke();
+                } else {
+                    OnInactive();
+                    OnInactiveEvent?.Invoke();
                 }
             }
         }

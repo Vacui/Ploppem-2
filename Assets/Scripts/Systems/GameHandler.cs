@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Entities;
 using UnityEngine;
 
 public class GameHandler : MonoBehaviour {
@@ -25,6 +26,16 @@ public class GameHandler : MonoBehaviour {
 
         Instance = this;
 
+    }
+
+    private void Start() {
+        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += (sender, args) => StopGame();
+    }
+
+    private void OnDestroy() {
+        if (World.DefaultGameObjectInjectionWorld.IsCreated) {
+            World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver -= (sender, args) => StopGame();
+        }
     }
 
     public void StartGame() {

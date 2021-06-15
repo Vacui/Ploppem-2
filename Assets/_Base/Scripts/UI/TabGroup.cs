@@ -6,7 +6,15 @@ namespace UI {
     [RequireComponent(typeof(RectTransform))]
     public class TabGroup : MonoBehaviour {
         [SerializeField] private Tab originTab;
-        private string OriginName { get { return originTab.GetName(); } }
+        private string OriginName {
+            get {
+                if(originTab == null) {
+                    return null;
+                }
+
+                return originTab.GetName();
+            }
+        }
         private Dictionary<string, Tab> tabs;
         [SerializeField, Disable] private List<Tab> history;
         public List<Tab> History { get { return history; } }
@@ -31,7 +39,7 @@ namespace UI {
         public void ShowTab(string name) {
             name = name.Trim().ToLower();
 
-            if(name == "" || !tabs.ContainsKey(name) || !tabs[name]) {
+            if(name == "" || tabs == null || !tabs.ContainsKey(name) || !tabs[name]) {
                 return;
             }
 
@@ -52,6 +60,9 @@ namespace UI {
             history.Add(tabs[name]);
             Debug.Log($"Showing tab {history.Last().GetName()}");
             history.Last().Active();
+        }
+        public void ShowTab(Tab tab) {
+            ShowTab(tab.GetName());
         }
 
         public void GoBack() {

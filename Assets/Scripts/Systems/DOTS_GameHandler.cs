@@ -18,8 +18,6 @@ public class DOTS_GameHandler : JobComponentSystem {
         GameHandler.OnGamePaused += PauseGame;
         GameHandler.OnGameResumed += ResumeGame;
         GameHandler.OnGameOver += GameOver;
-
-        World.GetOrCreateSystem<GameOverSystem>().OnGameOver += GameOver;
     }
 
     protected override void OnStartRunning() {
@@ -62,13 +60,11 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void GameOver(object sender, EventArgs args) {
 
-        if (!SetSingletonValue(GameState.State.Dead, GameState.State.Playing)) {
+        if (!SetSingletonValue(GameState.State.Dead, GameState.State.Dead, false)) {
             return;
         }
 
         SetSystemsEnabled(false);
-
-        World.GetOrCreateSystem<EnemySpawnerSystem>().Reset();
 
         // Destroy all GameSession entities
         EntityQuery entityQuery = GetEntityQuery(typeof(Tag_GameSession));

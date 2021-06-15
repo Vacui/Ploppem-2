@@ -6,8 +6,21 @@ using Unity.Entities;
 public class GameOverSystem : ComponentSystem {
 
     private int lifes;
+    public int Lifes {
+        get {
+            return lifes;
+        }
+        private set {
+            lifes = value;
+            OnLifesChanged?.Invoke(this, new LifesEventArgs { remainingLifes = lifes });
+        }
+    }
 
     public event EventHandler OnGameOver;
+    public event EventHandler<LifesEventArgs> OnLifesChanged;
+    public class LifesEventArgs : EventArgs {
+        public int remainingLifes;
+    }
 
     protected override void OnCreate() {
         GameHandler.OnGameStarted += OnGameStarted;
@@ -16,20 +29,20 @@ public class GameOverSystem : ComponentSystem {
 
     private void OnGameStarted(object sender, EventArgs args) {
 
-        lifes = GameHandler.Instance.Lifes;
+        Lifes = GameHandler.Instance.Lifes;
 
     }
 
     private void OnEnemyDead(object sender, EventArgs args) {
 
-        lifes--;
-        UnityEngine.Debug.Log($"An Enemy is dead, lifes remaining: {lifes}");
+        Lifes--;
+        UnityEngine.Debug.Log($"An Enemy is dead, lifes remaining: {Lifes}");
 
     }
 
     protected override void OnUpdate() {
         
-        if(lifes > 0) {
+        if(Lifes > 0) {
             return;
         }
 

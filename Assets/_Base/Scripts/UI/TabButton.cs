@@ -8,19 +8,24 @@ namespace UI
     {
         [SerializeField] private TabGroup group;
         [SerializeField] private bool goBackButton = false;
-        [SerializeField, ShowIf("goBackButton", false)] private string tabToShow;
+        [SerializeField, ShowIf("goBackButton", false)] private Tab tabToShow;
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (group != null) {
-                if (goBackButton) {
-                    group.GoBack();
-                } else {
-                    if (tabToShow != "") {
-                        group.ShowTab(tabToShow);
-                    }
-                }
+            if(group == null) {
+                return;
             }
+
+            if (goBackButton) {
+                group.GoBack();
+                return;
+            }
+
+            if(tabToShow == null) {
+                return;
+            }
+
+            group.ShowTab(tabToShow);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UI {
         [SerializeField, EnableIf("useCustomName", true)] private string customName = "";
 
         [Header("On Active")]
-        [SerializeField] private bool showChildrens;
+        [SerializeField] private bool showChildrens = true;
         [SerializeField, ReorderableList] private GameObject[] objToShowOnActive;
         [SerializeField, ReorderableList] private GameObject[] objToHideOnActive;
 
@@ -23,6 +23,11 @@ namespace UI {
 
         protected override void OnActive() {
             base.OnActive();
+
+            if(group != null) {
+                group.ShowTab(GetName());
+            }
+
             UpdateChildrens();
             UtilsClass.SetObjectsActive(objToShowOnActive, IsActive);
             UtilsClass.SetObjectsActive(objToHideOnActive, !IsActive);
@@ -36,10 +41,12 @@ namespace UI {
         }
 
         private void UpdateChildrens() {
-            if (showChildrens) {
-                foreach (Transform child in transform) {
-                    child.gameObject.SetActive(IsActive);
-                }
+            if (!showChildrens) {
+                return;
+            }
+
+            foreach (Transform child in transform) {
+                child.gameObject.SetActive(IsActive);
             }
         }
 

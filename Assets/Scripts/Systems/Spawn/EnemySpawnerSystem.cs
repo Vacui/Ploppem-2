@@ -1,4 +1,5 @@
-﻿using Unity.Collections;
+﻿using System;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -12,7 +13,15 @@ public class EnemySpawnerSystem : ComponentSystem {
 
     private BlobAssetReference<SampledGradientBlobAsset> sampledColorGradientReference;
 
-    public void Reset() {
+    protected override void OnCreate() {
+        DOTS_GameHandler.Instance.OnGameStarted += Reset;
+    }
+
+    protected override void OnDestroy() {
+        DOTS_GameHandler.Instance.OnGameStarted -= Reset;
+    }
+
+    private void Reset(object sender, EventArgs args) {
         spawnTime = 0f;
         gameSessionTime = 0f;
 
