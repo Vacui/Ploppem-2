@@ -34,7 +34,7 @@ public class LifetimeJobSystem : JobComponentSystem {
 
                 if (lifetime.Value > lifetime.Duration) {
                     // Mark the Entity as Dead
-                    entityCommandBuffer.AddComponent(entityInQueryIndex, entity, typeof(Tag_DeathMark));
+                    entityCommandBuffer.AddComponent(entityInQueryIndex, entity, new Tag_DeathMark());
                     eventTrigger.TriggerEvent(entityInQueryIndex);
                 }
             }).Schedule(inputDeps);

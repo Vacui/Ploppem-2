@@ -1,7 +1,7 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using Unity.Entities;
 using UnityEngine;
+using Utils;
 
 [RequireComponent(typeof(TMP_Text))]
 public class Timer : MonoBehaviour {
@@ -10,36 +10,35 @@ public class Timer : MonoBehaviour {
 
     private TMP_Text text;
 
-    private void OnEnable() {
+    private void Awake() {
         text = GetComponent<TMP_Text>();
-
-        world = World.DefaultGameObjectInjectionWorld;
-        world.GetOrCreateSystem<TimerSystem>().OnTimerChanged += UpdateTimerText;
-        UpdateTimerText(world.GetOrCreateSystem<TimerSystem>().GameTime);
     }
 
-    private void OnDisable() {
+    private void Start() {
+        world = World.DefaultGameObjectInjectionWorld;
+        world.GetOrCreateSystem<TimerSystem>().OnTimerChanged += UpdateText;
+        UpdateText(world.GetOrCreateSystem<TimerSystem>().GameTime);
+    }
+
+    private void OnDestroy() {
         if (world.IsCreated) {
-            world.GetOrCreateSystem<TimerSystem>().OnTimerChanged -= UpdateTimerText;
+            world.GetOrCreateSystem<TimerSystem>().OnTimerChanged -= UpdateText;
         }
     }
 
-    private void UpdateTimerText(float time) {
+    private void UpdateText(float time) {
         if(text == null) {
             return;
         }
 
-        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-
-        string timeInText = string.Format("{0:00}:{1:00}:{2:000}", timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
-        if (timeSpan.Hours > 0) {
-            timeInText += string.Format("{0:00}:" + timeInText, timeSpan.Hours);
+        if (time >= 3600f) {
+            text.text = UtilsClass.FormatTimeWithHours(time);
+        } else {
+            text.text = UtilsClass.FormatTime(time);
         }
-
-        text.text = timeInText;
     }
-    private void UpdateTimerText(object sender, TimerSystem.TimerChangedEventArgs args) {
-        UpdateTimerText(args.time);
+    private void UpdateText(object sender, TimerSystem.TimerChangedEventArgs args) {
+        UpdateText(args.time);
     }
 
 }

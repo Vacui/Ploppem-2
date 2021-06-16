@@ -11,29 +11,31 @@ public class Lifes : MonoBehaviour {
 
     private int tweenId = -1;
 
-    private void OnEnable() {
+    private void Awake() {
         text = GetComponent<TMP_Text>();
-
-        world = World.DefaultGameObjectInjectionWorld;
-        world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged += UpdateLifesText;
-        UpdateLifesText(world.GetOrCreateSystem<GameOverSystem>().Lifes);
     }
 
-    private void OnDisable() {
+    private void Start() {
+        world = World.DefaultGameObjectInjectionWorld;
+        world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged += UpdateText;
+        UpdateText(world.GetOrCreateSystem<GameOverSystem>().Lifes);
+    }
+
+    private void OnDestroy() {
         if (world.IsCreated) {
-            world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged -= UpdateLifesText;
+            world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged -= UpdateText;
         }
     }
     
-    private void UpdateLifesText(int remainingLifes) {
+    private void UpdateText(int remainingLifes) {
         if (text == null) {
             return;
         }
 
         text.text = remainingLifes.ToString();
     }
-    private void UpdateLifesText(object sender, GameOverSystem.LifesEventArgs args) {
-        UpdateLifesText(args.remainingLifes);
+    private void UpdateText(object sender, GameOverSystem.LifesEventArgs args) {
+        UpdateText(args.remainingLifes);
 
         if (tweenId > 0 && LeanTween.isTweening(tweenId)) {
             LeanTween.cancel(tweenId);

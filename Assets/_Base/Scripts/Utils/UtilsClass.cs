@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.Mathematics;
@@ -184,7 +185,15 @@ namespace Utils {
             }
 
             return result;
+        }
 
+
+        public static string FormatTimeWithHours(float seconds) {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
+            return string.Format("{0:00}:{1:00}:{2:00}:{3:000}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+        }
+        public static string FormatTime(float seconds) {
+            return FormatTimeWithHours(seconds).Substring(3);
         }
     }
 }
