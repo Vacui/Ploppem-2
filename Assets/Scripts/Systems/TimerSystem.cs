@@ -3,16 +3,16 @@ using Unity.Entities;
 
 public class TimerSystem : ComponentSystem {
 
-    private float gameTime;
-    public float GameTime {
+    private static float gameTime;
+    public static float GameTime {
         get { return gameTime; }
         private set {
             gameTime = value;
-            OnTimerChanged?.Invoke(this, new TimerChangedEventArgs { time = gameTime });
+            OnTimerChanged?.Invoke(null, new TimerChangedEventArgs { time = gameTime });
         }
     }
 
-    public event EventHandler<TimerChangedEventArgs> OnTimerChanged;
+    public static event EventHandler<TimerChangedEventArgs> OnTimerChanged;
     public class TimerChangedEventArgs : EventArgs {
         public float time;
     }

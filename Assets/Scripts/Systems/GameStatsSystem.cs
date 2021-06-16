@@ -1,12 +1,26 @@
 ﻿using System;
 using Unity.Entities;
 using UnityEngine;
+using Utils;
 
 public class GameStatsSystem : ComponentSystem {
 
-    private const string HIGHSCORE_KEY = "highscore";
-    private float highscore = -1f;
-    private float Highscore {
+    private World world;
+
+    public enum GameStat {
+        Highscore,
+        Misses,
+        EnemiesKilled,
+        Precision,
+        Misses_GameSession,
+        EnemiesKilled_GameSession,
+        Precision_GameSession
+    }
+
+    // Global Stats
+    private static readonly string HIGHSCORE_KEY = "highscore";
+    private static float highscore = -1f;
+    private static float Highscore {
         get { return highscore; }
         set {
             if (highscore > value) {
@@ -14,44 +28,119 @@ public class GameStatsSystem : ComponentSystem {
             }
 
             highscore = value;
-            OnNewHighscore?.Invoke(value);
+            if (!NewHighscore) {
+                NewHighscore = true;
+                OnNewHighscore?.Invoke(null, EventArgs.Empty);
+            }
         }
     }
-    public static event Action<float> OnNewHighscore;
+    public static bool NewHighscore { get; private set; }
+    public static event EventHandler OnNewHighscore;
+
+    private static readonly string MISSES_KEY = "misses";
+    public static int Misses { get; private set; }
+    private static readonly string ENEMIES_KILLED_KEY = "enemies-killed";
+    private static int Touches { get { return Misses + EnemiesKilled; } }
+    public static int EnemiesKilled { get; private set; }
+    public static float Precision {
+        get {
+            return Touches > 0 ?
+                ((float)EnemiesKilled / Touches) * 100 :
+                0f;
+        }
+    }
+
+    // Game Session stats
+    public static int Misses_GameSession { get; private set; }
+    public static int EnemiesKilled_GameSession { get; private set; }
+    private static int Touches_GameSession { get { return Misses_GameSession + EnemiesKilled_GameSession; } }
+    public static float Precision_GameSession {
+        get {
+            return Touches_GameSession > 0 ?
+                ((float)EnemiesKilled_GameSession / Touches_GameSession) * 100 :
+                0f;
+        }
+    }
+
 
     protected override void OnCreate() {
-        World.GetOrCreateSystem<TimerSystem>().OnTimerChanged += UpdateHighscore;
+        world = World.DefaultGameObjectInjectionWorld;
+
+        TimerSystem.OnTimerChanged += OnHighscore;
+        world.GetOrCreateSystem<KillerEnemySystem>().OnMissedEnemy += MissedEnemy;
+        world.GetOrCreateSystem<KillerEnemySystem>().OnKilledEnemy += KilledEnemy;
+
+        DOTS_GameHandler.Instance.OnGameStarted += ResetGameSessionStats;
         DOTS_GameHandler.Instance.OnGameOver += SaveStats;
 
         GetStats();
-
-        base.OnCreate();
     }
 
     protected override void OnDestroy() {
+        TimerSystem.OnTimerChanged -= OnHighscore;
+
+        DOTS_GameHandler.Instance.OnGameStarted -= ResetGameSessionStats;
         DOTS_GameHandler.Instance.OnGameOver -= SaveStats;
 
         SaveStats();
     }
 
-    protected override void OnUpdate() { }
+    private void ResetGameSessionStats(object sender, EventArgs e) {
+        NewHighscore = false;
+        Misses_GameSession = 0;
+        EnemiesKilled_GameSession = 0;
+    }
 
-    private void UpdateHighscore(object sender, TimerSystem.TimerChangedEventArgs args) {
+    private void OnHighscore(object sender, TimerSystem.TimerChangedEventArgs args) {
         Highscore = args.time;
+    }
+
+    private void MissedEnemy(object sender, EventArgs args) {
+        Misses_GameSession++;
+        Misses++;
+    }
+
+    private void KilledEnemy(object sender, KillerEnemySystem.KilledEnemyEventArgs args) {
+        EnemiesKilled_GameSession += args.Enemies;
+        EnemiesKilled += args.Enemies;
     }
 
     private void GetStats() {
         Highscore = PlayerPrefs.GetFloat(HIGHSCORE_KEY, 0f);
+        Misses = PlayerPrefs.GetInt(MISSES_KEY, 0);
+        EnemiesKilled = PlayerPrefs.GetInt(ENEMIES_KILLED_KEY, 0);
     }
-    public static float GetHighscore() { return PlayerPrefs.GetFloat(HIGHSCORE_KEY, 0f); }
+    public static string GetStat(GameStat stat) {
+        switch (stat) {
+            case GameStat.Highscore: return GetHighscoreFormatted();
+            case GameStat.Misses: return Misses.ToString();
+            case GameStat.EnemiesKilled: return EnemiesKilled.ToString();
+            case GameStat.Precision: return Precision.ToString("#.00");
+            case GameStat.Misses_GameSession: return Misses_GameSession.ToString();
+            case GameStat.EnemiesKilled_GameSession: return EnemiesKilled_GameSession.ToString();
+            case GameStat.Precision_GameSession: return Precision_GameSession.ToString("#.00");
+        }
+
+        return string.Empty;
+    }
+    private static string GetHighscoreFormatted() {
+        if (highscore >= 3600f) {
+            return UtilsClass.FormatTimeWithHours(highscore);
+        } else {
+            return UtilsClass.FormatTime(highscore);
+        }
+    }
 
     private void SaveStats() {
         if (Highscore > PlayerPrefs.GetFloat(HIGHSCORE_KEY, 0f)) {
             PlayerPrefs.SetFloat(HIGHSCORE_KEY, Highscore);
         }
+        PlayerPrefs.SetInt(MISSES_KEY, Misses);
+        PlayerPrefs.SetInt(ENEMIES_KILLED_KEY, EnemiesKilled);
     }
     private void SaveStats(object sender, EventArgs args) {
         SaveStats();
     }
 
+    protected override void OnUpdate() { }
 }

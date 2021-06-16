@@ -1,12 +1,9 @@
 ﻿using TMPro;
-using Unity.Entities;
 using UnityEngine;
 using Utils;
 
 [RequireComponent(typeof(TMP_Text))]
 public class Timer : MonoBehaviour {
-
-    private World world;
 
     private TMP_Text text;
 
@@ -15,15 +12,12 @@ public class Timer : MonoBehaviour {
     }
 
     private void Start() {
-        world = World.DefaultGameObjectInjectionWorld;
-        world.GetOrCreateSystem<TimerSystem>().OnTimerChanged += UpdateText;
-        UpdateText(world.GetOrCreateSystem<TimerSystem>().GameTime);
+        TimerSystem.OnTimerChanged += UpdateText;
+        UpdateText(TimerSystem.GameTime);
     }
 
     private void OnDestroy() {
-        if (world.IsCreated) {
-            world.GetOrCreateSystem<TimerSystem>().OnTimerChanged -= UpdateText;
-        }
+        TimerSystem.OnTimerChanged -= UpdateText;
     }
 
     private void UpdateText(float time) {
