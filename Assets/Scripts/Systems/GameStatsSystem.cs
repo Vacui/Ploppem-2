@@ -9,6 +9,7 @@ public class GameStatsSystem : ComponentSystem {
 
     public enum GameStat {
         Highscore,
+        Games,
         Misses,
         EnemiesKilled,
         Precision,
@@ -36,13 +37,15 @@ public class GameStatsSystem : ComponentSystem {
     }
     public static bool NewHighscore { get; private set; }
     public static event EventHandler OnNewHighscore;
+    private static readonly string GAMES_KEY = "games";
+    private static int Games { get; set; }
 
     private static readonly string MISSES_KEY = "misses";
-    public static int Misses { get; private set; }
+    private static int Misses { get; set; }
     private static readonly string ENEMIES_KILLED_KEY = "enemies-killed";
     private static int Touches { get { return Misses + EnemiesKilled; } }
-    public static int EnemiesKilled { get; private set; }
-    public static float Precision {
+    private static int EnemiesKilled { get; set; }
+    private static float Precision {
         get {
             return Touches > 0 ?
                 ((float)EnemiesKilled / Touches) * 100 :
@@ -51,10 +54,10 @@ public class GameStatsSystem : ComponentSystem {
     }
 
     // Game Session stats
-    public static int Misses_GameSession { get; private set; }
-    public static int EnemiesKilled_GameSession { get; private set; }
+    private static int Misses_GameSession { get; set; }
+    private static int EnemiesKilled_GameSession { get; set; }
     private static int Touches_GameSession { get { return Misses_GameSession + EnemiesKilled_GameSession; } }
-    public static float Precision_GameSession {
+    private static float Precision_GameSession {
         get {
             return Touches_GameSession > 0 ?
                 ((float)EnemiesKilled_GameSession / Touches_GameSession) * 100 :
@@ -70,7 +73,7 @@ public class GameStatsSystem : ComponentSystem {
         world.GetOrCreateSystem<KillerEnemySystem>().OnMissedEnemy += MissedEnemy;
         world.GetOrCreateSystem<KillerEnemySystem>().OnKilledEnemy += KilledEnemy;
 
-        DOTS_GameHandler.Instance.OnGameStarted += ResetGameSessionStats;
+        DOTS_GameHandler.Instance.OnGameStarted += GameStarted;
         DOTS_GameHandler.Instance.OnGameOver += SaveStats;
 
         GetStats();
@@ -79,16 +82,17 @@ public class GameStatsSystem : ComponentSystem {
     protected override void OnDestroy() {
         TimerSystem.OnTimerChanged -= OnHighscore;
 
-        DOTS_GameHandler.Instance.OnGameStarted -= ResetGameSessionStats;
+        DOTS_GameHandler.Instance.OnGameStarted -= GameStarted;
         DOTS_GameHandler.Instance.OnGameOver -= SaveStats;
 
         SaveStats();
     }
 
-    private void ResetGameSessionStats(object sender, EventArgs e) {
+    private void GameStarted(object sender, EventArgs e) {
         NewHighscore = false;
         Misses_GameSession = 0;
         EnemiesKilled_GameSession = 0;
+        Games++;
     }
 
     private void OnHighscore(object sender, TimerSystem.TimerChangedEventArgs args) {
@@ -107,12 +111,14 @@ public class GameStatsSystem : ComponentSystem {
 
     private void GetStats() {
         Highscore = PlayerPrefs.GetFloat(HIGHSCORE_KEY, 0f);
+        Games = PlayerPrefs.GetInt(GAMES_KEY, 0);
         Misses = PlayerPrefs.GetInt(MISSES_KEY, 0);
         EnemiesKilled = PlayerPrefs.GetInt(ENEMIES_KILLED_KEY, 0);
     }
     public static string GetStat(GameStat stat) {
         switch (stat) {
             case GameStat.Highscore: return GetHighscoreFormatted();
+            case GameStat.Games: return Games.ToString();
             case GameStat.Misses: return Misses.ToString();
             case GameStat.EnemiesKilled: return EnemiesKilled.ToString();
             case GameStat.Precision: return Precision.ToString("#.00");
@@ -135,6 +141,7 @@ public class GameStatsSystem : ComponentSystem {
         if (Highscore > PlayerPrefs.GetFloat(HIGHSCORE_KEY, 0f)) {
             PlayerPrefs.SetFloat(HIGHSCORE_KEY, Highscore);
         }
+        PlayerPrefs.SetInt(GAMES_KEY, Games);
         PlayerPrefs.SetInt(MISSES_KEY, Misses);
         PlayerPrefs.SetInt(ENEMIES_KILLED_KEY, EnemiesKilled);
     }
