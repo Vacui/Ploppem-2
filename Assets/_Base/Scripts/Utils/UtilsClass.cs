@@ -190,7 +190,7 @@ namespace Utils {
 
         public static string FormatTimeWithHours(float seconds) {
             TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
-            return string.Format("{0:00}:{1:00}:{2:00}:{3:000}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
+            return string.Format("{0:00}:{1:00}:{2:00}'{3:000}\"", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
         }
         public static string FormatTime(float seconds) {
             return FormatTimeWithHours(seconds).Substring(3);
