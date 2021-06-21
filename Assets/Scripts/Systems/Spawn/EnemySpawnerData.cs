@@ -1,5 +1,4 @@
-﻿using System;
-using Unity.Entities;
+﻿using Unity.Entities;
 using UnityEngine;
 
 public class EnemySpawnerData : MonoBehaviour {
@@ -78,7 +77,7 @@ public class EnemySpawnerData : MonoBehaviour {
 
     }
 
-    private void OnGameStarted(object sender, EventArgs args) {
+    private void OnGameStarted() {
         CalculateSpawnLimits();
     }
 

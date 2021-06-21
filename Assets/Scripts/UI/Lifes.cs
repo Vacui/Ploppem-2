@@ -26,16 +26,18 @@ public class Lifes : MonoBehaviour {
             world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged -= UpdateText;
         }
     }
-    
+
     private void UpdateText(int remainingLifes) {
         if (text == null) {
             return;
         }
 
+        if(remainingLifes <= 0) {
+            text.text = "";
+            return;
+        }
+
         text.text = remainingLifes.ToString();
-    }
-    private void UpdateText(object sender, GameOverSystem.LifesEventArgs args) {
-        UpdateText(args.remainingLifes);
 
         if (tweenId > 0 && LeanTween.isTweening(tweenId)) {
             LeanTween.cancel(tweenId);

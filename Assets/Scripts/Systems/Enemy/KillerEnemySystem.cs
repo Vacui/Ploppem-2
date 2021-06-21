@@ -1,19 +1,16 @@
-﻿using UnityEngine;
-using Unity.Entities;
-using Unity.Transforms;
+﻿using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Transforms;
+using UnityEngine;
+using UnityEngine.Events;
 using Utils;
-using System;
 
 [UpdateBefore(typeof(MoveJobSystem))]
 public class KillerEnemySystem : ComponentSystem {
 
     private const float SELECT_SIZE_RADIUS = .5f;
-    public event EventHandler OnMissedEnemy;
-    public event EventHandler<KilledEnemyEventArgs> OnKilledEnemy;
-    public class KilledEnemyEventArgs : EventArgs {
-        public int Enemies;
-    }
+    public event UnityAction OnMissedEnemy;
+    public event UnityAction<int> OnKilledEnemy;
 
     protected override void OnUpdate() {
 
@@ -72,12 +69,12 @@ public class KillerEnemySystem : ComponentSystem {
             });
 
         if(killedEnemies <= 0) {
-            OnMissedEnemy?.Invoke(this, EventArgs.Empty);
+            OnMissedEnemy?.Invoke();
             return;
         }
 
         // Debug.Log($"Killed {killedEnemies} enemies");
-        OnKilledEnemy?.Invoke(this, new KilledEnemyEventArgs { Enemies = killedEnemies });
+        OnKilledEnemy?.Invoke(killedEnemies);
 
     }
 

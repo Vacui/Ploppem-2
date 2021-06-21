@@ -15,15 +15,20 @@ public class GetGameStat : MonoBehaviour {
     }
 
     private void OnEnable() {
-        UpdateText(GameStatsSystem.GetStat(gameStat));
+        GameStatsSystem.OnUpdateAllStats += UpdateText;
+        UpdateText();
     }
 
-    private void UpdateText(string value) {
+    private void OnDisable() {
+        GameStatsSystem.OnUpdateAllStats -= UpdateText;
+    }
+
+    private void UpdateText() {
         if (text == null) {
             return;
-        }     
+        }
 
-        text.text = prefix + value + suffix;
+        text.text = prefix + GameStatsSystem.GetStat(gameStat) + suffix;
     }
 
 }

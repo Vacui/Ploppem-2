@@ -1,12 +1,12 @@
-﻿using System;
-using Unity.Burst;
+﻿using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
+using UnityEngine.Events;
 
 public class LifetimeJobSystem : JobComponentSystem {
 
-    public event EventHandler OnEnemyDead;
+    public event UnityAction OnEnemyDead;
     public struct OnEnemyDeadEvent : IComponentData { public int Value; }
     private DOTSEvents_NextFrame<OnEnemyDeadEvent> dotsEvents;
 
@@ -42,7 +42,7 @@ public class LifetimeJobSystem : JobComponentSystem {
         entityCommandBufferSystem.AddJobHandleForProducer(jobHandle);
 
         dotsEvents.CaptureEvents(eventTrigger, jobHandle, (OnEnemyDeadEvent onEnemyDeadEvent) => {
-            OnEnemyDead?.Invoke(this, EventArgs.Empty);
+            OnEnemyDead?.Invoke();
         });
 
         return jobHandle;

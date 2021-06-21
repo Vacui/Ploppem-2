@@ -1,5 +1,5 @@
-﻿using System;
-using Unity.Entities;
+﻿using Unity.Entities;
+using UnityEngine.Events;
 
 [UpdateAfter(typeof(KillerEnemySystem))]
 [UpdateAfter(typeof(LifetimeJobSystem))]
@@ -12,42 +12,33 @@ public class GameOverSystem : ComponentSystem {
         }
         private set {
             lifes = value;
-            OnLifesChanged?.Invoke(this, new LifesEventArgs { remainingLifes = lifes });
+            OnLifesChanged?.Invoke(lifes);
         }
     }
 
-    public event EventHandler OnGameOver;
-    public event EventHandler<LifesEventArgs> OnLifesChanged;
-    public class LifesEventArgs : EventArgs {
-        public int remainingLifes;
-    }
+    public event UnityAction OnGameOver;
+    public event UnityAction<int> OnLifesChanged;
 
     protected override void OnCreate() {
         GameHandler.OnGameStarted += OnGameStarted;
         World.GetOrCreateSystem<LifetimeJobSystem>().OnEnemyDead += OnEnemyDead;
     }
 
-    private void OnGameStarted(object sender, EventArgs args) {
-
+    private void OnGameStarted() {
         Lifes = GameHandler.Instance.Lifes;
-
     }
 
-    private void OnEnemyDead(object sender, EventArgs args) {
-
+    private void OnEnemyDead() {
         Lifes--;
         UnityEngine.Debug.Log($"An Enemy is dead, lifes remaining: {Lifes}");
-
     }
 
     protected override void OnUpdate() {
-        
         if(Lifes > 0) {
             return;
         }
 
-        OnGameOver?.Invoke(this, EventArgs.Empty);
-
+        OnGameOver?.Invoke();
     }
 
 }

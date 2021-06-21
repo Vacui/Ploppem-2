@@ -1,5 +1,5 @@
-﻿using System;
-using Unity.Entities;
+﻿using Unity.Entities;
+using UnityEngine.Events;
 
 public class TimerSystem : ComponentSystem {
 
@@ -8,14 +8,11 @@ public class TimerSystem : ComponentSystem {
         get { return gameTime; }
         private set {
             gameTime = value;
-            OnTimerChanged?.Invoke(null, new TimerChangedEventArgs { time = gameTime });
+            OnTimerChanged?.Invoke(gameTime);
         }
     }
 
-    public static event EventHandler<TimerChangedEventArgs> OnTimerChanged;
-    public class TimerChangedEventArgs : EventArgs {
-        public float time;
-    }
+    public static event UnityAction<float> OnTimerChanged;
 
     protected override void OnCreate() {
         DOTS_GameHandler.Instance.OnGameStarted += Reset;
@@ -25,7 +22,7 @@ public class TimerSystem : ComponentSystem {
         DOTS_GameHandler.Instance.OnGameStarted -= Reset;
     }
 
-    private void Reset(object sender, EventArgs args) {
+    private void Reset() {
         GameTime = 0f;
     }
 

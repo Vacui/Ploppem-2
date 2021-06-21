@@ -1,5 +1,4 @@
-﻿using System;
-using Unity.Collections;
+﻿using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -21,7 +20,7 @@ public class EnemySpawnerSystem : ComponentSystem {
         DOTS_GameHandler.Instance.OnGameStarted -= Reset;
     }
 
-    private void Reset(object sender, EventArgs args) {
+    private void Reset() {
         spawnTime = 0f;
         gameSessionTime = 0f;
 

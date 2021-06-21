@@ -34,7 +34,7 @@ public class EnemyPreRenderingJobSystem : JobComponentSystem {
                 renderingData.Color = color;
 
                 // calculate layer, using just layers section 10 - 20
-                renderingData.Layer = (int)math.floor((1f - lifetimePercentage) * (20 - 10)) + 10;
+                //renderingData.Layer = (int)math.floor((1f - lifetimePercentage) * (20 - 10)) + 10;
 
 
             }).Schedule(inputDeps);

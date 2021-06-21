@@ -1,6 +1,6 @@
-﻿using System;
-using Unity.Entities;
+﻿using Unity.Entities;
 using UnityEngine;
+using UnityEngine.Events;
 using Utils;
 
 public class GameStatsSystem : ComponentSystem {
@@ -31,12 +31,12 @@ public class GameStatsSystem : ComponentSystem {
             highscore = value;
             if (!NewHighscore) {
                 NewHighscore = true;
-                OnNewHighscore?.Invoke(null, EventArgs.Empty);
+                OnNewHighscore?.Invoke();
             }
         }
     }
     public static bool NewHighscore { get; private set; }
-    public static event EventHandler OnNewHighscore;
+    public static event UnityAction OnNewHighscore;
     private static readonly string GAMES_KEY = "games";
     private static int Games { get; set; }
 
@@ -65,6 +65,8 @@ public class GameStatsSystem : ComponentSystem {
         }
     }
 
+    public static event UnityAction OnUpdateAllStats;
+
 
     protected override void OnCreate() {
         world = World.DefaultGameObjectInjectionWorld;
@@ -76,6 +78,8 @@ public class GameStatsSystem : ComponentSystem {
         DOTS_GameHandler.Instance.OnGameStarted += GameStarted;
         DOTS_GameHandler.Instance.OnGameOver += SaveStats;
 
+        OnUpdateAllStats += GetStats;
+
         GetStats();
     }
 
@@ -85,28 +89,30 @@ public class GameStatsSystem : ComponentSystem {
         DOTS_GameHandler.Instance.OnGameStarted -= GameStarted;
         DOTS_GameHandler.Instance.OnGameOver -= SaveStats;
 
+        OnUpdateAllStats -= GetStats;
+
         SaveStats();
     }
 
-    private void GameStarted(object sender, EventArgs e) {
+    private void GameStarted() {
         NewHighscore = false;
         Misses_GameSession = 0;
         EnemiesKilled_GameSession = 0;
         Games++;
     }
 
-    private void OnHighscore(object sender, TimerSystem.TimerChangedEventArgs args) {
-        Highscore = args.time;
+    private void OnHighscore(float time) {
+        Highscore = time;
     }
 
-    private void MissedEnemy(object sender, EventArgs args) {
+    private void MissedEnemy() {
         Misses_GameSession++;
         Misses++;
     }
 
-    private void KilledEnemy(object sender, KillerEnemySystem.KilledEnemyEventArgs args) {
-        EnemiesKilled_GameSession += args.Enemies;
-        EnemiesKilled += args.Enemies;
+    private void KilledEnemy(int enemies) {
+        EnemiesKilled_GameSession += enemies;
+        EnemiesKilled += enemies;
     }
 
     private void GetStats() {
@@ -145,8 +151,14 @@ public class GameStatsSystem : ComponentSystem {
         PlayerPrefs.SetInt(MISSES_KEY, Misses);
         PlayerPrefs.SetInt(ENEMIES_KILLED_KEY, EnemiesKilled);
     }
-    private void SaveStats(object sender, EventArgs args) {
-        SaveStats();
+
+    public static void ClearStats() {
+        PlayerPrefs.SetFloat(HIGHSCORE_KEY, 0f);
+        PlayerPrefs.SetInt(GAMES_KEY, 0);
+        PlayerPrefs.SetInt(MISSES_KEY, 0);
+        PlayerPrefs.SetInt(ENEMIES_KILLED_KEY, 0);
+
+        OnUpdateAllStats?.Invoke();
     }
 
     protected override void OnUpdate() { }

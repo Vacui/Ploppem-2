@@ -25,7 +25,7 @@ public class EnemyRenderingSystem : ComponentSystem {
                     mesh,
                     renderingData.Matrix,
                     material,
-                    renderingData.Layer, // Layer
+                    0, // Layer
                     Camera.main,
                     0, // Submesh index
                     materialPropertyBlock

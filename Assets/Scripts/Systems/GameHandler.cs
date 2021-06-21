@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Doozy.Engine;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameHandler : MonoBehaviour {
 
     public static GameHandler Instance { get; private set; }
 
-    public static event EventHandler OnGameStarted;
-    public static event EventHandler OnGamePaused;
-    public static event EventHandler OnGameResumed;
-    public static event EventHandler OnGameOver;
+    public static event UnityAction OnGameStarted;
+    public static event UnityAction OnGamePaused;
+    public static event UnityAction OnGameResumed;
+    public static event UnityAction OnGameOver;
 
     [EditorButton(nameof(ResumeGame), "Resume", ButtonActivityType.OnPlayMode)]
     [EditorButton(nameof(PauseGame), "Pause", ButtonActivityType.OnPlayMode)]
@@ -29,29 +30,23 @@ public class GameHandler : MonoBehaviour {
     }
 
     private void Start() {
-        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += (sender, args) => StopGame();
-    }
-
-    private void OnDestroy() {
-        if (World.DefaultGameObjectInjectionWorld.IsCreated) {
-            World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver -= (sender, args) => StopGame();
-        }
+        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += StopGame;
     }
 
     public void StartGame() {
-        OnGameStarted?.Invoke(this, EventArgs.Empty);
+        OnGameStarted?.Invoke();
     }
 
     public void PauseGame() {
-        OnGamePaused?.Invoke(this, EventArgs.Empty);
+        OnGamePaused?.Invoke();
     }
 
     public void ResumeGame() {
-        OnGameResumed?.Invoke(this, EventArgs.Empty);
+        OnGameResumed?.Invoke();
     }
 
     public void StopGame() {
-        OnGameOver?.Invoke(this, EventArgs.Empty);
+        OnGameOver?.Invoke();
     }
 
 }

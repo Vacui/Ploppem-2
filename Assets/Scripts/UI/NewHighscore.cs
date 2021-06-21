@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NewHighscore : MonoBehaviour {
 
@@ -8,7 +7,7 @@ public class NewHighscore : MonoBehaviour {
     private void Start() {
         GameHandler.OnGameStarted += DisableObject;
         GameStatsSystem.OnNewHighscore += EnableObject;
-        DisableObject(null, EventArgs.Empty);
+        DisableObject();
     }
 
     private void OnDestroy() {
@@ -16,14 +15,14 @@ public class NewHighscore : MonoBehaviour {
         GameStatsSystem.OnNewHighscore -= EnableObject;
     }
 
-    private void EnableObject(object sender, EventArgs args) {
+    private void EnableObject() {
         if (objectToShow == null) {
             return;
         }
 
         objectToShow.SetActive(true);
     }
-    private void DisableObject(object sender, EventArgs args) {
+    private void DisableObject() {
         if (objectToShow == null) {
             return;
         }

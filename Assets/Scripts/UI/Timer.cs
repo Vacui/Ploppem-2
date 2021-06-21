@@ -31,8 +31,5 @@ public class Timer : MonoBehaviour {
             text.text = UtilsClass.FormatTime(time);
         }
     }
-    private void UpdateText(object sender, TimerSystem.TimerChangedEventArgs args) {
-        UpdateText(args.time);
-    }
 
 }

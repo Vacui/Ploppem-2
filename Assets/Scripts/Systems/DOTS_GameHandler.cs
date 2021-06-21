@@ -1,15 +1,15 @@
-﻿using System;
-using Unity.Jobs;
+﻿using Unity.Jobs;
 using Unity.Entities;
+using UnityEngine.Events;
 
 public class DOTS_GameHandler : JobComponentSystem {
 
     public static DOTS_GameHandler Instance { get; private set; }
 
-    public event EventHandler OnGameStarted;
-    public event EventHandler OnGamePaused;
-    public event EventHandler OnGameResumed;
-    public event EventHandler OnGameOver;
+    public event UnityAction OnGameStarted;
+    public event UnityAction OnGamePaused;
+    public event UnityAction OnGameResumed;
+    public event UnityAction OnGameOver;
 
     protected override void OnCreate() {
         Instance = this;
@@ -26,39 +26,39 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     }
 
-    private void StartGame(object sender, EventArgs args) {
+    private void StartGame() {
 
         if (!SetSingletonValue(GameState.State.Playing, GameState.State.Playing, false)) {
             return;
         }
 
         SetSystemsEnabled(true);
-        OnGameStarted?.Invoke(this, EventArgs.Empty);
+        OnGameStarted?.Invoke();
     }
 
-    private void PauseGame(object sender, EventArgs args) {
+    private void PauseGame() {
 
         if (!SetSingletonValue(GameState.State.WaitingToStart, GameState.State.Playing)) {
             return;
         }
 
         SetSystemsEnabled(false);
-        OnGamePaused?.Invoke(this, EventArgs.Empty);
+        OnGamePaused?.Invoke();
 
     }
 
-    private void ResumeGame(object sender, EventArgs args) {
+    private void ResumeGame() {
 
         if (!SetSingletonValue(GameState.State.Playing, GameState.State.WaitingToStart)) {
             return;
         }
 
         SetSystemsEnabled(true);
-        OnGameResumed?.Invoke(this, EventArgs.Empty);
+        OnGameResumed?.Invoke();
 
     }
 
-    private void GameOver(object sender, EventArgs args) {
+    private void GameOver() {
 
         if (!SetSingletonValue(GameState.State.Dead, GameState.State.Dead, false)) {
             return;
@@ -70,7 +70,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         EntityQuery entityQuery = GetEntityQuery(typeof(Tag_GameSession));
         EntityManager.DestroyEntity(entityQuery);
 
-        OnGameOver?.Invoke(this, EventArgs.Empty);
+        OnGameOver?.Invoke();
 
     }
 
@@ -100,8 +100,8 @@ public class DOTS_GameHandler : JobComponentSystem {
         World.GetOrCreateSystem<ChangeDirectionJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<ShowDirectionDebugJobSystem>().Enabled = enabled;
         World.GetOrCreateSystem<LifetimeJobSystem>().Enabled = enabled;
-        World.GetOrCreateSystem<EnemyPreRenderingJobSystem>().Enabled = enabled;
-        World.GetOrCreateSystem<EnemyRenderingSystem>().Enabled = enabled;
+        //World.GetOrCreateSystem<EnemyPreRenderingJobSystem>().Enabled = enabled;
+        //World.GetOrCreateSystem<EnemyRenderingSystem>().Enabled = enabled;
         World.GetOrCreateSystem<KillerEnemySystem>().Enabled = enabled;
         World.GetOrCreateSystem<GameOverSystem>().Enabled = enabled;
     }
