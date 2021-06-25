@@ -8,6 +8,10 @@ public class EnemyRenderingSystem : ComponentSystem {
 
     protected override void OnUpdate() {
 
+        if(EnemySpawnerData.Instance == null) {
+            return;
+        }
+
         Material material = EnemySpawnerData.Instance.Material;
         Mesh mesh = EnemySpawnerData.Instance.Mesh;
         Gradient colorGradient = EnemySpawnerData.Instance.ColorGradient;

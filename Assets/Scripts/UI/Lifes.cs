@@ -22,7 +22,8 @@ public class Lifes : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        if (world.IsCreated) {
+        if (world != null && world.IsCreated) {
+            Debug.Log("Test");
             world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged -= UpdateText;
         }
     }

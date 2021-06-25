@@ -37,7 +37,7 @@ MonoBehaviour:
       SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
     - m_sprite: {fileID: 21300000, guid: 819625976dd9f59418c4f32459cd0601, type: 3}
       SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
-    - m_sprite: {fileID: 21300000, guid: 74bf8853e3332bd49bee366b8f298662, type: 3}
+    - m_sprite: {fileID: 21300000, guid: ae9c872cb78b3a244b3b7ecf4e665b6e, type: 3}
       SerializedGuid: 6109b665ec881d4dac52d1331d35396f
     - m_sprite: {fileID: 21300000, guid: 1f499e791b22fd142a27c7ee12a783fb, type: 3}
       SerializedGuid: 18a1fd335c855143995dd0f4aeb42c60
@@ -47,6 +47,8 @@ MonoBehaviour:
       SerializedGuid: 1ac22c382d511443b7bb57dbfd510685
     - m_sprite: {fileID: 21300000, guid: fe2fd31fa157d7f4ca2c32b10104afd8, type: 3}
       SerializedGuid: 0646de669335664eb30a8944eab55c75
+    - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
+      SerializedGuid: 6f12696cca05d24a931afa0412751bc7
     Textures: []
     Fonts: []
     FontAssets:
@@ -84,6 +86,8 @@ MonoBehaviour:
     SerializedGuid: 1ac22c382d511443b7bb57dbfd510685
   - m_label: Check
     SerializedGuid: 0646de669335664eb30a8944eab55c75
+  - m_label: Restart
+    SerializedGuid: 6f12696cca05d24a931afa0412751bc7
   TextureLabels: []
   FontLabels: []
   FontAssetLabels:
@@ -117,7 +121,7 @@ MonoBehaviour:
       SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
     - m_sprite: {fileID: 21300000, guid: 819625976dd9f59418c4f32459cd0601, type: 3}
       SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
-    - m_sprite: {fileID: 21300000, guid: 74bf8853e3332bd49bee366b8f298662, type: 3}
+    - m_sprite: {fileID: 21300000, guid: ae9c872cb78b3a244b3b7ecf4e665b6e, type: 3}
       SerializedGuid: 6109b665ec881d4dac52d1331d35396f
     - m_sprite: {fileID: 21300000, guid: 1f499e791b22fd142a27c7ee12a783fb, type: 3}
       SerializedGuid: 18a1fd335c855143995dd0f4aeb42c60
@@ -127,6 +131,8 @@ MonoBehaviour:
       SerializedGuid: 1ac22c382d511443b7bb57dbfd510685
     - m_sprite: {fileID: 21300000, guid: fe2fd31fa157d7f4ca2c32b10104afd8, type: 3}
       SerializedGuid: 0646de669335664eb30a8944eab55c75
+    - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
+      SerializedGuid: 6f12696cca05d24a931afa0412751bc7
     Textures: []
     Fonts: []
     FontAssets:
@@ -166,6 +172,8 @@ MonoBehaviour:
       SerializedGuid: 1ac22c382d511443b7bb57dbfd510685
     - m_sprite: {fileID: 21300000, guid: 1fb585b1459f6b34982b1b87e6402f90, type: 3}
       SerializedGuid: 0646de669335664eb30a8944eab55c75
+    - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
+      SerializedGuid: 6f12696cca05d24a931afa0412751bc7
     Textures: []
     Fonts: []
     FontAssets:

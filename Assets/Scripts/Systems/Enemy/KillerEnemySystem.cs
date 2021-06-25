@@ -8,7 +8,7 @@ using Utils;
 [UpdateBefore(typeof(MoveJobSystem))]
 public class KillerEnemySystem : ComponentSystem {
 
-    private const float SELECT_SIZE_RADIUS = .5f;
+    private const float SELECT_SIZE_RADIUS = 1f;
     public event UnityAction OnMissedEnemy;
     public event UnityAction<int> OnKilledEnemy;
 
