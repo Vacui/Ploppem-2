@@ -21,7 +21,7 @@ namespace UI {
 
         private void Awake() {
             tabs = new Dictionary<string, Tab>();
-            history = new List<Tab>();
+            history = new List<Tab>(10);
         }
 
         public void Subscribe(string name, Tab tab) {
@@ -54,7 +54,7 @@ namespace UI {
             }
 
             if (name == OriginName) {
-                history = new List<Tab>();
+                history = new List<Tab>(10);
             }
 
             history.Add(tabs[name]);

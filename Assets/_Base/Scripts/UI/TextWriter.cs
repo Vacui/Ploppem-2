@@ -37,7 +37,7 @@ public class TextWriter : MonoBehaviour {
             characterIndex++;
             string text = textToWrite.Substring(0, characterIndex);
             if (invisibleCharacters) {
-                text += "<color=#00000000>" + textToWrite.Substring(characterIndex) + "</color>";
+                text += string.Format("<color=#00000000>{0}</color>", textToWrite.Substring(characterIndex));
             }
 
             uiText.text = text;

@@ -39,6 +39,7 @@ public class GameHandler : MonoBehaviour {
 
     public void PauseGame() {
         OnGamePaused?.Invoke();
+        System.GC.Collect();
     }
 
     public void ResumeGame() {
@@ -47,6 +48,7 @@ public class GameHandler : MonoBehaviour {
 
     public void StopGame() {
         OnGameOver?.Invoke();
+        System.GC.Collect();
     }
 
 }

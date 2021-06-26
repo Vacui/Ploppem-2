@@ -6085,7 +6085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -101}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6661236036519274901
@@ -6419,7 +6419,7 @@ MonoBehaviour:
       AnimationType: 2
       Move:
         AnimationType: 2
-        Enabled: 1
+        Enabled: 0
         From: {x: 0, y: 0, z: 0}
         To: {x: 0, y: 0, z: 0}
         By: {x: 0, y: 0, z: 0}
@@ -6428,30 +6428,8 @@ MonoBehaviour:
         Elasticity: 1
         NumberOfLoops: -1
         LoopType: 1
-        Direction: 3
+        Direction: 2
         CustomPosition: {x: 0, y: 0, z: 0}
-        EaseType: 0
-        Ease: 3
-        AnimationCurve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        StartDelay: 0
-        Duration: 0.2
-      Rotate:
-        AnimationType: 2
-        Enabled: 0
-        From: {x: 0, y: 0, z: 0}
-        To: {x: 0, y: 0, z: -60}
-        By: {x: 0, y: 0, z: 0}
-        UseCustomFromAndTo: 0
-        Vibrato: 10
-        Elasticity: 1
-        NumberOfLoops: -1
-        LoopType: 1
-        RotateMode: 0
         EaseType: 0
         Ease: 17
         AnimationCurve:
@@ -6460,13 +6438,35 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        StartDelay: 0
-        Duration: 0.5
-      Scale:
+        StartDelay: 0.2
+        Duration: 0.4
+      Rotate:
         AnimationType: 2
         Enabled: 0
         From: {x: 0, y: 0, z: 0}
-        To: {x: 0, y: 0, z: 1}
+        To: {x: 0, y: 0, z: 0}
+        By: {x: 0, y: 0, z: 0}
+        UseCustomFromAndTo: 0
+        Vibrato: 10
+        Elasticity: 1
+        NumberOfLoops: -1
+        LoopType: 1
+        RotateMode: 1
+        EaseType: 0
+        Ease: 1
+        AnimationCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        StartDelay: 0
+        Duration: 1
+      Scale:
+        AnimationType: 2
+        Enabled: 1
+        From: {x: 0, y: 0, z: 0}
+        To: {x: 0.4, y: 0.4, z: 1}
         By: {x: 0, y: 0, z: 0}
         UseCustomFromAndTo: 0
         Vibrato: 10
@@ -6482,7 +6482,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.2
+        Duration: 0.4
       Fade:
         AnimationType: 2
         Enabled: 1
@@ -6500,7 +6500,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        StartDelay: 0
+        StartDelay: 0.4
         Duration: 0.2
     LoadSelectedPresetAtRuntime: 0
     InstantAnimation: 0
@@ -6544,8 +6544,8 @@ MonoBehaviour:
         SoundName: No Sound
         AudioClip: {fileID: 0}
         OutputAudioMixerGroup: {fileID: 0}
-    PresetCategory: Uncategorized
-    PresetName: Default
+    PresetCategory: Basic
+    PresetName: BlastOff
   HideOnAnyButton: 0
   HideOnBackButton: 1
   HideOnClickAnywhere: 0
@@ -6577,7 +6577,7 @@ MonoBehaviour:
       AnimationType: 1
       Move:
         AnimationType: 1
-        Enabled: 1
+        Enabled: 0
         From: {x: 0, y: 0, z: 0}
         To: {x: 0, y: 0, z: 0}
         By: {x: 0, y: 0, z: 0}
@@ -6586,10 +6586,10 @@ MonoBehaviour:
         Elasticity: 1
         NumberOfLoops: -1
         LoopType: 1
-        Direction: 3
+        Direction: 0
         CustomPosition: {x: 0, y: 0, z: 0}
         EaseType: 0
-        Ease: 3
+        Ease: 1
         AnimationCurve:
           serializedVersion: 2
           m_Curve: []
@@ -6597,7 +6597,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 0.2
+        Duration: 1
       Rotate:
         AnimationType: 1
         Enabled: 0
@@ -6609,9 +6609,9 @@ MonoBehaviour:
         Elasticity: 1
         NumberOfLoops: -1
         LoopType: 1
-        RotateMode: 1
+        RotateMode: 0
         EaseType: 0
-        Ease: 1
+        Ease: 26
         AnimationCurve:
           serializedVersion: 2
           m_Curve: []
@@ -6619,11 +6619,11 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 1
+        Duration: 0.5
       Scale:
         AnimationType: 1
-        Enabled: 0
-        From: {x: 0, y: 0, z: 0}
+        Enabled: 1
+        From: {x: 0.4, y: 0.4, z: 1}
         To: {x: 0, y: 0, z: 0}
         By: {x: 0, y: 0, z: 0}
         UseCustomFromAndTo: 0
@@ -6632,20 +6632,65 @@ MonoBehaviour:
         NumberOfLoops: -1
         LoopType: 1
         EaseType: 0
-        Ease: 1
+        Ease: 27
         AnimationCurve:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.4206471
+            value: 0.506504
+            inSlope: -0.28127939
+            outSlope: -0.28127939
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.641502
+            value: 0.6204572
+            inSlope: -0.85022783
+            outSlope: -0.85022783
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.9017855
+            value: 0.8473946
+            inSlope: -0.9030527
+            outSlope: -0.9030527
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 7.181079
+            outSlope: 7.181079
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         StartDelay: 0
-        Duration: 1
+        Duration: 0.4
       Fade:
         AnimationType: 1
         Enabled: 1
         From: 0
-        To: 0
+        To: 1
         By: 0.5
         UseCustomFromAndTo: 0
         NumberOfLoops: -1
@@ -6702,8 +6747,8 @@ MonoBehaviour:
         SoundName: No Sound
         AudioClip: {fileID: 0}
         OutputAudioMixerGroup: {fileID: 0}
-    PresetCategory: Uncategorized
-    PresetName: Default
+    PresetCategory: Basic
+    PresetName: BlastOff
   ShowProgressor: {fileID: 0}
   UpdateHideProgressorOnShow: 0
   UpdateShowProgressorOnHide: 0

@@ -46,7 +46,7 @@ namespace Utils {
         public static List<Vector2Int> GatherNeighbours(int x = 0, int y = 0, int radius = 1, bool avoidCenter = false, bool avoidCorners = false) {
             if (radius <= 0) return null;
 
-            List<Vector2Int> neighbours = new List<Vector2Int>();
+            List<Vector2Int> neighbours = new List<Vector2Int>(9 * radius);
             for (int xT = -radius; xT < radius + 1; xT++) {
                 for (int yT = -radius; yT < radius + 1; yT++) {
                     if (!avoidCenter || (xT != 0 || yT != 0)) {

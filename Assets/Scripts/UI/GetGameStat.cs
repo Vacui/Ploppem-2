@@ -28,7 +28,7 @@ public class GetGameStat : MonoBehaviour {
             return;
         }
 
-        text.text = prefix + GameStatsSystem.GetStat(gameStat) + suffix;
+        text.text = string.Format("{0}{1}{2}", prefix, GameStatsSystem.GetStat(gameStat), suffix);
     }
 
 }
