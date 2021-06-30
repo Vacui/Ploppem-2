@@ -33,7 +33,6 @@ public class ScoreSystem : ComponentSystem {
     }
 
     private void KilledEnemy(int enemies) {
-        UnityEngine.Debug.Log($"{Score} + {enemies}");
         Score += enemies;
     }
 

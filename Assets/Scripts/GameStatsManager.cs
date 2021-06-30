@@ -4,6 +4,7 @@ using Unity.Entities;
 using UnityEngine;
 using UnityEngine.Events;
 
+[UpdateBefore(typeof(ScoreSystem))]
 public class GameStatsManager : MonoBehaviour {
 
     [System.Serializable]
@@ -90,8 +91,12 @@ public class GameStatsManager : MonoBehaviour {
             return;
         }
 
+        Debug.Log(currentGameSessionStats.Highscore);
+
         lastGameSessionStats = currentGameSessionStats;
         currentGameSessionStats = null;
+
+        Debug.Log($"{globalGameStats.Highscore}, {lastGameSessionStats.Highscore}");
 
         if (NewHighscore) {
             globalGameStats.Highscore = lastGameSessionStats.Highscore;
@@ -121,6 +126,10 @@ public class GameStatsManager : MonoBehaviour {
 
     private static void IsHighscore(int score) {
         if (currentGameSessionStats == null) {
+            return;
+        }
+
+        if(score <= 0) {
             return;
         }
 
