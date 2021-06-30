@@ -53,20 +53,20 @@ public class EnemySpawnerSystem : ComponentSystem {
             SampleColorGradient(spawnData.ColorGradient);
         }
 
-        spawnTime = spawnData.SpawnFrequencyCurve.Evaluate(gameSessionTime);
+        spawnTime = spawnData.GetSpawnFrequency(gameSessionTime);
 
         SpawnEnemy(new float3(
                 UnityEngine.Random.Range(spawnData.SpawnLimitLeft, spawnData.SpawnLimitRight),
                 UnityEngine.Random.Range(spawnData.SpawnLimitBottom, spawnData.SpawnLimitTop),
                 0),
-                spawnData.DirectionChangeFrequencyCurve.Evaluate(gameSessionTime),
-                spawnData.MoveSpeedCurve.Evaluate(gameSessionTime),
+                spawnData.GetDirectionChangeFrequency(gameSessionTime),
+                spawnData.GetMoveSpeed(gameSessionTime),
                 spawnData.SpawnLimitTop,
                 spawnData.SpawnLimitRight,
                 spawnData.SpawnLimitBottom,
                 spawnData.SpawnLimitLeft,
-                spawnData.LifetimeCurve.Evaluate(gameSessionTime),
-                spawnData.DeathDuration,
+                spawnData.GeLifetime(gameSessionTime),
+                spawnData.DeathAnimDuration,
                 spawnData.DeathColor.ToFloat4()
                 );
 

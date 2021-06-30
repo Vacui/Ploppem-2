@@ -13,19 +13,17 @@ public class EnemySpawnerData : MonoBehaviour {
     [SerializeField] private float borderBottom;
     [SerializeField] private float borderLeft;
 
+    [SerializeField] private AnimationCurve difficultyCurve;
+
     [Header("Movement")]
     [SerializeField] private AnimationCurve spawnFrequencyCurve;
-    public AnimationCurve SpawnFrequencyCurve => spawnFrequencyCurve;
     [SerializeField] private AnimationCurve moveSpeedCurve;
-    public AnimationCurve MoveSpeedCurve => moveSpeedCurve;
     [SerializeField] private AnimationCurve directionChangeFrequencyCurve;
-    public AnimationCurve DirectionChangeFrequencyCurve => directionChangeFrequencyCurve;
 
     [Header("Death")]
     [SerializeField] private AnimationCurve lifetimeCurve;
-    public AnimationCurve LifetimeCurve => lifetimeCurve;
-    [SerializeField] private float deathDuration;
-    public float DeathDuration => deathDuration;
+    [SerializeField, UnityEngine.Serialization.FormerlySerializedAs("deathDuration")] private float deathAnimDuration;
+    public float DeathAnimDuration => deathAnimDuration;
 
     [Header("Rendering")]
     [SerializeField] private Mesh mesh;
@@ -89,6 +87,26 @@ public class EnemySpawnerData : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(spawnLimitRight, spawnLimitTop), new Vector3(spawnLimitLeft, spawnLimitTop));
         Gizmos.DrawLine(new Vector3(spawnLimitLeft, spawnLimitTop), new Vector3(spawnLimitLeft, spawnLimitBottom));
 
+    }
+
+    public float GetSpawnFrequency(float time) {
+        time = time < 0 ? 0 : time;
+        return spawnFrequencyCurve.Evaluate(time) * 1 / difficultyCurve.Evaluate(time);
+    }
+
+    public float GetMoveSpeed(float time) {
+        time = time < 0 ? 0 : time;
+        return moveSpeedCurve.Evaluate(time) * difficultyCurve.Evaluate(time);
+    }
+
+    public float GetDirectionChangeFrequency(float time) {
+        time = time < 0 ? 0 : time;
+        return directionChangeFrequencyCurve.Evaluate(time) * difficultyCurve.Evaluate(time);
+    }
+
+    public float GeLifetime(float time) {
+        time = time < 0 ? 0 : time;
+        return lifetimeCurve.Evaluate(time) * 1 / difficultyCurve.Evaluate(time);
     }
 
 }

@@ -765,7 +765,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 27811534}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &27811534
@@ -880,7 +879,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 27811534}
 --- !u!114 &27811537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,7 +949,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 39315367}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &39315366
@@ -1078,7 +1075,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 39315367}
 --- !u!114 &39315370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,7 +1242,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 62317691}
 --- !u!114 &62317689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,7 +1257,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 62317691}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &62317690
@@ -1446,7 +1440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &71089326
 GameObject:
@@ -1521,7 +1515,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 71089332}
 --- !u!114 &71089330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1530,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 71089332}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &71089331
@@ -1844,7 +1836,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 96674543}
 --- !u!114 &96674541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,7 +1851,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 96674543}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &96674542
@@ -2119,7 +2109,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 133720077}
 --- !u!114 &133720080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2135,7 +2124,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 133720077}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &133720081
@@ -2825,7 +2813,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 157971490}
 --- !u!114 &157971488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2828,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 157971490}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &157971489
@@ -3034,7 +3020,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 175633320}
 --- !u!114 &175633318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,7 +3035,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 175633320}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &175633319
@@ -4387,7 +4371,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 195676030}
 --- !u!114 &195676029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4403,7 +4386,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 195676030}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &195676030
@@ -4640,7 +4622,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 205587169}
 --- !u!114 &205587167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4656,7 +4637,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 205587169}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &205587168
@@ -4987,7 +4967,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 490c86be020307a4e933b604d4052425,
+      objectReference: {fileID: 21300000, guid: 819625976dd9f59418c4f32459cd0601,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b72b2bcc51288245a97ec51288f2cd3, type: 3}
@@ -7724,7 +7704,6 @@ MonoBehaviour:
       m_Calls: []
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 985468533}
   ToggleProgressor: {fileID: 0}
 --- !u!114 &228221063
 MonoBehaviour:
@@ -7846,7 +7825,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 238386784}
 --- !u!114 &238386782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7862,7 +7840,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 238386784}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &238386783
@@ -8051,7 +8028,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 243166502}
 --- !u!114 &243166500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8067,7 +8043,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 243166502}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &243166501
@@ -8351,7 +8326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261342882
 GameObject:
@@ -8492,7 +8467,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 261342883}
 --- !u!114 &261342886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8508,7 +8482,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 261342883}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &261342887
@@ -9784,7 +9757,6 @@ MonoBehaviour:
       m_Calls: []
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 133720077}
   ToggleProgressor: {fileID: 0}
 --- !u!114 &280254015
 MonoBehaviour:
@@ -9969,7 +9941,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 287820158}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &287820157
@@ -9987,7 +9958,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 287820158}
 --- !u!114 &287820158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10242,7 +10212,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 294624642}
 --- !u!114 &294624640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10258,7 +10227,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 294624642}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &294624641
@@ -10627,7 +10595,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 316058742}
 --- !u!114 &316058740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10643,7 +10610,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 316058742}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &316058741
@@ -10838,7 +10804,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 324557835}
 --- !u!114 &324557834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10854,7 +10819,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: b021c84ddddbf740b6e84cc6302d71c4
-  TextMeshPro: {fileID: 324557835}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &324557835
@@ -11554,7 +11518,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 337805814}
 --- !u!114 &337805812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11570,7 +11533,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 337805814}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &337805813
@@ -11933,7 +11895,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 395645227}
 --- !u!114 &395645225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11949,7 +11910,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 395645227}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &395645226
@@ -12138,7 +12098,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 427435257}
 --- !u!114 &427435255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12154,7 +12113,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 427435257}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &427435256
@@ -12425,7 +12383,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 440864141}
 --- !u!114 &440864144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12441,7 +12398,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 440864141}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!1 &457394260
@@ -12576,7 +12532,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 468604275}
 --- !u!114 &468604273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12592,7 +12547,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 468604275}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &468604274
@@ -16327,7 +16281,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 324557835}
 --- !u!114 &576476966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16510,7 +16463,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 589136690}
 --- !u!114 &589136688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16526,7 +16478,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 589136690}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &589136689
@@ -19272,7 +19223,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1923560569}
 --- !u!114 &666456860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19596,7 +19546,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 686709830}
 --- !u!114 &686709828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19612,7 +19561,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 686709830}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &686709829
@@ -19921,7 +19869,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 716845900}
 --- !u!114 &716845899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19937,7 +19884,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 716845900}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &716845900
@@ -20106,7 +20052,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 727358455}
 --- !u!114 &727358453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20122,7 +20067,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 727358455}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &727358454
@@ -20379,7 +20323,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 753353302}
 --- !u!114 &753353300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20395,7 +20338,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 753353302}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &753353301
@@ -20741,7 +20683,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 816114873}
 --- !u!114 &816114871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20757,7 +20698,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 816114873}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &816114872
@@ -20946,7 +20886,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 825042863}
 --- !u!114 &825042861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20962,7 +20901,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 825042863}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &825042862
@@ -21279,6 +21217,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7204239394364696739, guid: 9b72b2bcc51288245a97ec51288f2cd3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 490c86be020307a4e933b604d4052425,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b72b2bcc51288245a97ec51288f2cd3, type: 3}
 --- !u!224 &832481478 stripped
@@ -21494,7 +21438,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 856879599}
 --- !u!114 &856879597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21510,7 +21453,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 856879599}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &856879598
@@ -21927,7 +21869,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 879863443}
 --- !u!114 &879863441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21943,7 +21884,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 879863443}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &879863442
@@ -22200,7 +22140,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 969398761}
 --- !u!114 &969398759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22216,7 +22155,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 969398761}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &969398760
@@ -22475,7 +22413,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 985468533}
 --- !u!114 &985468536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22491,7 +22428,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 985468533}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &985468537
@@ -23322,7 +23258,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1070604067}
 --- !u!114 &1070604065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23338,7 +23273,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1070604067}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1070604066
@@ -23514,7 +23448,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1078425168}
 --- !u!114 &1078425167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23530,7 +23463,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 1078425168}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1078425168
@@ -24728,6 +24660,16 @@ PrefabInstance:
       propertyPath: ButtonCategory
       value: About
       objectReference: {fileID: 0}
+    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
+        type: 3}
+      propertyPath: offset.x
+      value: 7.071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
+        type: 3}
+      propertyPath: offset.y
+      value: -7.0710683
+      objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333134, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_Name
@@ -24949,7 +24891,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1125373670}
 --- !u!114 &1125373668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24965,7 +24906,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1125373670}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1125373669
@@ -25154,7 +25094,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1128829130}
 --- !u!114 &1128829128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25170,7 +25109,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1128829130}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1128829129
@@ -25363,7 +25301,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1147934958}
 --- !u!114 &1147934956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25379,7 +25316,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 1147934958}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1147934957
@@ -25791,7 +25727,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1187119663}
 --- !u!114 &1187119661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25807,7 +25742,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1187119663}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1187119662
@@ -25996,7 +25930,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1193337220}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1193337219
@@ -26014,7 +25947,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1193337220}
 --- !u!114 &1193337220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26201,7 +26133,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1193520110}
 --- !u!114 &1193520108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26217,7 +26148,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1193520110}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1193520109
@@ -26628,7 +26558,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1216251702}
 --- !u!114 &1216251700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26644,7 +26573,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1216251702}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1216251701
@@ -27026,7 +26954,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1273075374}
 --- !u!114 &1273075372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27042,7 +26969,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1273075374}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1273075373
@@ -27538,7 +27464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1364171988
 MonoBehaviour:
@@ -29087,6 +29013,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7204239394364696739, guid: 9b72b2bcc51288245a97ec51288f2cd3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 490c86be020307a4e933b604d4052425,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b72b2bcc51288245a97ec51288f2cd3, type: 3}
 --- !u!224 &1420083553 stripped
@@ -29152,7 +29084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22451668, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 22451668, guid: 0abab5bb77339e4428787a870eb31bd3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -29346,7 +29278,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1458535654}
 --- !u!114 &1458535652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29362,7 +29293,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1458535654}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1458535653
@@ -31375,7 +31305,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1544574913}
 --- !u!114 &1544574911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31391,7 +31320,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1544574913}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1544574912
@@ -32801,7 +32729,6 @@ MonoBehaviour:
       m_Calls: []
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 261342883}
   ToggleProgressor: {fileID: 0}
 --- !u!114 &1606069016
 MonoBehaviour:
@@ -33169,7 +33096,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 490c86be020307a4e933b604d4052425,
+      objectReference: {fileID: 21300000, guid: 262f5b3536f85b34aa9a58dd165382a6,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b72b2bcc51288245a97ec51288f2cd3, type: 3}
@@ -33386,7 +33313,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ae9c872cb78b3a244b3b7ecf4e665b6e,
+      objectReference: {fileID: 21300000, guid: 262f5b3536f85b34aa9a58dd165382a6,
         type: 3}
     - target: {fileID: 1844922398387477275, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -33869,7 +33796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675778673
 GameObject:
@@ -34001,7 +33928,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1679772943}
 --- !u!114 &1679772941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34017,7 +33943,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1679772943}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1679772942
@@ -34217,7 +34142,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1683540870}
 --- !u!114 &1683540868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34233,7 +34157,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1683540870}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1683540869
@@ -35079,7 +35002,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1712454699}
 --- !u!114 &1712454697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35095,7 +35017,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1712454699}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1712454698
@@ -37568,7 +37489,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 716845900}
 --- !u!114 &1714127178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37832,7 +37752,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1728559534}
 --- !u!114 &1728559532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37848,7 +37767,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1728559534}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1728559533
@@ -38181,7 +38099,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1745950877}
 --- !u!114 &1745950875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38197,7 +38114,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1745950877}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1745950876
@@ -40208,6 +40124,30 @@ MonoBehaviour:
   borderRight: 0.7
   borderBottom: 2
   borderLeft: 0.7
+  difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 50
+      value: 2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   spawnFrequencyCurve:
     serializedVersion: 2
     m_Curve:
@@ -40243,7 +40183,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 5
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -40268,7 +40208,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  deathDuration: 0.5
+  deathAnimDuration: 0.5
   mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: 301cb7cc601632341991e3f8fa75f262, type: 2}
   colorGradient:
@@ -40313,7 +40253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880194208
 GameObject:
@@ -40566,7 +40506,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1917938934}
 --- !u!114 &1917938932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40582,7 +40521,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1917938934}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1917938933
@@ -40777,7 +40715,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1923560569}
 --- !u!114 &1923560568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40793,7 +40730,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1923560569}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1923560569
@@ -41162,6 +41098,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7204239394364696739, guid: 9b72b2bcc51288245a97ec51288f2cd3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b72b2bcc51288245a97ec51288f2cd3, type: 3}
 --- !u!224 &1933688754 stripped
@@ -41300,8 +41242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 50
-    m_Right: 50
+    m_Left: 100
+    m_Right: 100
     m_Top: 50
     m_Bottom: 50
   m_ChildAlignment: 1
@@ -41385,7 +41327,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1959969042}
 --- !u!114 &1959969040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41401,7 +41342,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1959969042}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1959969041
@@ -42337,7 +42277,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 2064235642}
 --- !u!114 &2064235640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42353,7 +42292,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 2064235642}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &2064235641
@@ -43069,7 +43007,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 2109427084}
 --- !u!114 &2109427083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43085,7 +43022,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 2109427084}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &2109427084
@@ -43254,7 +43190,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 2116279231}
 --- !u!114 &2116279229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43270,7 +43205,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 2116279231}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &2116279230
@@ -44098,7 +44032,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 6173880257871518126}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &4869868355615357953
@@ -44116,7 +44049,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 6173880257871518126}
 --- !u!114 &5476321152986450514
 MonoBehaviour:
   m_ObjectHideFlags: 0

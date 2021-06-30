@@ -56,10 +56,8 @@ MonoBehaviour:
     Textures: []
     Fonts: []
     FontAssets:
-    - m_fontAsset: {fileID: 11400000, guid: e6ab45b8f5fdf2844aabdbe75eb58678, type: 2}
-      SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-    - m_fontAsset: {fileID: 11400000, guid: 6e36f928c829dfb4185f13e13c15703f, type: 2}
-      SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
+    - SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
+    - SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
   ColorLabels:
   - m_label: Primary
     SerializedGuid: 0922fbc32a44164e9ed7a99e43d88a83
@@ -148,10 +146,8 @@ MonoBehaviour:
     Textures: []
     Fonts: []
     FontAssets:
-    - m_fontAsset: {fileID: 11400000, guid: e6ab45b8f5fdf2844aabdbe75eb58678, type: 2}
-      SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-    - m_fontAsset: {fileID: 11400000, guid: 6e36f928c829dfb4185f13e13c15703f, type: 2}
-      SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
+    - SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
+    - SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
   - m_variantName: Test
     SerializedGuid: 3861ce102fae6b478a6ffeabd312a014
     Colors:
@@ -193,7 +189,5 @@ MonoBehaviour:
     Textures: []
     Fonts: []
     FontAssets:
-    - m_fontAsset: {fileID: 11400000, guid: e6ab45b8f5fdf2844aabdbe75eb58678, type: 2}
-      SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-    - m_fontAsset: {fileID: 11400000, guid: 6e36f928c829dfb4185f13e13c15703f, type: 2}
-      SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
+    - SerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
+    - SerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
