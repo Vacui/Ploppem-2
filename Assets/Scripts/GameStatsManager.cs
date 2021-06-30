@@ -91,8 +91,6 @@ public class GameStatsManager : MonoBehaviour {
             return;
         }
 
-        Debug.Log(currentGameSessionStats.Highscore);
-
         lastGameSessionStats = currentGameSessionStats;
         currentGameSessionStats = null;
 

@@ -30,7 +30,6 @@ public class GameOverSystem : ComponentSystem {
 
     private void OnEnemyDead() {
         Lifes--;
-        UnityEngine.Debug.Log($"An Enemy is dead, lifes remaining: {Lifes}");
     }
 
     protected override void OnUpdate() {
