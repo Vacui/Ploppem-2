@@ -1208,7 +1208,7 @@ MonoBehaviour:
   source: 1
   gameStat: 5
   prefix: 
-  suffix: 
+  suffix: '%'
   nullValue: N/A%
 --- !u!114 &62317688
 MonoBehaviour:
@@ -20227,7 +20227,7 @@ MonoBehaviour:
   source: 1
   gameStat: 5
   prefix: 
-  suffix: 
+  suffix: '%'
   nullValue: N/A%
 --- !u!114 &753353299
 MonoBehaviour:
@@ -41211,7 +41211,7 @@ MonoBehaviour:
   source: 0
   gameStat: 5
   prefix: 
-  suffix: 
+  suffix: '%'
   nullValue: N/A%
 --- !u!114 &1959969039
 MonoBehaviour:
