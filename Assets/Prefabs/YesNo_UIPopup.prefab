@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 80}
+  m_SizeDelta: {x: 0, y: 110}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &3324376109011605490
 MonoBehaviour:
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -215,7 +215,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 6661236035427702900}
 --- !u!114 &3820099189334197303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +230,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 6661236035427702900}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &9021559241729767688
@@ -1234,11 +1232,6 @@ PrefabInstance:
       propertyPath: PropertyIdSerializedGuid.Array.data[15]
       value: 164
       objectReference: {fileID: 0}
-    - target: {fileID: 1844922398387477274, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: m_MinWidth
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 1844922398387477275, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_Sprite
@@ -1272,98 +1265,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
-      propertyPath: offset.x
-      value: 7.071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: offset.y
-      value: -7.0710683
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[0]
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[1]
-      value: 174
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[2]
-      value: 213
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[3]
-      value: 172
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[4]
-      value: 183
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[5]
-      value: 164
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[6]
-      value: 221
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[7]
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[8]
-      value: 179
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[9]
-      value: 95
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[10]
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[11]
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[12]
-      value: 225
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[13]
-      value: 247
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[14]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333130, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: PropertyIdSerializedGuid.Array.data[15]
-      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333134, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -1598,7 +1501,7 @@ PrefabInstance:
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_fontSize
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -1618,7 +1521,7 @@ PrefabInstance:
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -1767,11 +1670,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1844922398387477274, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: m_MinWidth
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 1844922398387477275, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_Sprite
@@ -1782,16 +1680,6 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.TriggerEventsAfterAnimation
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: offset.x
-      value: 7.071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
-        type: 3}
-      propertyPath: offset.y
-      value: -7.0710683
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333134, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -1946,12 +1834,12 @@ PrefabInstance:
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_fontSize
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2195335966043191277, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}

@@ -175,7 +175,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 300, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1844922398797333121
 CanvasRenderer:
@@ -2563,7 +2563,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1844922400311426428}
 --- !u!114 &1844922398797333124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,7 +2797,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 0922fbc32a44164e9ed7a99e43d88a83
-  TextMeshPro: {fileID: 1844922400311426428}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1844922400311426370
@@ -2816,7 +2814,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1844922400311426428}
 --- !u!114 &1844922400311426369
 MonoBehaviour:
   m_ObjectHideFlags: 0
