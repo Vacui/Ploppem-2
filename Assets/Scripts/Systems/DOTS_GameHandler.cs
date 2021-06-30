@@ -28,7 +28,7 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void StartGame() {
 
-        if (!SetSingletonValue(GameState.State.Playing, GameState.State.Playing, false)) {
+        if (!SetSingletonValue(GameInfo.GameState.Playing, GameInfo.GameState.Playing, false)) {
             return;
         }
 
@@ -38,7 +38,7 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void PauseGame() {
 
-        if (!SetSingletonValue(GameState.State.WaitingToStart, GameState.State.Playing)) {
+        if (!SetSingletonValue(GameInfo.GameState.WaitingToStart, GameInfo.GameState.Playing)) {
             return;
         }
 
@@ -49,7 +49,7 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void ResumeGame() {
 
-        if (!SetSingletonValue(GameState.State.Playing, GameState.State.WaitingToStart)) {
+        if (!SetSingletonValue(GameInfo.GameState.Playing, GameInfo.GameState.WaitingToStart)) {
             return;
         }
 
@@ -60,7 +60,7 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     private void GameOver() {
 
-        if (!SetSingletonValue(GameState.State.Dead, GameState.State.Dead, false)) {
+        if (!SetSingletonValue(GameInfo.GameState.Dead, GameInfo.GameState.Dead, false)) {
             return;
         }
 
@@ -74,20 +74,20 @@ public class DOTS_GameHandler : JobComponentSystem {
 
     }
 
-    private bool SetSingletonValue(GameState.State value, GameState.State filter, bool filterEqual = true) {
+    private bool SetSingletonValue(GameInfo.GameState value, GameInfo.GameState filter, bool filterEqual = true) {
 
-        if (!HasSingleton<GameState>()) {
+        if (!HasSingleton<GameInfo>()) {
             return false;
         }
 
-        GameState gameState = GetSingleton<GameState>();
+        GameInfo gameState = GetSingleton<GameInfo>();
 
-        if ((filterEqual && gameState.Value != filter) ||
-            (!filterEqual && gameState.Value == filter)) {
+        if ((filterEqual && gameState.State != filter) ||
+            (!filterEqual && gameState.State == filter)) {
             return false;
         }
 
-        gameState.Value = value;
+        gameState.State = value;
         SetSingleton(gameState);
 
         return true;
@@ -103,6 +103,7 @@ public class DOTS_GameHandler : JobComponentSystem {
         //World.GetOrCreateSystem<EnemyPreRenderingJobSystem>().Enabled = enabled;
         //World.GetOrCreateSystem<EnemyRenderingSystem>().Enabled = enabled;
         World.GetOrCreateSystem<KillerEnemySystem>().Enabled = enabled;
+        World.GetOrCreateSystem<ScoreSystem>().Enabled = enabled;
         World.GetOrCreateSystem<GameOverSystem>().Enabled = enabled;
     }
 

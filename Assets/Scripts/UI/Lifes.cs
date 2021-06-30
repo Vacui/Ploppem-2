@@ -23,7 +23,6 @@ public class Lifes : MonoBehaviour {
 
     private void OnDestroy() {
         if (world != null && world.IsCreated) {
-            Debug.Log("Test");
             world.GetOrCreateSystem<GameOverSystem>().OnLifesChanged -= UpdateText;
         }
     }
@@ -45,7 +44,7 @@ public class Lifes : MonoBehaviour {
         }
 
         gameObject.transform.localScale = Vector3.one;
-        tweenId = gameObject.LeanScale(Vector3.one * 1.15f, 0.3f).setLoopPingPong(1).id;
+        tweenId = gameObject.LeanScale(Vector3.one * 1.5f, 0.3f).setLoopPingPong(1).id;
     }
 
 }

@@ -9,10 +9,9 @@ public class Quit : MonoBehaviour {
     [SerializeField] private string message;
 
     public void ShowPopup() {
-
         UIPopup popup = UIPopup.GetPopup(popupName);
 
-        if(popup == null) {
+        if (popup == null) {
             return;
         }
 

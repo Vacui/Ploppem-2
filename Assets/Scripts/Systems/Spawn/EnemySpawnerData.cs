@@ -47,7 +47,6 @@ public class EnemySpawnerData : MonoBehaviour {
     public float SpawnLimitLeft => spawnLimitLeft;
 
     private void Awake() {
-
         Instance = this;
 
         entityManger = World.DefaultGameObjectInjectionWorld.EntityManager;

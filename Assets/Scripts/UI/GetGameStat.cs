@@ -6,21 +6,23 @@ public class GetGameStat : MonoBehaviour {
 
     private TMP_Text text;
 
-    [SerializeField] GameStatsSystem.GameStat gameStat;
+    [SerializeField] private GameStatsManager.GameStatSource source;
+    [SerializeField] private GameStatsManager.GameStatType gameStat;
     [SerializeField] private string prefix;
     [SerializeField] private string suffix;
+    [SerializeField] private string nullValue;
 
     private void Awake() {
         text = GetComponent<TMP_Text>();
     }
 
     private void OnEnable() {
-        GameStatsSystem.OnUpdateAllStats += UpdateText;
+        GameStatsManager.OnUpdateAllStats += UpdateText;
         UpdateText();
     }
 
     private void OnDisable() {
-        GameStatsSystem.OnUpdateAllStats -= UpdateText;
+        GameStatsManager.OnUpdateAllStats -= UpdateText;
     }
 
     private void UpdateText() {
@@ -28,7 +30,13 @@ public class GetGameStat : MonoBehaviour {
             return;
         }
 
-        text.text = string.Format("{0}{1}{2}", prefix, GameStatsSystem.GetStat(gameStat), suffix);
+        string stat = GameStatsManager.GetStat(source, gameStat);
+
+        if (stat == string.Empty) {
+            stat = nullValue;
+        }
+
+        text.text = string.Format("{0}{1}{2}", prefix, stat, suffix);
     }
 
 }

@@ -26,14 +26,14 @@ MonoBehaviour:
       SerializedGuid: e25056c71e45364bb05b4f9433dffb12
     - m_color: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 1}
       SerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-    - m_color: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
+    - m_color: {r: 0.92549026, g: 0.4039216, b: 0.41960788, a: 1}
       SerializedGuid: b021c84ddddbf740b6e84cc6302d71c4
     Sprites:
     - m_sprite: {fileID: 21300000, guid: 262f5b3536f85b34aa9a58dd165382a6, type: 3}
       SerializedGuid: 1b624c4d94505f4a88a7daec6b2f8608
     - m_sprite: {fileID: 21300000, guid: 4f8a67463dd2d194cb402f0c56b554ee, type: 3}
       SerializedGuid: ae5f8558f87018408f6c88ceb68b5075
-    - m_sprite: {fileID: 21300000, guid: 928b308ee0991ed4fa65ced41e79b438, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 0247ec02e437b3942b8900d168fcdf4a, type: 3}
       SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
     - m_sprite: {fileID: 21300000, guid: 819625976dd9f59418c4f32459cd0601, type: 3}
       SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
@@ -49,6 +49,10 @@ MonoBehaviour:
       SerializedGuid: 0646de669335664eb30a8944eab55c75
     - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
       SerializedGuid: 6f12696cca05d24a931afa0412751bc7
+    - m_sprite: {fileID: 21300000, guid: e9e2230a9dd52ec419cb27110bb09e3a, type: 3}
+      SerializedGuid: 108c52fd58e3194fb53c911a162ff8cf
+    - m_sprite: {fileID: 21300000, guid: 7d24c338c461d7142b5fa58d257208fd, type: 3}
+      SerializedGuid: fcfbbe1dd2f96b44b90a6f3ae7053ee8
     Textures: []
     Fonts: []
     FontAssets:
@@ -65,14 +69,14 @@ MonoBehaviour:
     SerializedGuid: e25056c71e45364bb05b4f9433dffb12
   - m_label: Secondary
     SerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  - m_label: Secondary Dark
+  - m_label: Warning
     SerializedGuid: b021c84ddddbf740b6e84cc6302d71c4
   SpriteLabels:
   - m_label: Settings
     SerializedGuid: 1b624c4d94505f4a88a7daec6b2f8608
   - m_label: Quit
     SerializedGuid: ae5f8558f87018408f6c88ceb68b5075
-  - m_label: Credits
+  - m_label: About
     SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
   - m_label: Game
     SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
@@ -88,6 +92,10 @@ MonoBehaviour:
     SerializedGuid: 0646de669335664eb30a8944eab55c75
   - m_label: Restart
     SerializedGuid: 6f12696cca05d24a931afa0412751bc7
+  - m_label: Customize
+    SerializedGuid: 108c52fd58e3194fb53c911a162ff8cf
+  - m_label: Stat
+    SerializedGuid: fcfbbe1dd2f96b44b90a6f3ae7053ee8
   TextureLabels: []
   FontLabels: []
   FontAssetLabels:
@@ -110,14 +118,14 @@ MonoBehaviour:
       SerializedGuid: e25056c71e45364bb05b4f9433dffb12
     - m_color: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 1}
       SerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-    - m_color: {r: 0.16078432, g: 0.5019608, b: 0.7254902, a: 1}
+    - m_color: {r: 0.92549026, g: 0.4039216, b: 0.41960788, a: 1}
       SerializedGuid: b021c84ddddbf740b6e84cc6302d71c4
     Sprites:
     - m_sprite: {fileID: 21300000, guid: 262f5b3536f85b34aa9a58dd165382a6, type: 3}
       SerializedGuid: 1b624c4d94505f4a88a7daec6b2f8608
     - m_sprite: {fileID: 21300000, guid: 4f8a67463dd2d194cb402f0c56b554ee, type: 3}
       SerializedGuid: ae5f8558f87018408f6c88ceb68b5075
-    - m_sprite: {fileID: 21300000, guid: 928b308ee0991ed4fa65ced41e79b438, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 0247ec02e437b3942b8900d168fcdf4a, type: 3}
       SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
     - m_sprite: {fileID: 21300000, guid: 819625976dd9f59418c4f32459cd0601, type: 3}
       SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
@@ -133,6 +141,10 @@ MonoBehaviour:
       SerializedGuid: 0646de669335664eb30a8944eab55c75
     - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
       SerializedGuid: 6f12696cca05d24a931afa0412751bc7
+    - m_sprite: {fileID: 21300000, guid: e9e2230a9dd52ec419cb27110bb09e3a, type: 3}
+      SerializedGuid: 108c52fd58e3194fb53c911a162ff8cf
+    - m_sprite: {fileID: 21300000, guid: 7d24c338c461d7142b5fa58d257208fd, type: 3}
+      SerializedGuid: fcfbbe1dd2f96b44b90a6f3ae7053ee8
     Textures: []
     Fonts: []
     FontAssets:
@@ -149,31 +161,35 @@ MonoBehaviour:
       SerializedGuid: 40b1c44268f1ac429e36eb7465f8f39e
     - m_color: {r: 0.24313726, g: 0.24313726, b: 0.24313726, a: 1}
       SerializedGuid: e25056c71e45364bb05b4f9433dffb12
-    - m_color: {r: 0.9254902, g: 0.40392157, b: 0.41960785, a: 1}
+    - m_color: {r: 0.18039216, g: 0.8, b: 0.44313726, a: 1}
       SerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-    - m_color: {r: 0.8901961, g: 0.33333334, b: 0.34901962, a: 1}
+    - m_color: {r: 0.92549026, g: 0.4039216, b: 0.41960788, a: 1}
       SerializedGuid: b021c84ddddbf740b6e84cc6302d71c4
     Sprites:
-    - m_sprite: {fileID: 21300000, guid: fa7a73c44d2df8e4a83e56a69031a1fc, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 80a9d5bd3200634438656c421018254d, type: 3}
       SerializedGuid: 1b624c4d94505f4a88a7daec6b2f8608
-    - m_sprite: {fileID: 21300000, guid: 99d0ff9ad99621747a0019296ed74272, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 4f8a67463dd2d194cb402f0c56b554ee, type: 3}
       SerializedGuid: ae5f8558f87018408f6c88ceb68b5075
-    - m_sprite: {fileID: 21300000, guid: 928b308ee0991ed4fa65ced41e79b438, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 5d4684f0e83e6e841a71c713ffe176cd, type: 3}
       SerializedGuid: a4df5d4acb06d24d97989a4846ed60d2
-    - m_sprite: {fileID: 21300000, guid: 36959d5449ed7324794f281c5a6c4338, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 3f2c846f767524445accf1edaf0a15a6, type: 3}
       SerializedGuid: 6613163ee6bb7441829d4ece3755b2b9
-    - m_sprite: {fileID: 21300000, guid: d5c75d88263a22948a27022fffb23ec0, type: 3}
+    - m_sprite: {fileID: 21300000, guid: ae9c872cb78b3a244b3b7ecf4e665b6e, type: 3}
       SerializedGuid: 6109b665ec881d4dac52d1331d35396f
-    - m_sprite: {fileID: 21300000, guid: b308f944a5e181740ada9ba8e5478cae, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 1f499e791b22fd142a27c7ee12a783fb, type: 3}
       SerializedGuid: 18a1fd335c855143995dd0f4aeb42c60
-    - m_sprite: {fileID: 21300000, guid: 0eae7007700771944bed6ff4efa1984c, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 40e7a6106212adf44b85aa637ad22883, type: 3}
       SerializedGuid: 2ba4385361a21547a6339eb8301d672a
-    - m_sprite: {fileID: 21300000, guid: eabb9319b8c8f78499ad607f5a40b2c8, type: 3}
+    - m_sprite: {fileID: 21300000, guid: 5836ac203014d8d49845743b328d09f4, type: 3}
       SerializedGuid: 1ac22c382d511443b7bb57dbfd510685
     - m_sprite: {fileID: 21300000, guid: 1fb585b1459f6b34982b1b87e6402f90, type: 3}
       SerializedGuid: 0646de669335664eb30a8944eab55c75
     - m_sprite: {fileID: 21300000, guid: 44f1b39b5ce3dd3489833de41c1bfe2f, type: 3}
       SerializedGuid: 6f12696cca05d24a931afa0412751bc7
+    - m_sprite: {fileID: 21300000, guid: 152f961d65bfee8418b232a156da1900, type: 3}
+      SerializedGuid: 108c52fd58e3194fb53c911a162ff8cf
+    - m_sprite: {fileID: 21300000, guid: 27ec8c054fac25b4ca103a33dfd6f74e, type: 3}
+      SerializedGuid: fcfbbe1dd2f96b44b90a6f3ae7053ee8
     Textures: []
     Fonts: []
     FontAssets:

@@ -31,8 +31,8 @@ public class EnemySpawnerSystem : ComponentSystem {
 
     protected override void OnUpdate() {
 
-        if (!HasSingleton<GameState>() ||
-            GetSingleton<GameState>().Value != GameState.State.Playing) {
+        if (!HasSingleton<GameInfo>() ||
+            GetSingleton<GameInfo>().State != GameInfo.GameState.Playing) {
             return;
         }
 

@@ -34,7 +34,6 @@ public class KillerEnemySystem : ComponentSystem {
     }
 
     private void SelectEntitiesOn(float3 position) {
-
         if (position.x < EnemySpawnerData.Instance.SpawnLimitLeft ||
             position.x > EnemySpawnerData.Instance.SpawnLimitRight ||
             position.y < EnemySpawnerData.Instance.SpawnLimitBottom ||

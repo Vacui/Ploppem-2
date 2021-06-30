@@ -15,6 +15,12 @@ MonoBehaviour:
   DatabaseType: 0
   CategoryNames:
   - Custom
+  - About
+  - Game
   - General
+  - Stats
   Categories:
+  - {fileID: 11400000, guid: 1c43bf1567ef34e4ea3a762cd30c701c, type: 2}
+  - {fileID: 11400000, guid: 2df4e900a1b22e54caced70d1d8e1f27, type: 2}
   - {fileID: 11400000, guid: e72bf8c4c8dc16d468ccf2f7271b5a4e, type: 2}
+  - {fileID: 11400000, guid: b2ea636fd67a8ff4386d4021da46b500, type: 2}

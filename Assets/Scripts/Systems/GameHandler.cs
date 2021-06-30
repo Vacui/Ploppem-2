@@ -1,5 +1,4 @@
-﻿using Doozy.Engine;
-using Unity.Entities;
+﻿using Unity.Entities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,6 +30,8 @@ public class GameHandler : MonoBehaviour {
 
     private void Start() {
         World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += StopGame;
+
+        GameStatsManager.Initialize();
     }
 
     public void StartGame() {

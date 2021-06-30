@@ -1,14 +1,37 @@
-﻿using UnityEngine;
+﻿using Doozy.Engine.UI;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(RectTransform)), DisallowMultipleComponent]
+[RequireComponent(typeof(RectTransform))]
+[DisallowMultipleComponent]
 public class ClearGameStats : MonoBehaviour, IPointerClickHandler {
 
+    [Header("Popup Settings")]
+    [SerializeField] private string popupName = "YesNo";
+    [SerializeField] private string message;
+
     public void OnPointerClick(PointerEventData eventData) {
-        TabConfirmManager.NewConfirmTab(
-            "Do you <u>really</u> want to clear all the game stats ?<br><br>This action <u>cannot</u> be undone.",
-            () => GameStatsSystem.ClearStats(),
+        ShowPopup();
+    }
+
+    public void ShowPopup() {
+        if (GameHandler.Instance == null) {
+            return;
+        }
+
+        UIPopup popup = UIPopup.GetPopup(popupName);
+
+        if (popup == null) {
+            return;
+        }
+
+        popup.Data.SetLabelsTexts(message);
+
+        popup.Data.SetButtonsCallbacks(
+            () => GameStatsManager.Clear(),
             null);
+
+        popup.Show();
     }
 
 }

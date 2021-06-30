@@ -39,8 +39,7 @@ MonoBehaviour:
   CurrentGraph: {fileID: 11400000, guid: 48b83207698a307449fad1891808c8ea, type: 2}
   RecentlyOpenedGraphs:
   - {fileID: 11400000, guid: 48b83207698a307449fad1891808c8ea, type: 2}
-  CopiedNodes:
-  - {fileID: -8179809343771412161, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  CopiedNodes: []
   DeletedNodes:
   - {fileID: -5146645661323636234, guid: 48b83207698a307449fad1891808c8ea, type: 2}
   - {fileID: 1682977042116323235, guid: 48b83207698a307449fad1891808c8ea, type: 2}
@@ -63,8 +62,11 @@ MonoBehaviour:
   - {fileID: 435064216003671394, guid: 48b83207698a307449fad1891808c8ea, type: 2}
   - {fileID: -584771479857547523, guid: 48b83207698a307449fad1891808c8ea, type: 2}
   - {fileID: 1512298947717673363, guid: 48b83207698a307449fad1891808c8ea, type: 2}
-  SelectedNodes:
-  - {fileID: -8179809343771412161, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  - {fileID: 1320873077804591698, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  - {fileID: -7224795471370372306, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  - {fileID: -3189903686530490547, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  - {fileID: -7510022857144116965, guid: 48b83207698a307449fad1891808c8ea, type: 2}
+  SelectedNodes: []
   GraphTabs:
   - IsRootTab: 1
     Graph: {fileID: 11400000, guid: 48b83207698a307449fad1891808c8ea, type: 2}
@@ -74,7 +76,7 @@ MonoBehaviour:
     SelectedNodes: []
     DeletedNodes: []
   CurrentView: 1
-  CurrentPanOffset: {x: 375.14612, y: 200.00525}
+  CurrentPanOffset: {x: 247.2468, y: 131.00153}
   DefaultPanOffset: {x: 0, y: 0}
   IsDirty: 0
   SaveCurrentGraphWithControlS: 1

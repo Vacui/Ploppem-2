@@ -19,8 +19,10 @@ MonoBehaviour:
   - Game
   - General
   - Settings
+  - Stats
   Categories:
   - {fileID: 11400000, guid: 70b36eebd12e0664fb5cf0ebf9b331d2, type: 2}
   - {fileID: 11400000, guid: 84f7295debc3b634c8f3fafcdde71868, type: 2}
   - {fileID: 11400000, guid: 19a151d3e9e09214fb650c1c2eaf07c0, type: 2}
   - {fileID: 11400000, guid: f7c70f10c19b4cd4487a572cde8b6631, type: 2}
+  - {fileID: 11400000, guid: 304ea1ad830300c40801ebb58d6abbfa, type: 2}

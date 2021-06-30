@@ -6,13 +6,17 @@ public class NewHighscore : MonoBehaviour {
 
     private void Start() {
         GameHandler.OnGameStarted += DisableObject;
-        GameStatsSystem.OnNewHighscore += EnableObject;
+        GameStatsManager.OnNewHighscore += EnableObject;
         DisableObject();
     }
 
     private void OnDestroy() {
         GameHandler.OnGameStarted += DisableObject;
-        GameStatsSystem.OnNewHighscore -= EnableObject;
+        GameStatsManager.OnNewHighscore -= EnableObject;
+    }
+
+    private void OnDisable() {
+        DisableObject();
     }
 
     private void EnableObject() {

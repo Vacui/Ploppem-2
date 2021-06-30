@@ -1,16 +1,20 @@
 ﻿using Doozy.Engine;
 using Doozy.Engine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class StopGame : MonoBehaviour {
+public class StopGame : MonoBehaviour, IPointerClickHandler {
 
     [Header("Popup Settings")]
     [SerializeField] private string popupName = "YesNo";
     [SerializeField] private string message;
 
-    public void ShowPopup() {
+    public void OnPointerClick(PointerEventData eventData) {
+        ShowPopup();
+    }
 
-        if(GameHandler.Instance == null) {
+    public void ShowPopup() {
+        if (GameHandler.Instance == null) {
             return;
         }
 
