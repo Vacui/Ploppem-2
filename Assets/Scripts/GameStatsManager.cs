@@ -94,8 +94,6 @@ public class GameStatsManager : MonoBehaviour {
         lastGameSessionStats = currentGameSessionStats;
         currentGameSessionStats = null;
 
-        Debug.Log($"{globalGameStats.Highscore}, {lastGameSessionStats.Highscore}");
-
         if (NewHighscore) {
             globalGameStats.Highscore = lastGameSessionStats.Highscore;
         }
