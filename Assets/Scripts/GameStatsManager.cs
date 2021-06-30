@@ -75,7 +75,7 @@ public class GameStatsManager : MonoBehaviour {
     private static void GameStarted() {
         NewHighscore = false;
         currentGameSessionStats = new GameStat();
-
+        globalGameStats.Games++;
         Load();
     }
 
