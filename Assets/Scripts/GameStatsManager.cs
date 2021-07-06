@@ -131,8 +131,9 @@ public class GameStatsManager : MonoBehaviour {
 
         currentGameSessionStats.Highscore = score;
 
-        if (!NewHighscore) {
-            if (globalGameStats.Highscore < currentGameSessionStats.Highscore) {
+        if (globalGameStats.Highscore < score) {
+            globalGameStats.Highscore = score;
+            if (!NewHighscore) {
                 NewHighscore = true;
                 OnNewHighscore?.Invoke();
             }
