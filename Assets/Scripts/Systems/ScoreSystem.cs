@@ -16,6 +16,10 @@ public class ScoreSystem : ComponentSystem {
     public static event UnityAction<int> OnScoreChanged;
 
     protected override void OnCreate() {
+        if(DOTS_GameHandler.Instance == null) {
+            UnityEngine.Debug.LogError("DOTS_GameHandler instance is null");
+        }
+
         DOTS_GameHandler.Instance.OnGameStarted += Reset;
         DOTS_GameHandler.Instance.OnGameOver += Reset;
 
@@ -24,6 +28,10 @@ public class ScoreSystem : ComponentSystem {
     }
 
     protected override void OnDestroy() {
+        if (DOTS_GameHandler.Instance == null) {
+            UnityEngine.Debug.LogError("DOTS_GameHandler instance is null");
+        }
+
         DOTS_GameHandler.Instance.OnGameStarted -= Reset;
         DOTS_GameHandler.Instance.OnGameOver -= Reset;
     }
