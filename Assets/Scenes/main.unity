@@ -3474,8 +3474,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
-      GameEvents:
-      - StartGame
+      GameEvents: []
       SoundData:
         SoundSource: 0
         DatabaseName: General
@@ -6866,8 +6865,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
-      GameEvents:
-      - StartGame
+      GameEvents: []
       SoundData:
         SoundSource: 0
         DatabaseName: General

@@ -10,6 +10,8 @@ public class Lifes : MonoBehaviour {
     private TMP_Text text;
 
     private int tweenId = -1;
+    private const float SCALE_SIZE = 1.5f;
+    private const float SCALE_TIME = 0.3f;
 
     private void Awake() {
         text = GetComponent<TMP_Text>();
@@ -44,7 +46,7 @@ public class Lifes : MonoBehaviour {
         }
 
         gameObject.transform.localScale = Vector3.one;
-        tweenId = gameObject.LeanScale(Vector3.one * 1.5f, 0.3f).setLoopPingPong(1).id;
+        tweenId = gameObject.LeanScale(Vector3.one * SCALE_SIZE, SCALE_TIME).setLoopPingPong(1).id;
     }
 
 }
