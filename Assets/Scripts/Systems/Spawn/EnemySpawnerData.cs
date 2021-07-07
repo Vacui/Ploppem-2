@@ -29,7 +29,7 @@ public class EnemySpawnerData : MonoBehaviour {
     [SerializeField] private Mesh mesh;
     public Mesh Mesh => mesh;
     [SerializeField] private Material material;
-    public Material Material => material;
+    public static Material Material { get; private set; }
     [SerializeField] private Gradient colorGradient;
     public Gradient ColorGradient => colorGradient;
     [SerializeField] private Color deathColor;
@@ -50,6 +50,7 @@ public class EnemySpawnerData : MonoBehaviour {
         entityManger = World.DefaultGameObjectInjectionWorld.EntityManager;
 
         CalculateSpawnLimits();
+        Material = material;
     }
 
     private void Start() {
@@ -87,6 +88,10 @@ public class EnemySpawnerData : MonoBehaviour {
         Gizmos.DrawLine(new Vector3(spawnLimitRight, spawnLimitTop), new Vector3(spawnLimitLeft, spawnLimitTop));
         Gizmos.DrawLine(new Vector3(spawnLimitLeft, spawnLimitTop), new Vector3(spawnLimitLeft, spawnLimitBottom));
 
+    }
+
+    public void SetMesh(Mesh mesh) {
+        this.mesh = mesh;
     }
 
     public float GetSpawnFrequency(float time) {

@@ -30,8 +30,6 @@ public class GameHandler : MonoBehaviour {
 
     private void Start() {
         World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += StopGame;
-
-        GameStatsManager.Initialize();
     }
 
     public void StartGame() {

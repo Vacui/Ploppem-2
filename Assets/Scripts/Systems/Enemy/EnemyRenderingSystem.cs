@@ -12,7 +12,7 @@ public class EnemyRenderingSystem : ComponentSystem {
             return;
         }
 
-        Material material = EnemySpawnerData.Instance.Material;
+        Material material = EnemySpawnerData.Material;
         Mesh mesh = EnemySpawnerData.Instance.Mesh;
         Gradient colorGradient = EnemySpawnerData.Instance.ColorGradient;
 
