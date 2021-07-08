@@ -26323,6 +26323,18 @@ PrefabInstance:
       propertyPath: m_text
       value: play
       objectReference: {fileID: 0}
+    - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e36f928c829dfb4185f13e13c15703f,
+        type: 2}
+    - target: {fileID: 1844922400311426428, guid: 009a766ea16badf4ab633fc09b162378,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7557525559728942538, guid: 6e36f928c829dfb4185f13e13c15703f,
+        type: 2}
     - target: {fileID: 2195335966043191277, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: PropertyIdSerializedGuid.Array.data[0]
