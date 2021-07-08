@@ -14,7 +14,8 @@ public class ScoreSystem : ComponentSystem {
             return highscore;
         }
         private set {
-            if (value < highscore) {
+            if (value <= highscore || value <= 0) {
+                IsHighscore = false;
                 return;
             }
 

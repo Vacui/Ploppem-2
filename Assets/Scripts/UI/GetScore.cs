@@ -30,10 +30,6 @@ public class GetScore : MonoBehaviour {
 
         string scoreString = score.ToString();
 
-        if (ScoreSystem.IsHighscore) {
-            scoreString += "!";
-        }
-
         text.text = scoreString;
 
         if (tweenId > 0 && LeanTween.isTweening(tweenId)) {

@@ -4294,7 +4294,7 @@ MonoBehaviour:
   m_minimumOutputSocketsCount: 1
   m_graphId: 1929c715-252b-468c-b555-c484c163c651
   m_id: 21c98841-9ce8-42fd-ac18-d3262e4d1417
-  m_name: Customizations
+  m_name: Customize
   m_notes: 
   m_onEnterShowViews:
   - Category: General
@@ -4302,10 +4302,10 @@ MonoBehaviour:
     Name: _TopBar
   - Category: General
     InstantAction: 0
-    Name: Customizations
+    Name: Customize
   m_onEnterHideViews: []
   m_onExitShowViews: []
   m_onExitHideViews:
   - Category: General
     InstantAction: 0
-    Name: Customizations
+    Name: Customize

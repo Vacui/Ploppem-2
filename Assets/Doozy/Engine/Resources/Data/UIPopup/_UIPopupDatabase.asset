@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: _UIPopupDatabase
   m_EditorClassIdentifier: 
   PopupNames:
-  - Quit
+  - YesNo
+  - UnlockSkin
   Popups:
   - {fileID: 11400000, guid: ab4fe8a70ddb43442a228fa0cbe946d4, type: 2}
+  - {fileID: 11400000, guid: e104ed55691de16489876edce3558a2b, type: 2}
