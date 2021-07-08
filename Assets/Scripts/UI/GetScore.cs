@@ -7,7 +7,7 @@ public class GetScore : MonoBehaviour {
     private TMP_Text text;
 
     private int tweenId = -1;
-    private const float SCALE_SIZE = 1.25f;
+    private const float SCALE_SIZE = 1.10f;
     private const float SCALE_TIME = 0.3f;
 
     private void Awake() {

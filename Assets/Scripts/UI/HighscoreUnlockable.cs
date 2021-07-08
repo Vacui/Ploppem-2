@@ -33,7 +33,7 @@ public class HighscoreUnlockable : MonoBehaviour {
     }
 
     private void OnEnable() {
-        if (ScoreSystem.Highscore >= unlockValue) {
+        if (IsUnlocked(unlockValue)) {
             toggle.interactable = true;
             if (IsSelected(unlockValue)) {
                 toggle.isOn = true;
@@ -47,6 +47,11 @@ public class HighscoreUnlockable : MonoBehaviour {
 
     private void Unlock(bool value) {
         if(value == true) {
+            if (!IsUnlocked(unlockValue)) {
+                toggle.isOn = false;
+                return;
+            }
+
             if (EnemySpawnerData.Instance != null) {
                 EnemySpawnerData.Instance.SetMesh(mesh);
             }
@@ -54,6 +59,9 @@ public class HighscoreUnlockable : MonoBehaviour {
         }
     }
 
+    private static bool IsUnlocked(int unlockValue) {
+        return ScoreSystem.Highscore > unlockValue;
+    }
     private const string SKIN_KEY = "skin";
     private static bool IsSelected(int unlockValue) {
         return PlayerPrefs.GetInt(SKIN_KEY, 0) == unlockValue;
