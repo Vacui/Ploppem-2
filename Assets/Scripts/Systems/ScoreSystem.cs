@@ -46,7 +46,6 @@ public class ScoreSystem : ComponentSystem {
         }
 
         DOTS_GameHandler.Instance.OnGameStarted += Reset;
-        DOTS_GameHandler.Instance.OnGameOver += Reset;
 
         World.GetOrCreateSystem<KillerEnemySystem>().OnKilledEnemy += KilledEnemy;
         World.GetOrCreateSystem<KillerEnemySystem>().OnMissedEnemy += MissedEnemy;
@@ -58,7 +57,6 @@ public class ScoreSystem : ComponentSystem {
         }
 
         DOTS_GameHandler.Instance.OnGameStarted -= Reset;
-        DOTS_GameHandler.Instance.OnGameOver -= Reset;
     }
 
     private void Reset() {

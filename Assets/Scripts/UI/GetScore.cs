@@ -14,6 +14,15 @@ public class GetScore : MonoBehaviour {
         text = GetComponent<TMP_Text>();
     }
 
+    private void OnEnable() {
+        if(text == null) {
+            Debug.LogWarning("Text is null");
+            return;
+        }
+
+        text.text = "";
+    }
+
     private void Start() {
         ScoreSystem.OnScoreChanged += UpdateText;
         UpdateText(ScoreSystem.Score);
