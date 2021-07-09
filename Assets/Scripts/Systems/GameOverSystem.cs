@@ -20,7 +20,9 @@ public class GameOverSystem : ComponentSystem {
     public event UnityAction<int> OnLifesChanged;
 
     protected override void OnCreate() {
-        GameHandler.OnGameStarted += OnGameStarted;
+        if (DOTS_GameHandler.Instance != null) {
+            DOTS_GameHandler.Instance.OnGameStarted += OnGameStarted;
+        }
         World.GetOrCreateSystem<LifetimeJobSystem>().OnEnemyDead += OnEnemyDead;
     }
 

@@ -748,7 +748,7 @@ MonoBehaviour:
   AutoSelectButtonAfterShow: 0
   AutoSelectPreviouslySelectedButtonAfterHide: 0
   BlockBackButton: 1
-  CanvasName: OverviewCanvas
+  CanvasName: PopupCanvas
   Container:
     Canvas: {fileID: 6661236036519274901}
     CanvasGroup: {fileID: 6661236036519274907}
