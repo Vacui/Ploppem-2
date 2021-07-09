@@ -10582,7 +10582,7 @@ PrefabInstance:
     - target: {fileID: 7204239393912045307, guid: 9b72b2bcc51288245a97ec51288f2cd3,
         type: 3}
       propertyPath: ButtonName
-      value: Customizations
+      value: Customize
       objectReference: {fileID: 0}
     - target: {fileID: 7204239393912045310, guid: 9b72b2bcc51288245a97ec51288f2cd3,
         type: 3}
@@ -10707,7 +10707,7 @@ PrefabInstance:
     - target: {fileID: 7204239393912045311, guid: 9b72b2bcc51288245a97ec51288f2cd3,
         type: 3}
       propertyPath: m_Name
-      value: Button - Customizations
+      value: Button - Customize
       objectReference: {fileID: 0}
     - target: {fileID: 7204239394364696736, guid: 9b72b2bcc51288245a97ec51288f2cd3,
         type: 3}
@@ -19410,7 +19410,7 @@ PrefabInstance:
     - target: {fileID: 1844922398797333125, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: ButtonName
-      value: Customizations
+      value: Customize
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333128, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -19430,7 +19430,7 @@ PrefabInstance:
     - target: {fileID: 1844922398797333134, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_Name
-      value: Button - Customizations
+      value: Button - Customize
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333135, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
