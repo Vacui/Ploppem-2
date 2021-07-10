@@ -151,9 +151,9 @@ namespace Utils {
         }
 
         /// <param name="samples">Must be 2 or higher</param>
-        public static NativeArray<float4> SampleGradient(Gradient gradient, int samples, Allocator allocator){
+        public static NativeArray<float4> SampleGradient(Gradient gradient, int samples, Allocator allocator) {
 
-            if(samples < 2) {
+            if (samples < 2) {
                 throw new System.IndexOutOfRangeException();
             }
 
@@ -161,7 +161,7 @@ namespace Utils {
 
             NativeArray<float4> result = new NativeArray<float4>(samples, allocator);
 
-            for(int i = 0; i < samples; i++) {
+            for (int i = 0; i < samples; i++) {
                 result[i] = gradient.Evaluate(i * timeStep).ToFloat4();
             }
 
@@ -194,6 +194,11 @@ namespace Utils {
         }
         public static string FormatTime(float seconds) {
             return FormatTimeWithHours(seconds).Substring(3);
+        }
+
+        public static float Map(float value, float in_min, float in_max, float out_min, float out_max, bool clamp = false) {
+            if (clamp) value = Math.Max(in_min, Math.Min(value, in_max));
+            return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
         }
     }
 }

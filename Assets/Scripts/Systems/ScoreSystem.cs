@@ -53,7 +53,7 @@ public class ScoreSystem : ComponentSystem {
 
     protected override void OnDestroy() {
         if (DOTS_GameHandler.Instance == null) {
-            UnityEngine.Debug.LogError("DOTS_GameHandler instance is null");
+            Debug.LogError("DOTS_GameHandler instance is null");
         }
 
         DOTS_GameHandler.Instance.OnGameStarted -= Reset;
