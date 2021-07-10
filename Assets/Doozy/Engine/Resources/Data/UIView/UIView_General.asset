@@ -15,11 +15,10 @@ MonoBehaviour:
   CategoryName: General
   DatabaseType: 2
   Names:
-  - _TopBar
+  - _Navbar
   - About
   - Customize
   - Game
   - MainMenu
-  - Settings
   - Unnamed
   - Loading

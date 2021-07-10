@@ -310,13 +310,13 @@ MonoBehaviour:
     Name: GameOver
   - Category: General
     InstantAction: 0
-    Name: _TopBar
+    Name: Unnamed
   - Category: General
     InstantAction: 0
     Name: Game
   - Category: General
     InstantAction: 0
-    Name: Unnamed
+    Name: _Navbar
   m_onExitShowViews: []
   m_onExitHideViews:
   - Category: General
@@ -894,15 +894,18 @@ MonoBehaviour:
   m_name: Credits
   m_notes: 
   m_onEnterShowViews:
+  - Category: General
+    InstantAction: 0
+    Name: _Navbar
   - Category: About
     InstantAction: 0
     Name: Credits
-  - Category: General
-    InstantAction: 0
-    Name: _TopBar
   m_onEnterHideViews: []
   m_onExitShowViews: []
   m_onExitHideViews:
+  - Category: General
+    InstantAction: 0
+    Name: _Navbar
   - Category: About
     InstantAction: 0
     Name: Credits
@@ -1482,7 +1485,10 @@ MonoBehaviour:
   - Category: Game
     InstantAction: 0
     Name: GameOver
-  m_onEnterHideViews: []
+  m_onEnterHideViews:
+  - Category: General
+    InstantAction: 0
+    Name: _Navbar
   m_onExitShowViews: []
   m_onExitHideViews:
   - Category: Game
@@ -2131,7 +2137,7 @@ MonoBehaviour:
   m_onEnterShowViews:
   - Category: General
     InstantAction: 0
-    Name: _TopBar
+    Name: _Navbar
   - Category: General
     InstantAction: 0
     Name: About
@@ -2140,7 +2146,7 @@ MonoBehaviour:
   m_onExitHideViews:
   - Category: General
     InstantAction: 0
-    Name: _TopBar
+    Name: _Navbar
   - Category: General
     InstantAction: 0
     Name: About
@@ -2374,14 +2380,7 @@ MonoBehaviour:
   ErrorDuplicateNameFoundInGraph: 0
   m_inputSockets:
   - m_connectionMode: 1
-    m_connections:
-    - m_inputConnectionPoint: {x: 202, y: 4}
-      m_outputConnectionPoint: {x: -2, y: 4}
-      m_id: e5482f84-8dd6-48e6-b62a-eb043a43a7fd
-      m_inputNodeId: 7c04fd5f-f777-4f90-aac6-8a2b894a3781
-      m_inputSocketId: 6c8269b1-1f63-4d0e-b623-21239d141076
-      m_outputNodeId: 43ade56b-9d2d-4432-8cc9-b2672bfc0a04
-      m_outputSocketId: 74ec0f9b-a840-4219-b34a-eafed29e157d
+    m_connections: []
     m_connectionPoints:
     - {x: -2, y: 4}
     - {x: 202, y: 4}
@@ -2401,14 +2400,7 @@ MonoBehaviour:
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_outputSockets:
   - m_connectionMode: 0
-    m_connections:
-    - m_inputConnectionPoint: {x: -2, y: 4}
-      m_outputConnectionPoint: {x: 202, y: 4}
-      m_id: 7afc0e0a-cdf4-4bf3-90e3-67bb4d8c3195
-      m_inputNodeId: 43ade56b-9d2d-4432-8cc9-b2672bfc0a04
-      m_inputSocketId: 107cc93c-5ea9-4430-93ff-c6a8d376fe1f
-      m_outputNodeId: 7c04fd5f-f777-4f90-aac6-8a2b894a3781
-      m_outputSocketId: 0b88b6dc-6a90-4cf9-8163-c32d1b930850
+    m_connections: []
     m_connectionPoints:
     - {x: -2, y: 4}
     - {x: 202, y: 4}
@@ -2474,14 +2466,7 @@ MonoBehaviour:
   ErrorDuplicateNameFoundInGraph: 0
   m_inputSockets:
   - m_connectionMode: 1
-    m_connections:
-    - m_inputConnectionPoint: {x: -2, y: 4}
-      m_outputConnectionPoint: {x: 202, y: 4}
-      m_id: 7afc0e0a-cdf4-4bf3-90e3-67bb4d8c3195
-      m_inputNodeId: 43ade56b-9d2d-4432-8cc9-b2672bfc0a04
-      m_inputSocketId: 107cc93c-5ea9-4430-93ff-c6a8d376fe1f
-      m_outputNodeId: 7c04fd5f-f777-4f90-aac6-8a2b894a3781
-      m_outputSocketId: 0b88b6dc-6a90-4cf9-8163-c32d1b930850
+    m_connections: []
     m_connectionPoints:
     - {x: -2, y: 4}
     - {x: 202, y: 4}
@@ -2501,14 +2486,7 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_outputSockets:
   - m_connectionMode: 0
-    m_connections:
-    - m_inputConnectionPoint: {x: 202, y: 4}
-      m_outputConnectionPoint: {x: -2, y: 4}
-      m_id: e5482f84-8dd6-48e6-b62a-eb043a43a7fd
-      m_inputNodeId: 7c04fd5f-f777-4f90-aac6-8a2b894a3781
-      m_inputSocketId: 6c8269b1-1f63-4d0e-b623-21239d141076
-      m_outputNodeId: 43ade56b-9d2d-4432-8cc9-b2672bfc0a04
-      m_outputSocketId: 74ec0f9b-a840-4219-b34a-eafed29e157d
+    m_connections: []
     m_connectionPoints:
     - {x: -2, y: 4}
     - {x: 202, y: 4}
@@ -2857,7 +2835,7 @@ MonoBehaviour:
   m_useFixedUpdate: 0
   m_useLateUpdate: 0
   m_useUpdate: 0
-  m_height: 156
+  m_height: 187.2
   m_width: 216
   m_x: 660
   m_y: -12
@@ -2900,7 +2878,6 @@ MonoBehaviour:
   - {fileID: -3270260690643124484}
   - {fileID: -8179809343771412161}
   - {fileID: -6294602384523754054}
-  - {fileID: -896077467588265350}
   - {fileID: 8977593982416753004}
   - {fileID: 4260016385300295238}
   - {fileID: -2373667727588246120}
@@ -2911,12 +2888,11 @@ MonoBehaviour:
   - {fileID: 2587558748234565909}
   - {fileID: 1494038139267917194}
   - {fileID: 3321088949097900061}
-  - {fileID: -941942729621500127}
   m_isSubGraph: 0
   m_version: 1
   m_description: 
   m_id: 1929c715-252b-468c-b555-c484c163c651
-  m_lastModified: 132703219181579518
+  m_lastModified: 132704082202260610
 --- !u!114 &342851564951061644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4744,7 +4720,7 @@ MonoBehaviour:
   m_onEnterShowViews:
   - Category: General
     InstantAction: 0
-    Name: _TopBar
+    Name: _Navbar
   - Category: General
     InstantAction: 0
     Name: Customize
@@ -4753,7 +4729,7 @@ MonoBehaviour:
   m_onExitHideViews:
   - Category: General
     InstantAction: 0
-    Name: _TopBar
+    Name: _Navbar
   - Category: General
     InstantAction: 0
     Name: Customize
