@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class SoundVolumeController : MonoBehaviour, IPointerClickHandler {
 
     [SerializeField] private AudioMixer audioMixer;
@@ -30,7 +31,6 @@ public class SoundVolumeController : MonoBehaviour, IPointerClickHandler {
     }
 
     private void UpdateVolume() {
-        Debug.Log($"{volume}-0-{iconArray.Length}");
         float volumeIndex = GetVolumeIndex();
         volumeIndex++;
         if (volumeIndex >= iconArray.Length) {
@@ -39,7 +39,16 @@ public class SoundVolumeController : MonoBehaviour, IPointerClickHandler {
         Debug.Log(volumeIndex);
         float volumeIndexBaseZero = Utils.UtilsClass.Map(volumeIndex, 0, iconArray.Length - 1, 0, 1);
         volume = volumeIndexBaseZero;
+
         UpdateVisual(Mathf.FloorToInt(volumeIndex), volumeIndexBaseZero);
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null) {
+            audioSource.mute = volumeIndex <= 0;
+            GetComponent<AudioSource>().Play();
+        } else {
+            Debug.LogWarning("Audio Source is null");
+        }
     }
 
     private void UpdateVisual(int iconIndex, float sliderValue) {
