@@ -77,7 +77,6 @@ public class SkinManager : MonoBehaviour {
         return UnlockedSkin == index;
     }
     private bool IsUnlocked(int unlockValue) {
-        Debug.Log(string.Format("Is Unlocked {0} -> {1}", unlockValue, ScoreSystem.Highscore));
         return ScoreSystem.Highscore >= unlockValue;
     }
 
