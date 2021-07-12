@@ -7,7 +7,6 @@ public class CreditPanel : MonoBehaviour {
     [SerializeField] private TMP_Text titleText;
     [SerializeField] private TMP_Text versionText;
     [SerializeField] private TMP_Text authorText;
-    [SerializeField] private TMP_Text descriptionText;
     [SerializeField] private OpenUrl openUrl;
 
     public void SetUp(Credit credit) {
@@ -21,10 +20,6 @@ public class CreditPanel : MonoBehaviour {
 
         if (authorText != null) {
             authorText.text = credit.Author;
-        }
-
-        if (descriptionText != null) {
-            descriptionText.text = credit.Description;
         }
 
         if(openUrl != null) {

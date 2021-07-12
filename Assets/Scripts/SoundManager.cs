@@ -20,6 +20,9 @@ public class SoundManager : MonoBehaviour {
     }
 
     private void GameOver() {
+        foreach (Object source in FindObjectsOfType<AudioSource>()) {
+            Destroy(source);
+        }
         PlaySound(gameOverAudio);
     }
 
