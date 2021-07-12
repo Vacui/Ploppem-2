@@ -894,21 +894,21 @@ MonoBehaviour:
   m_name: Credits
   m_notes: 
   m_onEnterShowViews:
+  - Category: Custom
+    InstantAction: 0
+    Name: Credits
   - Category: General
     InstantAction: 0
     Name: _Navbar
-  - Category: About
-    InstantAction: 0
-    Name: Credits
   m_onEnterHideViews: []
   m_onExitShowViews: []
   m_onExitHideViews:
+  - Category: Custom
+    InstantAction: 0
+    Name: Credits
   - Category: General
     InstantAction: 0
     Name: _Navbar
-  - Category: About
-    InstantAction: 0
-    Name: Credits
 --- !u!114 &-6171080685486609876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2032,13 +2032,6 @@ MonoBehaviour:
   m_inputSockets:
   - m_connectionMode: 1
     m_connections:
-    - m_inputConnectionPoint: {x: -2, y: 4}
-      m_outputConnectionPoint: {x: 202, y: 4}
-      m_id: f2e978b4-ea9a-4ecd-98f7-72e46e3972af
-      m_inputNodeId: 91907dce-ee0b-4dd2-acab-27bcfe541e2c
-      m_inputSocketId: c948ed27-e7e7-4318-bc9f-76a1f4699de9
-      m_outputNodeId: 2f87710d-1efc-4833-ba37-e09c77a8c89c
-      m_outputSocketId: abeb1808-a550-431f-9cf0-665d62ed0352
     - m_inputConnectionPoint: {x: 202, y: 4}
       m_outputConnectionPoint: {x: 202, y: 4}
       m_id: 368f64cd-8a79-4707-9a05-25d7d5cfdaf4
@@ -2090,32 +2083,6 @@ MonoBehaviour:
     m_value: '{"ButtonCategory":"General","ButtonName":"Back","GameEvent":"","TimeDelay":3.0,"Trigger":0}'
     m_valueTypeQualifiedName: Doozy.Engine.UI.Connections.UIConnection, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - m_connectionMode: 0
-    m_connections:
-    - m_inputConnectionPoint: {x: 202, y: 4}
-      m_outputConnectionPoint: {x: -2, y: 4}
-      m_id: 977a4317-153d-417c-8059-6abb398e40d1
-      m_inputNodeId: 2f87710d-1efc-4833-ba37-e09c77a8c89c
-      m_inputSocketId: 0642952f-4e43-4181-a409-a56ac69c8318
-      m_outputNodeId: 91907dce-ee0b-4dd2-acab-27bcfe541e2c
-      m_outputSocketId: d249163d-cdf2-4c4b-948a-52a869d7e2ae
-    m_connectionPoints:
-    - {x: -2, y: 4}
-    - {x: 202, y: 4}
-    m_direction: 1
-    m_canBeDeleted: 1
-    m_canBeReordered: 1
-    m_curveModifier: 0
-    m_height: 24
-    m_width: 216
-    m_x: 0
-    m_y: 86
-    m_id: d249163d-cdf2-4c4b-948a-52a869d7e2ae
-    m_nodeId: 91907dce-ee0b-4dd2-acab-27bcfe541e2c
-    m_socketName: OutputSocket_1
-    m_value: '{"ButtonCategory":"About","ButtonName":"Credits","GameEvent":"","TimeDelay":3.0,"Trigger":0}'
-    m_valueTypeQualifiedName: Doozy.Engine.UI.Connections.UIConnection, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_nodeType: 4
   m_allowDuplicateNodeName: 0
   m_allowEmptyNodeName: 0
@@ -2124,7 +2091,7 @@ MonoBehaviour:
   m_useFixedUpdate: 0
   m_useLateUpdate: 0
   m_useUpdate: 0
-  m_height: 152
+  m_height: 128
   m_width: 216
   m_x: 120
   m_y: 408
@@ -2835,7 +2802,7 @@ MonoBehaviour:
   m_useFixedUpdate: 0
   m_useLateUpdate: 0
   m_useUpdate: 0
-  m_height: 187.2
+  m_height: 156
   m_width: 216
   m_x: 660
   m_y: -12
@@ -2877,7 +2844,6 @@ MonoBehaviour:
   - {fileID: -3951387520123650817}
   - {fileID: -3270260690643124484}
   - {fileID: -8179809343771412161}
-  - {fileID: -6294602384523754054}
   - {fileID: 8977593982416753004}
   - {fileID: 4260016385300295238}
   - {fileID: -2373667727588246120}
@@ -2892,7 +2858,7 @@ MonoBehaviour:
   m_version: 1
   m_description: 
   m_id: 1929c715-252b-468c-b555-c484c163c651
-  m_lastModified: 132704082202260610
+  m_lastModified: 132704890663786935
 --- !u!114 &342851564951061644
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1920,7 +1920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2169}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334228668
@@ -6898,6 +6898,7 @@ GameObject:
   - component: {fileID: 1034446899}
   - component: {fileID: 1034446898}
   - component: {fileID: 1034446901}
+  - component: {fileID: 1034446902}
   m_Layer: 5
   m_Name: GitHub
   m_TagString: Untagged
@@ -6993,6 +6994,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &1034446902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034446896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://github.com/Vacui
 --- !u!1001 &1070758170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11068,7 +11082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1267, y: 2250}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1496364833
@@ -13281,6 +13295,7 @@ GameObject:
   - component: {fileID: 1711636935}
   - component: {fileID: 1711636934}
   - component: {fileID: 1711636937}
+  - component: {fileID: 1711636938}
   m_Layer: 5
   m_Name: E-mail
   m_TagString: Untagged
@@ -13376,6 +13391,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &1711636938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711636932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: graizzaromatteo@gmail.com
 --- !u!1 &1728559528
 GameObject:
   m_ObjectHideFlags: 0
@@ -15270,6 +15298,7 @@ GameObject:
   - component: {fileID: 1844754533}
   - component: {fileID: 1844754532}
   - component: {fileID: 1844754535}
+  - component: {fileID: 1844754536}
   m_Layer: 5
   m_Name: Portfolio
   m_TagString: Untagged
@@ -15365,6 +15394,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &1844754536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844754530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://vacui.github.io/
 --- !u!1 &1861844960
 GameObject:
   m_ObjectHideFlags: 0
@@ -16319,6 +16361,7 @@ GameObject:
   - component: {fileID: 2047065368}
   - component: {fileID: 2047065367}
   - component: {fileID: 2047065370}
+  - component: {fileID: 2047065371}
   m_Layer: 5
   m_Name: Linkedin
   m_TagString: Untagged
@@ -16414,6 +16457,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 2
   m_AspectRatio: 1
+--- !u!114 &2047065371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047065365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://www.linkedin.com/in/matteo-graizzaro/
 --- !u!1 &2090853476
 GameObject:
   m_ObjectHideFlags: 0
@@ -16511,6 +16567,7 @@ GameObject:
   - component: {fileID: 2099431745}
   - component: {fileID: 2099431743}
   - component: {fileID: 2099431744}
+  - component: {fileID: 2099431747}
   m_Layer: 5
   m_Name: Twitter
   m_TagString: Untagged
@@ -16606,6 +16663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099431741}
   m_CullTransparentMesh: 0
+--- !u!114 &2099431747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099431741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://twitter.com/matteograizzaro
 --- !u!1001 &2100555989
 PrefabInstance:
   m_ObjectHideFlags: 0

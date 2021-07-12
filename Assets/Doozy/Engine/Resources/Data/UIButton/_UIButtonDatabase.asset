@@ -15,10 +15,8 @@ MonoBehaviour:
   DatabaseType: 0
   CategoryNames:
   - Custom
-  - About
   - General
   - Pause
   Categories:
-  - {fileID: 11400000, guid: 1c43bf1567ef34e4ea3a762cd30c701c, type: 2}
   - {fileID: 11400000, guid: e72bf8c4c8dc16d468ccf2f7271b5a4e, type: 2}
   - {fileID: 11400000, guid: 1e83c3b7ba55b64438c7e3b222d4d08c, type: 2}
