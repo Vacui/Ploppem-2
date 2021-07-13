@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour {
 
     private void Awake() {
         World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<KillerEnemySystem>().OnKilledEnemy += KilledEnemy;
-        GameHandler.OnGameOver += GameOver;
+        World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<GameOverSystem>().OnGameOver += GameOver;
         World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<LifetimeJobSystem>().OnEnemyDead += EnemyDead;
     }
 
