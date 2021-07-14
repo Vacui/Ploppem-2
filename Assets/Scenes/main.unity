@@ -567,7 +567,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 82459632}
 --- !u!114 &82459630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +582,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 82459632}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &82459631
@@ -866,7 +864,7 @@ PrefabInstance:
     - target: {fileID: 1844922398797333135, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1844922398797333135, guid: 009a766ea16badf4ab633fc09b162378,
         type: 3}
@@ -2492,7 +2490,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 427435257}
 --- !u!114 &427435255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,7 +2505,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 427435257}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &427435257
@@ -2759,7 +2755,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 440864141}
 --- !u!114 &440864144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2775,7 +2770,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 440864141}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!1 &478447502
@@ -2809,7 +2803,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 968794986}
+  - {fileID: 1547409196}
   - {fileID: 1649379688}
   - {fileID: 137050157}
   m_Father: {fileID: 1979881261}
@@ -2817,7 +2811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 90, y: -2469}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478447506
@@ -3365,7 +3359,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 486446723}
 --- !u!114 &486446722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3381,7 +3374,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 486446723}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &486446723
@@ -3819,7 +3811,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 589136690}
 --- !u!114 &589136688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3835,7 +3826,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 589136690}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &589136690
@@ -4299,7 +4289,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 646492855}
 --- !u!114 &646492853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4315,7 +4304,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 646492855}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &646492854
@@ -5610,7 +5598,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 879863443}
 --- !u!114 &879863441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5626,7 +5613,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 879863443}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &879863443
@@ -6523,176 +6509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &968794985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 968794986}
-  - component: {fileID: 968794990}
-  - component: {fileID: 968794989}
-  - component: {fileID: 968794988}
-  - component: {fileID: 968794987}
-  m_Layer: 5
-  m_Name: Logo (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &968794986
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968794985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 478447503}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
-  m_SizeDelta: {x: 600, y: 500}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &968794987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968794985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6401496767114744af3e66187f44995d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
-  VariantIdSerializedGuid: 
-  PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 968794989}
---- !u!114 &968794988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968794985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f34e6c94be345baaafed933eb7531ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
-  VariantIdSerializedGuid: 
-  PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 968794989}
-  OverrideAlpha: 0
-  Alpha: 0
---- !u!114 &968794989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968794985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Plopp<#3498DB>em<#34495E><size=+30>2
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6ab45b8f5fdf2844aabdbe75eb58678, type: 2}
-  m_sharedMaterial: {fileID: 5305893309948315392, guid: e6ab45b8f5fdf2844aabdbe75eb58678,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4284369204
-  m_fontColor: {r: 0.20392157, g: 0.28627452, b: 0.36862746, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 200
-  m_fontStyle: 16
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &968794990
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968794985}
-  m_CullTransparentMesh: 0
 --- !u!1 &1021919866
 GameObject:
   m_ObjectHideFlags: 0
@@ -8333,7 +8149,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1147934958}
 --- !u!114 &1147934956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8349,7 +8164,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1147934958}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1147934958
@@ -8504,7 +8318,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1219099950}
 --- !u!114 &1219099948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8520,7 +8333,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1219099950}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1219099949
@@ -8984,7 +8796,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1273075374}
 --- !u!114 &1273075372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,7 +8811,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1273075374}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1273075373
@@ -9175,7 +8985,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1304965247}
 --- !u!114 &1304965247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9288,7 +9097,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1304965247}
   OverrideAlpha: 1
   Alpha: 0.35
 --- !u!114 &1304965250
@@ -10398,7 +10206,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1404946875}
 --- !u!114 &1404946874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10414,7 +10221,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 0922fbc32a44164e9ed7a99e43d88a83
-  TextMeshPro: {fileID: 1404946875}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1404946875
@@ -11833,6 +11639,80 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!1 &1547409195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547409196}
+  - component: {fileID: 1547409198}
+  - component: {fileID: 1547409197}
+  m_Layer: 5
+  m_Name: Logo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1547409196
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547409195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 478447503}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -117.45}
+  m_SizeDelta: {x: 800, y: 800}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1547409197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547409195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d90ed186f47cb1c46bf3c642fe02615f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1547409198
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547409195}
+  m_CullTransparentMesh: 0
 --- !u!1 &1567427695
 GameObject:
   m_ObjectHideFlags: 0
@@ -12281,7 +12161,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 1679772943}
 --- !u!114 &1679772941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12297,7 +12176,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1679772943}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1679772942
@@ -12497,7 +12375,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: 
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1683540870}
 --- !u!114 &1683540868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12513,7 +12390,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: 
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1683540870}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1683540869
@@ -13406,7 +13282,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: 
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: a08f9260f893ca49b10be0a167b9c6e4
-  TextMeshPro: {fileID: 1728559534}
 --- !u!114 &1728559532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13422,7 +13297,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: 
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: e25056c71e45364bb05b4f9433dffb12
-  TextMeshPro: {fileID: 1728559534}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &1728559533
@@ -16169,7 +16043,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 2038784526}
 --- !u!114 &2038784525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16185,7 +16058,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 0922fbc32a44164e9ed7a99e43d88a83
-  TextMeshPro: {fileID: 2038784526}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &2038784526
@@ -17176,7 +17048,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 2109427084}
 --- !u!114 &2109427083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17192,7 +17063,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 2109427084}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &2109427084
@@ -17554,7 +17424,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 2146567607}
   OverrideAlpha: 1
   Alpha: 0.35
 --- !u!114 &2146567606
@@ -17572,7 +17441,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 2146567607}
 --- !u!114 &2146567607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17906,7 +17774,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 64aed5acb7a4dd4ab35f1f34e1f732a4
-  TextMeshPro: {fileID: 0}
   OverrideAlpha: 0
   Alpha: 0
 --- !u!114 &4869868355615357953
@@ -17924,7 +17791,6 @@ MonoBehaviour:
   ThemeIdSerializedGuid: a0ff9c995ec92640b8122b9c454aebbe
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 8856dc5b3f7e8f44a93cd79ca6cd8f4c
-  TextMeshPro: {fileID: 0}
 --- !u!224 &6173880257871518112
 RectTransform:
   m_ObjectHideFlags: 0
