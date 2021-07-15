@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
-  m_Name: Circle
+  m_Name: Pentagon
   m_EditorClassIdentifier: 
-  UnlockValue: 500
-  Icon: {fileID: 21300000, guid: e5847db7030f15c4299d50f8204a40b9, type: 3}
-  Mesh: {fileID: -7773880533215830293, guid: 59bdd3b26b09ec14380385ed7acc5347, type: 3}
+  UnlockValue: 200
+  Icon: {fileID: 21300000, guid: 860831343ec7a2c4bbdc387634fc20b0, type: 3}
+  Mesh: {fileID: 6577240238868259514, guid: a4dc3cba1e0a48943a836cb34819cdf3, type: 3}
