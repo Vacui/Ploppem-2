@@ -6,6 +6,7 @@ public class GetScore : MonoBehaviour {
 
     private TMP_Text text;
 
+    [SerializeField] private bool animate;
     private int tweenId = -1;
     private const float SCALE_SIZE = 1.10f;
     private const float SCALE_TIME = 0.3f;
@@ -32,12 +33,14 @@ public class GetScore : MonoBehaviour {
 
         text.text = scoreString;
 
-        if (tweenId > 0 && LeanTween.isTweening(tweenId)) {
-            LeanTween.cancel(tweenId);
-        }
+        if (animate) {
+            if (tweenId > 0 && LeanTween.isTweening(tweenId)) {
+                LeanTween.cancel(tweenId);
+            }
 
-        gameObject.transform.localScale = Vector3.one;
-        tweenId = gameObject.LeanScale(Vector3.one * SCALE_SIZE, SCALE_TIME).setLoopPingPong(1).id;
+            gameObject.transform.localScale = Vector3.one;
+            tweenId = gameObject.LeanScale(Vector3.one * SCALE_SIZE, SCALE_TIME).setLoopPingPong(1).id;
+        }
     }
 
 }

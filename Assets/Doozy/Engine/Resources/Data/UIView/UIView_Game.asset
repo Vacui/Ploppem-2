@@ -15,5 +15,5 @@ MonoBehaviour:
   CategoryName: Game
   DatabaseType: 2
   Names:
-  - GameOver
+  - Game Over
   - Pause
