@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Square Rounded
   m_EditorClassIdentifier: 
-  UnlockValue: 45
+  UnlockValue: 35
   Icon: {fileID: 21300000, guid: 6436b8faf9e16954ebdb75bbfad17394, type: 3}
   Mesh: {fileID: 3440785943157156401, guid: 333ce82bf9c82e84eab6c156d8723e9b, type: 3}
