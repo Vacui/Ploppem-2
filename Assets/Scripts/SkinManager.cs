@@ -8,7 +8,7 @@ public class SkinManager : MonoBehaviour {
 
     private Skin[] skinArray;
     private const string SELECTED_SKIN_INDEX_KEY = "skin";
-    private int UnlockedSkin {
+    private int SelectedSkin {
         get { return Mathf.Clamp(PlayerPrefs.GetInt(SELECTED_SKIN_INDEX_KEY, 0), 0, skinArray.Length - 1); }
         set { PlayerPrefs.SetInt(SELECTED_SKIN_INDEX_KEY, Mathf.Clamp(value, 0, skinArray.Length - 1)); }
     }
@@ -30,7 +30,7 @@ public class SkinManager : MonoBehaviour {
     private void Awake() {
         skinArray = Resources.LoadAll<Skin>("UI/Skins");
         skinArray = skinArray.OrderBy(s => s.UnlockValue).ToArray();
-        UnlockedSkin = Mathf.Clamp(UnlockedSkin, 0, skinArray.Where(s => s.UnlockValue <= ScoreSystem.Highscore).Count() - 1);
+        SelectedSkin = Mathf.Clamp(SelectedSkin, 0, skinArray.Where(s => s.UnlockValue <= ScoreSystem.Highscore).Count() - 1);
     }
 
     private void OnEnable() {
@@ -75,7 +75,7 @@ public class SkinManager : MonoBehaviour {
 
     
     private bool IsSelected(int index) {
-        return UnlockedSkin == index;
+        return SelectedSkin == index;
     }
     private bool IsUnlocked(int unlockValue) {
         return ScoreSystem.Highscore >= unlockValue;
@@ -84,7 +84,7 @@ public class SkinManager : MonoBehaviour {
     public void Select(int index) {
         // I trust the toggle group to stop the player from selecting locked skins
 
-        UnlockedSkin = index;
+        SelectedSkin = index;
 
         if (EnemySpawnerData.Instance == null) {
             Debug.LogWarning("Enemy Spawner Data is null");
