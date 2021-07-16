@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Circle
   m_EditorClassIdentifier: 
-  UnlockValue: 70
+  UnlockValue: 420
   Icon: {fileID: 21300000, guid: e5847db7030f15c4299d50f8204a40b9, type: 3}
   Mesh: {fileID: -7773880533215830293, guid: 59bdd3b26b09ec14380385ed7acc5347, type: 3}

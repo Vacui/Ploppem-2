@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Rhombus Rounded
   m_EditorClassIdentifier: 
-  UnlockValue: 40
+  UnlockValue: 150
   Icon: {fileID: 21300000, guid: 05a392c2823d54b4cad8016c4edb60b6, type: 3}
   Mesh: {fileID: 7503335854553485384, guid: 6e55ec7c03c07a84fabdc47ae7b1b596, type: 3}

@@ -4477,7 +4477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -98.74829}
+  m_AnchoredPosition: {x: -10, y: -98.748535}
   m_SizeDelta: {x: 20, y: -642.50336}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &619576422
@@ -10545,7 +10545,7 @@ MonoBehaviour:
   size: 32
   offsetAngle: 90
   offsetDistance: 4
-  offset: {x: 0.00000023841858, y: -3.9999998}
+  offset: {x: 0.0000002384186, y: -4}
   color: {r: 0, g: 0, b: 0, a: 0.15}
   inset: 1
   blendMode: 2
@@ -12108,7 +12108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -117.44995}
+  m_AnchoredPosition: {x: 0, y: -117.44971}
   m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1547409197
@@ -13753,7 +13753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d2d6baf5c15a048879009000f1cf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: graizzaromatteo@gmail.com
+  url: mailto:graizzaromatteo@gmail.com
 --- !u!1 &1728559528
 GameObject:
   m_ObjectHideFlags: 0
@@ -15965,23 +15965,32 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.014427031
+      outSlope: 0.014427031
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.08962264
     - serializedVersion: 3
       time: 120
       value: 2
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 65
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     - serializedVersion: 3
-      time: 240
+      time: 180
+      value: 2
+      inSlope: -0
+      outSlope: 0.010298385
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 300
       value: 3
       inSlope: 0
       outSlope: 0
