@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9254902, g: 0.9411765, b: 0.94509804, a: 1}
+  m_Color: {r: 0.9254902, g: 0.9411765, b: 0.94509804, a: 0.8}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1579,8 +1579,8 @@ MonoBehaviour:
   VariantIdSerializedGuid: 
   PropertyIdSerializedGuid: 0922fbc32a44164e9ed7a99e43d88a83
   Image: {fileID: 7786260863451189989}
-  OverrideAlpha: 0
-  Alpha: 0
+  OverrideAlpha: 1
+  Alpha: 0.8
 --- !u!114 &7786260863451189991
 MonoBehaviour:
   m_ObjectHideFlags: 0
