@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91edaca8499f54db4f5a3e03d2077b, type: 3}
   m_Name: CustomHierarchy
   m_EditorClassIdentifier: 
-  Version: 
-  Author: 
-  Url: 
+  Version: 1.1.0
+  Author: febucci
+  Url: https://github.com/febucci/unitypackage-custom-hierarchy

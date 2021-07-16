@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e91edaca8499f54db4f5a3e03d2077b, type: 3}
-  m_Name: Translucent Image
+  m_Name: Translucent Image - Fast Blurred Background UI
   m_EditorClassIdentifier: 
-  Version: 
-  Author: 
-  Url: 
+  Version: 3.4.2
+  Author: Tai's Assets
+  Url: https://assetstore.unity.com/packages/tools/gui/translucent-image-fast-blurred-background-ui-78464

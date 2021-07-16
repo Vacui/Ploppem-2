@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e91edaca8499f54db4f5a3e03d2077b, type: 3}
   m_Name: DoozyUI
   m_EditorClassIdentifier: 
-  Version: 
-  Author: 
-  Url: 
+  Version: 3.1.3
+  Author: Doozy Entertainment
+  Url: https://assetstore.unity.com/packages/tools/gui/doozyui-complete-ui-management-system-138361
