@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Triangle
   m_EditorClassIdentifier: 
-  UnlockValue: 400
+  UnlockValue: 0
   Icon: {fileID: 21300000, guid: f8abf60f864945044bcebf1b3c2aa6d0, type: 3}
-  Mesh: {fileID: 4065239391471438389, guid: afad74f157da9f241af0e124f1060a5b, type: 3}
+  Mesh: {fileID: 4065239391471438389, guid: eb4bdc475f6990d45bf8a31a5e0dcd7b, type: 3}

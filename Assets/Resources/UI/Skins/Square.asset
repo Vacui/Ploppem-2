@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Square
   m_EditorClassIdentifier: 
-  UnlockValue: 0
+  UnlockValue: 10
   Icon: {fileID: 21300000, guid: 2b21610fcc5233248958af6276c68e6f, type: 3}
   Mesh: {fileID: -5681122057338540984, guid: 2a18ae4491803744a86feb68c5e28e48, type: 3}

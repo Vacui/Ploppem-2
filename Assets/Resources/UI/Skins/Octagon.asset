@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cabbfbc791a484083fe05ff0a312e6, type: 3}
   m_Name: Octagon
   m_EditorClassIdentifier: 
-  UnlockValue: 300
+  UnlockValue: 60
   Icon: {fileID: 21300000, guid: 6cfb441f5a5ee1d4e849e44391df1d07, type: 3}
   Mesh: {fileID: -5755243094280207408, guid: 0d9cabb2c428ca147bc5d7c44c5104d0, type: 3}
