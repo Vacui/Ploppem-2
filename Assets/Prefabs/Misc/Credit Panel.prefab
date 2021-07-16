@@ -490,10 +490,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7569710347099796738}
+  - component: {fileID: 1954358620510137863}
+  - component: {fileID: 180344433163134313}
   - component: {fileID: 986752834650957303}
   - component: {fileID: 2264540882068235877}
   - component: {fileID: 2847416886488466120}
-  - component: {fileID: 1954358620510137863}
+  - component: {fileID: 3419188484034923930}
   m_Layer: 5
   m_Name: Credit Panel
   m_TagString: Untagged
@@ -523,6 +525,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1954358620510137863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3619631790107204274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &180344433163134313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3619631790107204274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &986752834650957303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +608,6 @@ MonoBehaviour:
   titleText: {fileID: 7567782101263494737}
   versionText: {fileID: 5923693721709570712}
   authorText: {fileID: 7057831484863465722}
-  descriptionText: {fileID: 0}
   openUrl: {fileID: 2847416886488466120}
 --- !u!114 &2847416886488466120
 MonoBehaviour:
@@ -578,20 +622,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: 
---- !u!114 &1954358620510137863
-MonoBehaviour:
+--- !u!222 &3419188484034923930
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3619631790107204274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_CullTransparentMesh: 0
 --- !u!1 &6836904976604338251
 GameObject:
   m_ObjectHideFlags: 0
