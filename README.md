@@ -3,6 +3,7 @@ _This repository hosts paid plugins downloaded trough the online community [Game
 <p align="center">
   <img src="https://img.shields.io/badge/-unity-000000?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
   <img src="https://img.shields.io/badge/-visual studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white" alt="Visual Studio">
+  <img src="https://img.shields.io/badge/-sourcetree-2684FF?style=for-the-badge&logo=sourcetree&logoColor=white" alt="Sourcetree">
 </p>
 <p align="center">
   <b>Code repository of Tunnel, a minimal puzzle game I developed to improve my skills.</b>
