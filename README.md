@@ -19,11 +19,10 @@ _This repository hosts paid plugins downloaded trough the online community [Game
 </p>
 
 <p align="center">
-  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/player.gif" height="300">
-  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/1.jpg" height="300">
-  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/2.jpg" height="300">
-  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/3.jpg" height="300">
-  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/4.jpg" height="300">
+  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/Gameplay.gif" height="300">
+  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/GameOver.png" height="300">
+  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/Skins.png" height="300">
+  <img src="https://github.com/Vacui/Ploppem-2/blob/main/_README%20files/Menu.png" height="300">
 </p>
 
 <p align="center">
