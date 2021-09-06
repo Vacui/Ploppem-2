@@ -6,7 +6,7 @@ _This repository hosts paid plugins downloaded trough the online community [Game
   <img src="https://img.shields.io/badge/-sourcetree-2684FF?style=for-the-badge&logo=sourcetree&logoColor=white" alt="Sourcetree">
 </p>
 <p align="center">
-  <b>Code repository of Tunnel, a minimal puzzle game I developed to improve my skills.</b>
+  <b>Code repository of Ploppem 2, minimal endless runner sequel of one of my old projects.</b>
 </p>
 
 <h3 align="center">Game Features</h3>
